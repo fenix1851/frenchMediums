@@ -1,0 +1,35 @@
+
+*,
+*::after,
+*::before 
+    box-sizing: border-box
+    margin: 0
+
+.container
+    max-width: 1114px
+    margin: 0 auto
+@media screen and ( max-width:  1024px)
+    .container
+        width: 826px
+@media screen and ( max-width: 768px)
+    .container
+        width: 730px
+
+@media screen and ( max-width: 320px)
+    .container
+        width: 256px
+    
+body
+    max-width: 1440px
+    margin: 0 auto
+    background-color: #FBFBFC
+    position: relative
+    &::after
+        content: ''
+        background: url("/img/hero/heroElement.png")
+        width: 1596px
+        height: 1276px
+        position: absolute
+        top: 0
+        left: -100px
+        z-index: -9999999999999999999999999999999
