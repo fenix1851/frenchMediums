@@ -77,7 +77,7 @@ body::after {
   margin-right: 30px;
   font-weight: 600;
   position: relative;
-  transition: background-color 0.1s ease-in;
+  transition: background-color 0.1s ease-in .0s;
 }
 
 .header-links__link:last-child {
@@ -93,7 +93,7 @@ body::after {
   width: 0%;
   height: 2px;
   background-color: #252729;
-  transition: width .2s ease-in, background-color 0.1s ease-in;
+  transition: width .2s ease-in .2s, background-color 0.1s ease-in .2s;
   -webkit-animation-duration: 0;
           animation-duration: 0;
 }
@@ -113,7 +113,7 @@ body::after {
   justify-content: space-between;
 }
 
-.hero-section {
+.hero-text {
   margin-top: 130px;
 }
 
@@ -131,6 +131,157 @@ body::after {
   font-size: 24px;
   font-weight: 700;
   margin-top: 7px;
+}
+
+.hero-teresa-foto {
+  position: relative;
+  margin-top: 77px;
+  padding-right: 86px;
+}
+
+.hero-teresa-foto::after {
+  content: '';
+  background: url("/img/hero/purpleSubstrate.png");
+  position: absolute;
+  width: 588px;
+  height: 470px;
+  left: -180px;
+  top: 11px;
+  z-index: -10;
+}
+
+.hero-teresa-foto::before {
+  content: '';
+  background: url("/img/hero/whiteSubstrate.png");
+  position: absolute;
+  width: 350px;
+  height: 362px;
+  left: -1px;
+  top: -1px;
+  z-index: -9;
+}
+
+.hero-teresa-card {
+  background-color: #fff;
+  width: 700px;
+  height: 200px;
+  box-shadow: 0 4px 8px rgba(37, 39, 41, 0.12);
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px 0px 24px 16px;
+  position: absolute;
+  bottom: -101px;
+  left: -96px;
+}
+
+.hero-teresa-card-inner {
+  width: 528px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.hero-teresa-card-inner-row1 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.hero-teresa-card-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-teresa-card-name__name {
+  color: #2f3a5b;
+  font-family: Aleo;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.72px;
+  line-height: normal;
+}
+
+.hero-teresa-card-name__stars picture {
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+.hero-teresa-card-name__stars img {
+  margin-right: 8px;
+}
+
+.hero-teresa-card-name__stars img:last-child {
+  margin-right: 0;
+}
+
+.hero-teresa-card-statistics {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F9F9F9;
+  margin-left: 20px;
+  border-radius: 4px;
+  width: 392px;
+  height: 72px;
+}
+
+.hero-teresa-card-statistics-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 48px;
+  position: relative;
+}
+
+.hero-teresa-card-statistics-item::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 40px;
+  border: 1px solid #f0f1f3;
+  right: -50px;
+  top: 0;
+}
+
+.hero-teresa-card-statistics-item:last-child {
+  margin-right: 22px;
+}
+
+.hero-teresa-card-statistics-item:last-child::after {
+  display: none;
+}
+
+.hero-teresa-card-statistics-item:first-child {
+  margin-left: 23px;
+}
+
+.hero-teresa-card-statistics-item__subtitle {
+  color: #9169db;
+  font-family: Lato;
+  font-size: 11px;
+  letter-spacing: 0.26px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.hero-teresa-card-statistics-item__title {
+  color: #2f3a5b;
+  font-family: Aleo;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.72px;
+  margin-bottom: -7px;
+}
+
+.hero-teresa-card-skills {
+  display: flex;
+}
+
+.fw-700 {
+  font-weight: 700;
 }
 
 @media screen and (max-width: 1024px) {
@@ -196,3 +347,7 @@ body::after {
 .webp body::after { background: url(/img/hero/heroElement.webp); }
 
 .webp .header-container::after { background: url(/img/header/headerDropElement.webp); }
+
+.webp .hero-teresa-foto::after { background: url(/img/hero/purpleSubstrate.webp); }
+
+.webp .hero-teresa-foto::before { background: url(/img/hero/whiteSubstrate.webp); }
