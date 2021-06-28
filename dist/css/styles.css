@@ -10,6 +10,10 @@
   margin: 0 auto;
 }
 
+ul > li {
+  display: none;
+}
+
 body {
   max-width: 1440px;
   margin: 0 auto;
@@ -18,14 +22,14 @@ body {
 }
 
 body::after {
-  content: '';
+  content: "";
   background: url("/img/hero/heroElement.png");
   width: 1596px;
   height: 1276px;
   position: absolute;
   top: 0;
   left: -100px;
-  z-index: -9999999999999999999999999999999;
+  z-index: -10000000000000000000000000000000;
 }
 
 .header {
@@ -37,7 +41,7 @@ body::after {
 }
 
 .header-container::after {
-  content: '';
+  content: "";
   background: url("/img/header/headerDropElement.png");
   position: absolute;
   top: 0;
@@ -55,7 +59,7 @@ body::after {
 .header-logo {
   color: #ffffff;
   text-decoration: none;
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 0.56px;
@@ -77,7 +81,9 @@ body::after {
   margin-right: 30px;
   font-weight: 600;
   position: relative;
-  transition: background-color 0.1s ease-in .0s;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
 }
 
 .header-links__link:last-child {
@@ -86,16 +92,16 @@ body::after {
 
 .header-links__link::after {
   position: absolute;
-  content: '';
+  content: "";
   opacity: 0;
   bottom: -5px;
   left: 0;
   width: 0%;
   height: 2px;
   background-color: #252729;
-  transition: width .2s ease-in .2s, background-color 0.1s ease-in .2s;
-  -webkit-animation-duration: 0;
-          animation-duration: 0;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
 }
 
 .header-links__link:hover.header-links__link {
@@ -140,7 +146,7 @@ body::after {
 }
 
 .hero-teresa-foto::after {
-  content: '';
+  content: "";
   background: url("/img/hero/purpleSubstrate.png");
   position: absolute;
   width: 588px;
@@ -151,7 +157,7 @@ body::after {
 }
 
 .hero-teresa-foto::before {
-  content: '';
+  content: "";
   background: url("/img/hero/whiteSubstrate.png");
   position: absolute;
   width: 350px;
@@ -237,7 +243,7 @@ body::after {
 
 .hero-teresa-card-statistics-item::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 0;
   height: 40px;
   border: 1px solid #f0f1f3;
@@ -278,10 +284,285 @@ body::after {
 
 .hero-teresa-card-skills {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-teresa-card-skills-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-teresa-card-skills-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.hero-teresa-card-skills-item-text {
+  color: #2f3a5b;
+  font-family: Lato;
+  font-size: 11px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.26px;
+  margin-top: 8px;
+}
+
+.hero-filters {
+  width: 1120px;
+  height: 192px;
+  box-shadow: 0 8px 16px rgba(37, 39, 41, 0.12);
+  border-radius: 4px;
+  background-color: #ffffff;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hero-filters-row1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-filters-row2 {
+  display: flex;
+  justify-content: start;
+}
+
+.hero-filters-container {
+  margin-top: 220px;
+}
+
+.hero-filters-dropdown {
+  width: 352px;
+  height: 48px;
+  padding: 14px;
+  border-radius: 4px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.hero-filters-dropdown::after {
+  content: "";
+  background: url(/img/hero/arrowDown.png);
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.hero-filters-dropdown-select {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.hero-filters-search {
+  padding: 15px;
+  padding-left: 52px;
+  width: 352px;
+  height: 48px;
+  caret-color: transparent;
+  outline-color: none;
+  border-radius: 1px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  background: url("/img/hero/searchIcon.svg");
+  background-repeat: no-repeat;
+  background-position: 12px 12px;
+}
+
+.hero-filters-search::-moz-placeholder {
+  color: #2f3a5b;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.hero-filters-search:-ms-input-placeholder {
+  color: #2f3a5b;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.hero-filters-search::placeholder {
+  color: #2f3a5b;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.hero-filters-search:focus.hero-filters-search {
+  outline: none;
+}
+
+.hero-filters-countOnPage {
+  display: flex;
+  align-items: center;
+}
+
+.hero-filters-countOnPage-text {
+  margin-left: 18px;
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+  margin-right: 26px;
+}
+
+.hero-filters-countOnPage-radio__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  margin-right: 15px;
+  color: #2f3a5b;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
+}
+
+.hero-filters-countOnPage-radio__label:hover {
+  cursor: pointer;
+}
+
+.hero-filters-countOnPage-radio__button {
+  display: none;
+}
+
+.hero-filters-countOnPage-radio__button:checked + label {
+  border: 1px solid #9169db;
+  background-color: #9169db;
+  color: #ffffff;
+}
+
+.hero-filters-apply {
+  width: 99px;
+  height: 48px;
+  color: #9169db;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.66px;
+  border: 1px solid #9169db;
+  border-radius: 4px;
+  background-color: #fff;
+  position: absolute;
+  right: 16px;
 }
 
 .fw-700 {
   font-weight: 700;
+}
+
+.main-section {
+  margin-top: 70px;
+}
+
+.main-card {
+  width: 256px;
+  height: 432px;
+  box-shadow: 0 2px 4px rgba(37, 39, 41, 0.12);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.main-card svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9;
+}
+
+.main-card-header-title {
+  margin-top: 16px;
+  color: #575a61;
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.36px;
+}
+
+.main-card-header-title::before {
+  content: "";
+  background: url(/img/main/playButton.png);
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.main-card-header-title::after {
+  content: "";
+  background: url(/img/main/frenchFlag.png);
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+
+.main-card:hover.main-card-header-title {
+  color: red;
+}
+
+.main-card:hover path {
+  fill: #9169db;
+}
+
+.main-card-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+path {
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
 }
 
 @media screen and (max-width: 1024px) {
@@ -351,3 +632,9 @@ body::after {
 .webp .hero-teresa-foto::after { background: url(/img/hero/purpleSubstrate.webp); }
 
 .webp .hero-teresa-foto::before { background: url(/img/hero/whiteSubstrate.webp); }
+
+.webp .hero-filters-dropdown::after { background: url(/img/hero/arrowDown.webp); }
+
+.webp .main-card-header-title::before { background: url(/img/main/playButton.webp); }
+
+.webp .main-card-header-title::after { background: url(/img/main/frenchFlag.webp); }

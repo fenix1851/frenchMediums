@@ -1,0 +1,56 @@
+.main
+    &-section
+        margin-top: 70px
+    &-card
+        width: 256px
+        height: 432px
+        box-shadow: 0 2px 4px rgba(37, 39, 41, 0.12)
+        border-radius: 4px
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
+        & svg
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -9
+        &-header
+            &-title
+                margin-top: 16px
+                color: #575a61
+                font-family: Lato
+                font-size: 10px
+                font-weight: 700
+                font-style: normal
+                letter-spacing: 0.36px
+                &::before
+                   content: ''
+                   background: url(/img/main/playButton.png) 
+                   width: 16px
+                   height: 16px
+                   position: absolute
+                   top: 16px
+                   left: 16px
+                &::after
+                   content: ''
+                   background: url(/img/main/frenchFlag.png) 
+                   width: 26px
+                   height: 26px
+                   position: absolute
+                   top: 12px
+                   right: 16px
+        &:hover 
+            &.main-card-header-title
+                color: red
+            & path
+                fill: #9169db
+        &-row
+            display: flex
+            justify-content: space-between
+        
+
+path
+    -moz-transition: 0.2s 0.1s ease-in
+    -o-transition: 0.2s 0.1s ease-in
+    -webkit-transition: 0.2s 0.1s ease-in

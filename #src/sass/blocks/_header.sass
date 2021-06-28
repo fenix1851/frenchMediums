@@ -69,7 +69,9 @@
             margin-right: 30px
             font-weight: 600
             position: relative
-            transition: background-color 0.1s ease-in .0s
+            -moz-transition: 0.2s 0.1s ease-in
+            -o-transition: 0.2s 0.1s ease-in
+            -webkit-transition: 0.2s 0.1s ease-in
             &:last-child
                 margin: 0
 
@@ -83,8 +85,9 @@
                 width: 0%
                 height: 2px
                 background-color: #252729
-                transition: width .2s ease-in .2s, background-color 0.1s ease-in .2s
-                animation-duration: 0
+                -moz-transition: 0.2s 0.1s ease-in
+                -o-transition: 0.2s 0.1s ease-in
+                -webkit-transition: 0.2s 0.1s ease-in
 
             &:hover
                 &.header-links__link
