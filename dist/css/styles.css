@@ -3,6 +3,9 @@
 *::before {
   box-sizing: border-box;
   margin: 0;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
 }
 
 .container {
@@ -19,6 +22,7 @@ body {
   margin: 0 auto;
   background-color: #FBFBFC;
   position: relative;
+  overflow-x: hidden;
 }
 
 body::after {
@@ -34,6 +38,10 @@ body::after {
 
 .header {
   position: relative;
+}
+
+.headerPlanning-container::after {
+  display: none;
 }
 
 .header-container {
@@ -64,6 +72,10 @@ body::after {
   font-weight: 400;
   letter-spacing: 0.56px;
   z-index: 999999;
+}
+
+.header-logo-planning {
+  color: #2f3a5b;
 }
 
 .header-links {
@@ -294,6 +306,10 @@ body::after {
   align-items: center;
 }
 
+.hero-teresa-card-skills-item:first-child {
+  margin-left: 36px;
+}
+
 .hero-teresa-card-skills-item-icon {
   display: flex;
   align-items: center;
@@ -509,49 +525,171 @@ body::after {
   position: relative;
 }
 
-.main-card svg {
+.main-card-svg {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -9;
 }
 
+.main-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 11x;
+  padding: 11px 19px 0 17px;
+  width: 100%;
+}
+
 .main-card-header-title {
-  margin-top: 16px;
   color: #575a61;
   font-family: Lato;
   font-size: 10px;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.36px;
+  justify-self: center;
 }
 
-.main-card-header-title::before {
-  content: "";
-  background: url(/img/main/playButton.png);
+.main-card-header-playIcon {
   width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 16px;
-  left: 16px;
+  height: 18px;
 }
 
-.main-card-header-title::after {
-  content: "";
-  background: url(/img/main/frenchFlag.png);
-  width: 26px;
-  height: 26px;
-  position: absolute;
-  top: 12px;
-  right: 16px;
+.main-card-logo {
+  background-color: #fff;
+  border-radius: 9999px;
+  margin-top: 30px;
+  margin-bottom: 8px;
 }
 
-.main-card:hover.main-card-header-title {
-  color: red;
+.main-card-name {
+  color: #2f3a5b;
+  font-family: Aleo;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.56px;
+  line-height: normal;
+  margin-bottom: 8px;
 }
 
-.main-card:hover path {
+.main-card-name-stars {
+  margin-bottom: 12px;
+}
+
+.main-card-name-stars picture {
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+.main-card-name-stars img {
+  margin-right: 8px;
+}
+
+.main-card-name-stars img:last-child {
+  margin-right: 0;
+}
+
+.main-card-statistics {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F9F9F9;
+  border-radius: 4px;
+  width: 240px;
+  height: 72px;
+  padding: 16px 22px;
+}
+
+.main-card-statistics-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-card-statistics-item__subtitle {
+  color: #9169db;
+  font-family: Lato;
+  font-size: 11px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.26px;
+  line-height: 18px;
+}
+
+.main-card-statistics-item__title {
+  color: #575a61;
+  font-family: Aleo;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.56px;
+}
+
+.main-card-skills {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  margin-top: 8px;
+}
+
+.main-card-skills-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-card-skills-text {
+  color: #2f3a5b;
+  font-family: Lato;
+  font-size: 13px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.23px;
+  line-height: normal;
+  margin-bottom: 14px;
+}
+
+.main-card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-card-footer-text {
+  color: #9169db;
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.96px;
+  line-height: normal;
+}
+
+.main-card-footer-svg {
+  margin-top: 6px;
+  margin-bottom: 1px;
+}
+
+.main-card-row {
+  margin-bottom: 64px;
+}
+
+.main-card-row:last-child {
+  margin-bottom: 0;
+}
+
+.main-card:hover .main-card-header-title {
+  color: #fff;
+}
+
+.main-card:hover .main-card-svg path {
   fill: #9169db;
+}
+
+.main-card:hover .main-card-header-playIcon path {
+  stroke: #fff;
 }
 
 .main-card-row {
@@ -559,10 +697,213 @@ body::after {
   justify-content: space-between;
 }
 
+.main-page-select {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 96px;
+}
+
+.main-page-select-nextPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
+}
+
+.main-page-select-nextPage:hover {
+  cursor: pointer;
+}
+
+.main-page-select-nextPage:hover.main-page-select-nextPage {
+  background-color: #9169db;
+}
+
+.main-page-select-text {
+  margin-left: 18px;
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+  margin-right: 26px;
+}
+
+.main-page-select-radio__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  margin-right: 15px;
+  color: #2f3a5b;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
+}
+
+.main-page-select-radio__label:hover {
+  cursor: pointer;
+}
+
+.main-page-select-radio__label:hover.main-page-select-radio__label {
+  border: 1px solid #9169db;
+  background-color: #9169db;
+  color: #ffffff;
+}
+
+.main-page-select-radio__label:hover.main-page-select-nextPage {
+  border: 1px solid #9169db;
+  background-color: #9169db;
+  color: #ffffff;
+}
+
+.main-page-select-radio__button {
+  display: none;
+}
+
+.main-page-select-radio__button:checked + label {
+  border: 1px solid #9169db;
+  background-color: #9169db;
+  color: #ffffff;
+}
+
 path {
   -moz-transition: 0.2s 0.1s ease-in;
   -o-transition: 0.2s 0.1s ease-in;
   -webkit-transition: 0.2s 0.1s ease-in;
+}
+
+.footer-container {
+  width: 1114px;
+  align-items: center;
+}
+
+.footer-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  color: #2f3a5b;
+  text-decoration: none;
+  font-family: "Aleo", serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.56px;
+  z-index: 999999;
+}
+
+.footer-links {
+  display: inline-block;
+  text-decoration: none;
+  z-index: 9999999;
+}
+
+.footer-links__link {
+  color: #252729;
+  text-decoration: none;
+  font-family: Lato;
+  font-size: 15px;
+  letter-spacing: 0.28px;
+  margin-right: 30px;
+  font-weight: 600;
+  position: relative;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
+}
+
+.footer-links__link:last-child {
+  margin: 0;
+}
+
+.footer-links__link::after {
+  position: absolute;
+  content: "";
+  opacity: 0;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #252729;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
+}
+
+.footer-links__link:hover.footer-links__link {
+  color: #9169DB;
+}
+
+.footer-links__link:hover.footer-links__link::after {
+  opacity: 1;
+  width: 100%;
+  background-color: #9169DB;
+}
+
+.footer-row1 {
+  display: flex;
+  align-items: center;
+  background-color: #f0f1f3;
+  height: 100px;
+  width: 100%;
+}
+
+.footer-row2 {
+  height: 70px;
+  background-color: #9169db;
+  display: flex;
+  align-items: center;
+}
+
+.footer-row3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f1f3;
+  height: 48px;
+}
+
+.footer-documents {
+  color: #ffffff;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+  text-decoration: none;
+}
+
+.footer-text {
+  color: #252729;
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.36px;
+  line-height: normal;
 }
 
 @media screen and (max-width: 1024px) {
@@ -634,7 +975,3 @@ path {
 .webp .hero-teresa-foto::before { background: url(/img/hero/whiteSubstrate.webp); }
 
 .webp .hero-filters-dropdown::after { background: url(/img/hero/arrowDown.webp); }
-
-.webp .main-card-header-title::before { background: url(/img/main/playButton.webp); }
-
-.webp .main-card-header-title::after { background: url(/img/main/frenchFlag.webp); }

@@ -4,6 +4,9 @@
 *::before 
     box-sizing: border-box
     margin: 0
+    -moz-transition: 0.2s 0.1s ease-in
+    -o-transition: 0.2s 0.1s ease-in
+    -webkit-transition: 0.2s 0.1s ease-in
 
 .container
     max-width: 1114px
@@ -25,6 +28,7 @@ body
     margin: 0 auto
     background-color: #FBFBFC
     position: relative
+    overflow-x: hidden
     &::after
         content: ''
         background: url("/img/hero/heroElement.png")
