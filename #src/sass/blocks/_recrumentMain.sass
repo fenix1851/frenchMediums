@@ -8,6 +8,27 @@
     flex-direction: column
     padding: 96px 96px 54px 96px
     margin: 100px auto 74px auto
+    position: relative
+    &::after
+        content: ''
+        width: 1410px
+        height: 785px
+        position: absolute
+        top: 176px
+        right: -360px
+        background-image: url('/img/others/recrument.svg')
+        z-index: -999999
+    &::before
+        content: ''
+        width: 448px
+        height: 349px
+        position: absolute
+        top: 465px
+        right: -225px
+        background-image: url('/img/others/recrumentBefore.png')
+        z-index: -999998
+
+
     &-suptitle
         color: #9169db
         font-family: Lato
@@ -78,6 +99,13 @@
         padding: 16px
         resize: none
         margin-bottom: 32px
+        &:placeholder
+            color: #8c8ea1
+            font-family: Lato
+            font-size: 15px
+            font-weight: 400
+            font-style: normal
+            letter-spacing: 0.28px
         &:hover
             &.recrument-form-textarea
                 border-color: #9169db

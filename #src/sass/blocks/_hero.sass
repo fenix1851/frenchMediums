@@ -176,6 +176,9 @@
             border: 1px solid #f0f1f3
             background-color: #ffffff
             position: relative
+            &:hover
+                &.hero-filters-dropdown
+                    border-color: #9169db
             &::after
                 content: ''
                 background: url(/img/hero/arrowDown.png)
@@ -206,6 +209,9 @@
             background: url('/img/hero/searchIcon.svg')
             background-repeat: no-repeat
             background-position: 12px 12px
+            &:hover
+                &.hero-filters-search
+                    border-color: #9169db
             &::placeholder
                 color: #2f3a5b
                 font-family: Lato
@@ -253,6 +259,8 @@
                     -webkit-transition: 0.2s 0.1s ease-in
                     &:hover
                         cursor: pointer
+                        &.hero-filters-countOnPage-radio__label
+                            border-color: #9169db
                 &__button
                     display: none
                     &:checked
@@ -283,3 +291,6 @@
 
 .fw-700
     font-weight: 700
+
+
+    

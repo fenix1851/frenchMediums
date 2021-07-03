@@ -455,6 +455,25 @@
         flex-direction: column
         padding: 64px 96px 76px 96px
         margin: 100px auto 96px auto
+        position: relative
+        &::after
+            content: ' '
+            position: absolute
+            width: 833px
+            height: 575px
+            top: -33px
+            right: 70px
+            z-index: -9999999
+            background-image: url('/img/Voyance/formAfter.png')
+        &::before
+            content: ' '
+            position: absolute
+            width: 60px
+            height: 53px
+            top: -20px
+            right: 298px
+            z-index: -9999999
+            background-image: url('/img/Voyance/formBefore.png')
         &-rating
             display: flex
             align-items: center
@@ -545,6 +564,13 @@
                 &.teresaVoyanceMain-form-textarea
                     border-color: #9169db
                     outline: none
+            &:placeholder
+                color: #8c8ea1
+                font-family: Lato
+                font-size: 15px
+                font-weight: 400
+                font-style: normal
+                letter-spacing: 0.28px
         &-apply
             width: 219px
             height: 48px
@@ -639,6 +665,7 @@
             top: -1px
             right: 0
             background-image: url(/img/teresaVoyanceMain/HolderXL.svg)
+
     &-header
         &-links
             &__link
@@ -648,12 +675,37 @@
                         color: #fff
                         &::after
                             background-color: #fff
+.Voyance
+    &Body
+        position: relative
+        &::after
+            content: ' '
+            display: block
+            position: absolute
+            width: 1440px
+            height: 636px
+            z-index: -999999999
+            top: -1px
+            right: 0
+            background-image: url(/img/Voyance/HolderXL.png)
+    &-header
+        &-logo
+            color: #2f3a5b
+        &-container
+            &::after
+                display: none
 @media screen and ( min-width: 1441px)
     .teresaVoyanceBody
         &::after
             background-image: url(/img/teresaVoyanceMain/HolderXXL.png)
             right: 1px
             width: 1920px
+    .VoyanceBody
+        &::after
+            background-image: url(/img/Voyance/HolderXXL.png)
+            right: 1px
+            width: 1920px
+        
 
 
     

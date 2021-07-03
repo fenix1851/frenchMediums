@@ -367,6 +367,10 @@ body {
   position: relative;
 }
 
+.hero-filters-dropdown:hover.hero-filters-dropdown {
+  border-color: #9169db;
+}
+
 .hero-filters-dropdown::after {
   content: "";
   background: url(/img/hero/arrowDown.png);
@@ -401,6 +405,10 @@ body {
   background: url("/img/hero/searchIcon.svg");
   background-repeat: no-repeat;
   background-position: 12px 12px;
+}
+
+.hero-filters-search:hover.hero-filters-search {
+  border-color: #9169db;
 }
 
 .hero-filters-search::-moz-placeholder {
@@ -480,6 +488,10 @@ body {
   cursor: pointer;
 }
 
+.hero-filters-countOnPage-radio__label:hover.hero-filters-countOnPage-radio__label {
+  border-color: #9169db;
+}
+
 .hero-filters-countOnPage-radio__button {
   display: none;
 }
@@ -530,6 +542,7 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
+  text-decoration: none;
 }
 
 .main-card-svg {
@@ -725,7 +738,7 @@ body {
   cursor: pointer;
 }
 
-.page-select-nextPage:hover.main-page-select-nextPage {
+.page-select-nextPage:hover.page-select-radio__label {
   background-color: #9169db;
 }
 
@@ -767,16 +780,12 @@ body {
   cursor: pointer;
 }
 
-.page-select-radio__label:hover.main-page-select-radio__label {
+.page-select-radio__label:hover.page-select-radio__label {
   border: 1px solid #9169db;
-  background-color: #9169db;
-  color: #ffffff;
 }
 
-.page-select-radio__label:hover.main-page-select-nextPage {
+.page-select-radio__label:hover.page-select-nextPage {
   border: 1px solid #9169db;
-  background-color: #9169db;
-  color: #ffffff;
 }
 
 .page-select-radio__button {
@@ -1281,6 +1290,29 @@ body {
   flex-direction: column;
   padding: 96px 96px 54px 96px;
   margin: 100px auto 74px auto;
+  position: relative;
+}
+
+.recrument-form::after {
+  content: "";
+  width: 1410px;
+  height: 785px;
+  position: absolute;
+  top: 176px;
+  right: -360px;
+  background-image: url("/img/others/recrument.svg");
+  z-index: -999999;
+}
+
+.recrument-form::before {
+  content: "";
+  width: 448px;
+  height: 349px;
+  position: absolute;
+  top: 465px;
+  right: -225px;
+  background-image: url("/img/others/recrumentBefore.png");
+  z-index: -999998;
 }
 
 .recrument-form-suptitle {
@@ -1371,6 +1403,15 @@ body {
   padding: 16px;
   resize: none;
   margin-bottom: 32px;
+}
+
+.recrument-form-textarea:placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
 }
 
 .recrument-form-textarea:hover.recrument-form-textarea {
@@ -2175,6 +2216,29 @@ body {
   flex-direction: column;
   padding: 64px 96px 76px 96px;
   margin: 100px auto 96px auto;
+  position: relative;
+}
+
+.teresaVoyanceMain-form::after {
+  content: " ";
+  position: absolute;
+  width: 833px;
+  height: 575px;
+  top: -33px;
+  right: 70px;
+  z-index: -9999999;
+  background-image: url("/img/Voyance/formAfter.png");
+}
+
+.teresaVoyanceMain-form::before {
+  content: " ";
+  position: absolute;
+  width: 60px;
+  height: 53px;
+  top: -20px;
+  right: 298px;
+  z-index: -9999999;
+  background-image: url("/img/Voyance/formBefore.png");
 }
 
 .teresaVoyanceMain-form-rating {
@@ -2289,6 +2353,15 @@ body {
 .teresaVoyanceMain-form-textarea:focus.teresaVoyanceMain-form-textarea {
   border-color: #9169db;
   outline: none;
+}
+
+.teresaVoyanceMain-form-textarea:placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
 }
 
 .teresaVoyanceMain-form-apply {
@@ -2421,9 +2494,39 @@ body {
   background-color: #fff;
 }
 
+.VoyanceBody {
+  position: relative;
+}
+
+.VoyanceBody::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 1440px;
+  height: 636px;
+  z-index: -999999999;
+  top: -1px;
+  right: 0;
+  background-image: url(/img/Voyance/HolderXL.png);
+}
+
+.Voyance-header-logo {
+  color: #2f3a5b;
+}
+
+.Voyance-header-container::after {
+  display: none;
+}
+
 @media screen and (min-width: 1441px) {
   .teresaVoyanceBody::after {
     background-image: url(/img/teresaVoyanceMain/HolderXXL.png);
+    right: 1px;
+    width: 1920px;
+  }
+
+  .VoyanceBody::after {
+    background-image: url(/img/Voyance/HolderXXL.png);
     right: 1px;
     width: 1920px;
   }
@@ -2501,15 +2604,28 @@ body {
 
 .webp .planningMain-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
 
+.webp .recrument-form::before{ background-image: url(/img/others/recrumentBefore.webp); }
+
 .webp .aboutUs-teresa-photo::after{ background-image: url(/img/aboutUs/aboutUs-teresaPhotoafter.webp); }
 
 .webp .aboutUs-teresa-photo::before{ background-image: url(/img/aboutUs/aboutUs-teresaPhotobefore.webp); }
 
 .webp .teresaVoyanceMain-planning-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
 
+.webp .teresaVoyanceMain-form::after{ background-image: url(/img/Voyance/formAfter.webp); }
+
+.webp .teresaVoyanceMain-form::before{ background-image: url(/img/Voyance/formBefore.webp); }
+
 .webp .teresaVoyanceMain-commentCard-text-rating::after{ background-image: url(/img/teresaVoyanceMain/Star.webp); }
+
+.webp .VoyanceBody::after{ background-image: url(/img/Voyance/HolderXL.webp); }
 
 @media screen and (min-width: 1441px){
 
   .webp .teresaVoyanceBody::after{ background-image: url(/img/teresaVoyanceMain/HolderXXL.webp); }
+}
+
+@media screen and (min-width: 1441px){
+
+  .webp .VoyanceBody::after{ background-image: url(/img/Voyance/HolderXXL.webp); }
 }
