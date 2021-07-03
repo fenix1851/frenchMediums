@@ -2,6 +2,7 @@
     &-container
         margin-top: 132px
         margin-bottom: 64px
+        position: relative
     &-card
         width: 1120px
         height: 264px
@@ -444,5 +445,218 @@
                     margin-right: 2px
                     &:last-child
                         margin-right: 0
+    &-form
+        width: 928px
+        height: 458px
+        box-shadow: 0 8px 16px rgba(37, 39, 41, 0.12)
+        border-radius: 4px
+        background-color: #ffffff
+        display: flex
+        flex-direction: column
+        padding: 64px 96px 76px 96px
+        margin: 100px auto 96px auto
+        &-rating
+            display: flex
+            align-items: center
+            &__title
+                color: #575a61
+                font-family: Aleo
+                font-size: 24px
+                font-weight: 700
+                font-style: normal
+                letter-spacing: 0.72px
+                line-height: normal
+                margin-right: 6px
+        &-row
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &-suptitle
+            color: #9169db
+            font-family: Lato
+            font-size: 10px
+            font-weight: 700
+            font-style: normal
+            letter-spacing: 0.96px
+            margin-bottom: 5px
+            text-transform: uppercase
+        &-title
+            color: #2f3a5b
+            font-family: Aleo
+            font-size: 32px
+            font-weight: 400
+            font-style: normal
+            letter-spacing: 1.22px
+            margin-bottom: 14px
+        &-description
+            width: 597px
+            color: #252729
+            font-family: Lato
+            font-size: 15px
+            font-weight: 400
+            font-style: normal
+            letter-spacing: 0.28px
+            line-height: 22px
+            margin-bottom: 16px
+        &-inputs
+            display: flex
+            justify-content: space-between
+            &__input
+                width: 352px
+                height: 48px
+                border-radius: 4px
+                border: 1px solid #f0f1f3
+                background-color: #ffffff
+                padding: 16px
+                padding-right: 0
+                margin-bottom: 16px
+                outline: none
+                &:hover
+                    &.teresaVoyanceMain-form-inputs__input
+                        border-color: #9169db
+                        outline: none
+                &:focus
+                    &.teresaVoyanceMain-form-inputs__input
+                        border-color: #9169db
+                        outline: none
+                &:placeholder
+                    color: #8c8ea1
+                    font-family: Lato
+                    font-size: 15px
+                    font-weight: 400
+                    font-style: normal
+                    letter-spacing: 0.28px
+                    line-height: 19px
+        &-textarea
+            width: 736px
+            height: 128px
+            outline: none
+            border-radius: 4px
+            border: 1px solid #f0f1f3
+            background-color: #ffffff
+            padding: 16px
+            resize: none
+            margin-bottom: 16px
+            &:hover
+                &.teresaVoyanceMain-form-textarea
+                    border-color: #9169db
+                    outline: none
+            &:focus
+                &.teresaVoyanceMain-form-textarea
+                    border-color: #9169db
+                    outline: none
+        &-apply
+            width: 219px
+            height: 48px
+            background-color: transparent
+            border: 1px solid #9169db
+            border-radius: 4px
+            color: #9169db
+            font-family: Lato
+            font-size: 15px
+            font-weight: 600
+            font-style: normal
+            letter-spacing: 0.66px
+            margin-left: auto
+            &:hover
+                &.teresaVoyanceMain-form-apply
+                    background-color: #9169db
+                    color: #fff
+    &-commentCard
+        width: 736px
+        height: 204px
+        border-radius: 4px
+        border: 1px solid #f0f1f3
+        background-color: #ffffff
+        margin: 0 auto 32px auto
+        display: flex
+        position: relative
+        padding: 32px
+        &::after
+            content: 'fév. 17.02.2020'
+            position: absolute
+            width: 78px
+            height: 12px
+            color: #8c8ea1
+            font-family: Lato
+            font-size: 10px
+            font-weight: 700
+            font-style: normal
+            letter-spacing: 0.36px
+            bottom: 32px
+            right: 32px
+        &-text
+            margin-left: 16px
+            &__row1
+                display: flex
+                justify-content: space-between
+                margin-bottom: 16px
+            &__title
+                color: #2f3a5b
+                font-family: Aleo
+                font-size: 20px
+                font-weight: 400
+                font-style: normal
+                letter-spacing: 0.56px
+            &-rating
+                color: #9169db
+                font-family: Lato
+                font-size: 13px
+                font-weight: 700
+                font-style: normal
+                letter-spacing: 0.23px
+                position: relative
+                display: inline-block
+                &::after
+                    position: absolute
+                    margin: 1px 0 0 5px
+                    content: ''
+                    display: inline-block
+                    width: 12px
+                    height: 12px
+                    background-image: url(/img/teresaVoyanceMain/Star.png)
+            &__paragraph
+                color: #575a61
+                font-family: Lato
+                font-size: 15px
+                font-weight: 400
+                font-style: normal
+                letter-spacing: 0.28px
+                line-height: 20px
+    &-page-select
+        margin: 64px auto
+        width: 736px
+.teresaVoyance
+    &Body
+        position: relative
+        &::after
+            content: ' '
+            display: block
+            position: absolute
+            width: 1440px
+            height: 636px
+            z-index: -999999999
+            top: -1px
+            right: 0
+            background-image: url(/img/teresaVoyanceMain/HolderXL.svg)
+    &-header
+        &-links
+            &__link
+                color: #fff
+                &:hover
+                    &.header-links__link
+                        color: #fff
+                        &::after
+                            background-color: #fff
+@media screen and ( min-width: 1441px)
+    .teresaVoyanceBody
+        &::after
+            background-image: url(/img/teresaVoyanceMain/HolderXXL.png)
+            right: 1px
+            width: 1920px
+
+
+    
+
 
         

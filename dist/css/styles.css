@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 *,
 *::after,
 *::before {
@@ -504,6 +506,13 @@ body {
   right: 16px;
 }
 
+.hero-filters-apply:hover.hero-filters-apply {
+  width: 150px;
+  color: #fff;
+  background-color: #9169db;
+  letter-spacing: 0.8px;
+}
+
 .fw-700 {
   font-weight: 700;
 }
@@ -782,7 +791,19 @@ body {
 
 .footer-container {
   width: 1114px;
+}
+
+.footer-tel {
+  display: flex;
   align-items: center;
+  height: 128px;
+  background-color: #fff;
+}
+
+.footer-tel-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .footer-inner {
@@ -1309,6 +1330,17 @@ body {
   padding: 16px;
   padding-right: 0;
   margin-bottom: 32px;
+  outline: none;
+}
+
+.recrument-form-inputs__input:focus.recrument-form-inputs__input {
+  border-color: #9169db;
+  outline: none;
+}
+
+.recrument-form-inputs__input:hover.recrument-form-inputs__input {
+  border-color: #9169db;
+  outline: none;
 }
 
 .recrument-form-inputs__input:placeholder {
@@ -1341,6 +1373,16 @@ body {
   margin-bottom: 32px;
 }
 
+.recrument-form-textarea:hover.recrument-form-textarea {
+  border-color: #9169db;
+  outline: none;
+}
+
+.recrument-form-textarea:focus.recrument-form-textarea {
+  border-color: #9169db;
+  outline: none;
+}
+
 .recrument-form-apply {
   width: 219px;
   height: 48px;
@@ -1354,6 +1396,11 @@ body {
   font-style: normal;
   letter-spacing: 0.66px;
   margin-left: auto;
+}
+
+.recrument-form-apply:hover.recrument-form-apply {
+  background-color: #9169db;
+  color: #fff;
 }
 
 .requestSended-inner {
@@ -1522,6 +1569,7 @@ body {
 .teresaVoyanceMain-container {
   margin-top: 132px;
   margin-bottom: 64px;
+  position: relative;
 }
 
 .teresaVoyanceMain-card {
@@ -2117,6 +2165,270 @@ body {
   margin-right: 0;
 }
 
+.teresaVoyanceMain-form {
+  width: 928px;
+  height: 458px;
+  box-shadow: 0 8px 16px rgba(37, 39, 41, 0.12);
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 64px 96px 76px 96px;
+  margin: 100px auto 96px auto;
+}
+
+.teresaVoyanceMain-form-rating {
+  display: flex;
+  align-items: center;
+}
+
+.teresaVoyanceMain-form-rating__title {
+  color: #575a61;
+  font-family: Aleo;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.72px;
+  line-height: normal;
+  margin-right: 6px;
+}
+
+.teresaVoyanceMain-form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teresaVoyanceMain-form-suptitle {
+  color: #9169db;
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.96px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.teresaVoyanceMain-form-title {
+  color: #2f3a5b;
+  font-family: Aleo;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1.22px;
+  margin-bottom: 14px;
+}
+
+.teresaVoyanceMain-form-description {
+  width: 597px;
+  color: #252729;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.teresaVoyanceMain-form-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.teresaVoyanceMain-form-inputs__input {
+  width: 352px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  padding: 16px;
+  padding-right: 0;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.teresaVoyanceMain-form-inputs__input:hover.teresaVoyanceMain-form-inputs__input {
+  border-color: #9169db;
+  outline: none;
+}
+
+.teresaVoyanceMain-form-inputs__input:focus.teresaVoyanceMain-form-inputs__input {
+  border-color: #9169db;
+  outline: none;
+}
+
+.teresaVoyanceMain-form-inputs__input:placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-textarea {
+  width: 736px;
+  height: 128px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  padding: 16px;
+  resize: none;
+  margin-bottom: 16px;
+}
+
+.teresaVoyanceMain-form-textarea:hover.teresaVoyanceMain-form-textarea {
+  border-color: #9169db;
+  outline: none;
+}
+
+.teresaVoyanceMain-form-textarea:focus.teresaVoyanceMain-form-textarea {
+  border-color: #9169db;
+  outline: none;
+}
+
+.teresaVoyanceMain-form-apply {
+  width: 219px;
+  height: 48px;
+  background-color: transparent;
+  border: 1px solid #9169db;
+  border-radius: 4px;
+  color: #9169db;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.66px;
+  margin-left: auto;
+}
+
+.teresaVoyanceMain-form-apply:hover.teresaVoyanceMain-form-apply {
+  background-color: #9169db;
+  color: #fff;
+}
+
+.teresaVoyanceMain-commentCard {
+  width: 736px;
+  height: 204px;
+  border-radius: 4px;
+  border: 1px solid #f0f1f3;
+  background-color: #ffffff;
+  margin: 0 auto 32px auto;
+  display: flex;
+  position: relative;
+  padding: 32px;
+}
+
+.teresaVoyanceMain-commentCard::after {
+  content: "fév. 17.02.2020";
+  position: absolute;
+  width: 78px;
+  height: 12px;
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.36px;
+  bottom: 32px;
+  right: 32px;
+}
+
+.teresaVoyanceMain-commentCard-text {
+  margin-left: 16px;
+}
+
+.teresaVoyanceMain-commentCard-text__row1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.teresaVoyanceMain-commentCard-text__title {
+  color: #2f3a5b;
+  font-family: Aleo;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.56px;
+}
+
+.teresaVoyanceMain-commentCard-text-rating {
+  color: #9169db;
+  font-family: Lato;
+  font-size: 13px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.23px;
+  position: relative;
+  display: inline-block;
+}
+
+.teresaVoyanceMain-commentCard-text-rating::after {
+  position: absolute;
+  margin: 1px 0 0 5px;
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url(/img/teresaVoyanceMain/Star.png);
+}
+
+.teresaVoyanceMain-commentCard-text__paragraph {
+  color: #575a61;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 20px;
+}
+
+.teresaVoyanceMain-page-select {
+  margin: 64px auto;
+  width: 736px;
+}
+
+.teresaVoyanceBody {
+  position: relative;
+}
+
+.teresaVoyanceBody::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 1440px;
+  height: 636px;
+  z-index: -999999999;
+  top: -1px;
+  right: 0;
+  background-image: url(/img/teresaVoyanceMain/HolderXL.svg);
+}
+
+.teresaVoyance-header-links__link {
+  color: #fff;
+}
+
+.teresaVoyance-header-links__link:hover.header-links__link {
+  color: #fff;
+}
+
+.teresaVoyance-header-links__link:hover.header-links__link::after {
+  background-color: #fff;
+}
+
+@media screen and (min-width: 1441px) {
+  .teresaVoyanceBody::after {
+    background-image: url(/img/teresaVoyanceMain/HolderXXL.png);
+    right: 1px;
+    width: 1920px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     width: 826px;
@@ -2177,20 +2489,27 @@ body {
   }
 }
 
-.webp .indexbody::after { background: url(/img/hero/heroElement.webp); }
+.webp .indexbody::after{ background: url(/img/hero/heroElement.webp); }
 
-.webp .header-container::after { background: url(/img/header/headerDropElement.webp); }
+.webp .header-container::after{ background: url(/img/header/headerDropElement.webp); }
 
-.webp .hero-teresa-foto::after { background: url(/img/hero/purpleSubstrate.webp); }
+.webp .hero-teresa-foto::after{ background: url(/img/hero/purpleSubstrate.webp); }
 
-.webp .hero-teresa-foto::before { background: url(/img/hero/whiteSubstrate.webp); }
+.webp .hero-teresa-foto::before{ background: url(/img/hero/whiteSubstrate.webp); }
 
-.webp .hero-filters-dropdown::after { background: url(/img/hero/arrowDown.webp); }
+.webp .hero-filters-dropdown::after{ background: url(/img/hero/arrowDown.webp); }
 
-.webp .planningMain-time-timeline__item::after { background: url(/img/planning/Main/arrowRight.webp); }
+.webp .planningMain-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
 
-.webp .aboutUs-teresa-photo::after { background-image: url(/img/aboutUs/aboutUs-teresaPhotoafter.webp); }
+.webp .aboutUs-teresa-photo::after{ background-image: url(/img/aboutUs/aboutUs-teresaPhotoafter.webp); }
 
-.webp .aboutUs-teresa-photo::before { background-image: url(/img/aboutUs/aboutUs-teresaPhotobefore.webp); }
+.webp .aboutUs-teresa-photo::before{ background-image: url(/img/aboutUs/aboutUs-teresaPhotobefore.webp); }
 
-.webp .teresaVoyanceMain-planning-time-timeline__item::after { background: url(/img/planning/Main/arrowRight.webp); }
+.webp .teresaVoyanceMain-planning-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
+
+.webp .teresaVoyanceMain-commentCard-text-rating::after{ background-image: url(/img/teresaVoyanceMain/Star.webp); }
+
+@media screen and (min-width: 1441px){
+
+  .webp .teresaVoyanceBody::after{ background-image: url(/img/teresaVoyanceMain/HolderXXL.webp); }
+}
