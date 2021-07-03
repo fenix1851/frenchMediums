@@ -11,12 +11,23 @@
         align-items: center
         position: relative
         text-decoration: none
+        background-color: #fff
+        @media screen and ( max-width:  768px)
+                width: 224px
+@media screen and ( max-width: 1024px )
+    .main-card
+        &:nth-child(3n)
+            display: none
+    
         &-svg
             position: absolute
             top: 0
             left: 0
-            z-index: -9
+            z-index: 0
+            @media screen and ( max-width:  768px)
+                width: 224px
         &-header
+            z-index: 1
             display: flex
             justify-content: space-between
             align-items: center
@@ -39,6 +50,7 @@
             &-header-title
                 color: #fff
         &-logo
+            z-index: 1
             background-color: #fff
             border-radius: 9999px
             margin-top: 30px
@@ -70,6 +82,10 @@
             width: 240px
             height: 72px
             padding: 16px 22px
+            @media screen and ( max-width:  768px)
+                width: 208px
+                padding: 16px 16px
+
             &-item
                 display: flex
                 flex-direction: column

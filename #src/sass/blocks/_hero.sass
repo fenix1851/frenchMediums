@@ -21,6 +21,13 @@
             position: relative
             margin-top: 77px
             padding-right: 86px
+            width: 351px
+            height: 362px
+            background: url("/img/hero/heroFoto.png")
+            @media screen and ( max-width:  1024px)
+                background: url("/img/hero/heroFotoMD.png")
+                margin-top: 111px
+                margin-right: -58px
             &::after
                 content: ''
                 background: url("/img/hero/purpleSubstrate.png")
@@ -30,6 +37,12 @@
                 left: -180px
                 top: 11px
                 z-index: -10
+                @media screen and ( max-width:  1024px)
+                    background: url("/img/hero/purpleSubstratMD.svg")
+                    width: 472px
+                    height: 378px
+                    left: -171px
+                    top: 23px
             &::before
                 content: ''
                 background: url("/img/hero/whiteSubstrate.png")
@@ -39,6 +52,10 @@
                 left: -1px
                 top: -1px
                 z-index: -9
+                @media screen and ( max-width:  1024px)
+                    background: url("/img/hero/whiteSubstrateMd.svg")
+                    width: 284px
+                    height: 292px
         &-card
             background-color: #fff
             width: 700px
@@ -50,6 +67,14 @@
             position: absolute
             bottom: -101px
             left: -96px
+            @media screen and ( max-width:  1024px)
+                width: 640px
+                left: -254px 
+                bottom: -50px
+            @media screen and ( max-width:  768px)
+                width: 560px
+                left: -254px 
+                bottom: -50px
             &-inner
                 width: 528px
                 display: flex
@@ -160,12 +185,28 @@
         flex-direction: column
         justify-content: space-between
         position: relative
+        @media screen and ( max-width:  1024px)
+            width: 832px
+        @media screen and ( max-width:  768px)
+            width: 736px
+            height: 272px
+            padding: 32px
+            flex-wrap: wrap
+
         &-row1
             display: flex
             justify-content: space-between
-        &-row2
+            flex-wrap: wrap
+            @media screen and ( max-width:  768px)
+                flex-wrap: wrap
+        &-down-element
             display: flex
             justify-content: start
+            width: 731px
+            @media screen and ( max-width:  1024px)
+                width: 530px
+            @media screen and ( max-width:  768px)
+                width: 600px
         &-container
             margin-top: 220px
         &-dropdown
@@ -176,6 +217,11 @@
             border: 1px solid #f0f1f3
             background-color: #ffffff
             position: relative
+            margin-bottom: 32px
+            @media screen and ( max-width:  1024px)
+                width: 256px
+            @media screen and ( max-width:  768px)
+                width: 320px
             &:hover
                 &.hero-filters-dropdown
                     border-color: #9169db
@@ -209,6 +255,10 @@
             background: url('/img/hero/searchIcon.svg')
             background-repeat: no-repeat
             background-position: 12px 12px
+            @media screen and ( max-width:  1024px)
+                width: 256px
+            @media screen and ( max-width:  768px)
+                width: 320px
             &:hover
                 &.hero-filters-search
                     border-color: #9169db
@@ -236,6 +286,10 @@
                 letter-spacing: 0.28px
                 line-height: 19px
                 margin-right: 26px
+                @media screen and ( max-width:  768px)
+                    margin-left: 10px
+                    margin-right: 15px
+
             &-radio
                 &__label
                     display: flex
@@ -257,6 +311,8 @@
                     -moz-transition: 0.2s 0.1s ease-in
                     -o-transition: 0.2s 0.1s ease-in
                     -webkit-transition: 0.2s 0.1s ease-in
+                    @media screen and ( max-width:  768px)
+                        margin-right: 6px    
                     &:hover
                         cursor: pointer
                         &.hero-filters-countOnPage-radio__label
@@ -282,6 +338,8 @@
             background-color: #fff
             position: absolute
             right: 16px
+            @media screen and ( max-width:  768px)
+                right: 32px
             &:hover
                 &.hero-filters-apply
                     width: 150px

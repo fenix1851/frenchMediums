@@ -155,6 +155,9 @@ body {
   position: relative;
   margin-top: 77px;
   padding-right: 86px;
+  width: 351px;
+  height: 362px;
+  background: url("/img/hero/heroFoto.png");
 }
 
 .hero-teresa-foto::after {
@@ -346,11 +349,13 @@ body {
 .hero-filters-row1 {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.hero-filters-row2 {
+.hero-filters-down-element {
   display: flex;
   justify-content: start;
+  width: 731px;
 }
 
 .hero-filters-container {
@@ -365,6 +370,7 @@ body {
   border: 1px solid #f0f1f3;
   background-color: #ffffff;
   position: relative;
+  margin-bottom: 32px;
 }
 
 .hero-filters-dropdown:hover.hero-filters-dropdown {
@@ -543,174 +549,7 @@ body {
   align-items: center;
   position: relative;
   text-decoration: none;
-}
-
-.main-card-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -9;
-}
-
-.main-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 11x;
-  padding: 11px 19px 0 17px;
-  width: 100%;
-}
-
-.main-card-header-title {
-  color: #575a61;
-  font-family: Lato;
-  font-size: 10px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0.36px;
-  justify-self: center;
-}
-
-.main-card-header-playIcon {
-  width: 16px;
-  height: 18px;
-}
-
-.main-card-teresa {
-  text-decoration: none;
-}
-
-.main-card-teresa-header-title {
-  color: #fff;
-}
-
-.main-card-logo {
   background-color: #fff;
-  border-radius: 9999px;
-  margin-top: 30px;
-  margin-bottom: 8px;
-}
-
-.main-card-name {
-  color: #2f3a5b;
-  font-family: Aleo;
-  font-size: 20px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0.56px;
-  line-height: normal;
-  margin-bottom: 8px;
-}
-
-.main-card-name-stars {
-  margin-bottom: 12px;
-}
-
-.main-card-name-stars picture {
-  margin-left: 4px;
-  margin-right: 8px;
-}
-
-.main-card-name-stars img {
-  margin-right: 8px;
-}
-
-.main-card-name-stars img:last-child {
-  margin-right: 0;
-}
-
-.main-card-statistics {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #F9F9F9;
-  border-radius: 4px;
-  width: 240px;
-  height: 72px;
-  padding: 16px 22px;
-}
-
-.main-card-statistics-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-card-statistics-item__subtitle {
-  color: #9169db;
-  font-family: Lato;
-  font-size: 11px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0.26px;
-  line-height: 18px;
-}
-
-.main-card-statistics-item__title {
-  color: #575a61;
-  font-family: Aleo;
-  font-size: 20px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0.56px;
-}
-
-.main-card-skills {
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
-  margin-top: 8px;
-}
-
-.main-card-skills-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-card-skills-text {
-  color: #2f3a5b;
-  font-family: Lato;
-  font-size: 13px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0.23px;
-  line-height: normal;
-  margin-bottom: 14px;
-}
-
-.main-card-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-card-footer-text {
-  color: #9169db;
-  font-family: Lato;
-  font-size: 10px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0.96px;
-  line-height: normal;
-}
-
-.main-card-footer-svg {
-  margin-top: 6px;
-  margin-bottom: 1px;
-}
-
-.main-card-row {
-  margin-bottom: 64px;
-}
-
-.main-card-row:last-child {
-  margin-bottom: 0;
-}
-
-.main-card-row {
-  display: flex;
-  justify-content: space-between;
 }
 
 .page-select {
@@ -1512,6 +1351,32 @@ body {
   margin-bottom: 105px;
   display: flex;
   align-items: flex-start;
+  position: relative;
+}
+
+.aboutUs-container::after {
+  position: absolute;
+  top: -550px;
+  left: -360px;
+  z-index: -99999;
+  display: block;
+  content: "";
+  width: 1875px;
+  height: 1300px;
+  background-image: url("/img/aboutUs/aboutUsAfter.svg");
+  transform: rotate(328deg);
+}
+
+.aboutUs-container::before {
+  position: absolute;
+  top: 791px;
+  left: 414px;
+  z-index: -99999;
+  display: block;
+  content: "";
+  width: 135px;
+  height: 117px;
+  background-image: url("/img/aboutUs/aboutUsBefore.png");
 }
 
 .aboutUs-teresa {
@@ -2518,6 +2383,53 @@ body {
   display: none;
 }
 
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 173px auto 128px auto;
+}
+
+.NotFound-image {
+  margin-bottom: 34px;
+}
+
+.NotFound__title {
+  color: #9169db;
+  font-family: Aleo;
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -1.15px;
+  margin-bottom: 16px;
+}
+
+.NotFound__subtitle {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+  margin-bottom: 32px;
+}
+
+.NotFound__link {
+  width: 192px;
+  height: 48px;
+  box-shadow: 0 8px 12px rgba(113, 74, 189, 0.32);
+  border-radius: 4px;
+  background-color: #9169db;
+  padding: 15px 32px;
+  color: #ffffff;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.66px;
+}
+
 @media screen and (min-width: 1441px) {
   .teresaVoyanceBody::after {
     background-image: url(/img/teresaVoyanceMain/HolderXXL.png);
@@ -2537,6 +2449,14 @@ body {
     width: 826px;
   }
 
+  .indexbody::after {
+    background: url("/img/hero/bodyAfterMD.svg");
+    width: 1024px;
+    height: 1158px;
+    top: 1px;
+    left: 1px;
+  }
+
   .header .header-container::after {
     transform: scaleX(0.71);
     left: -441px;
@@ -2550,11 +2470,244 @@ body {
   .header .header-links__link {
     font-size: 15px;
   }
+
+  .hero-teresa-foto {
+    background: url("/img/hero/heroFotoMD.png");
+    margin-top: 111px;
+    margin-right: -58px;
+  }
+
+  .hero-teresa-foto::after {
+    background: url("/img/hero/purpleSubstratMD.svg");
+    width: 472px;
+    height: 378px;
+    left: -171px;
+    top: 23px;
+  }
+
+  .hero-teresa-foto::before {
+    background: url("/img/hero/whiteSubstrateMd.svg");
+    width: 284px;
+    height: 292px;
+  }
+
+  .hero-teresa-card {
+    width: 640px;
+    left: -254px;
+    bottom: -50px;
+  }
+
+  .hero-filters {
+    width: 832px;
+  }
+
+  .hero-filters-down-element {
+    width: 530px;
+  }
+
+  .hero-filters-dropdown {
+    width: 256px;
+  }
+
+  .hero-filters-search {
+    width: 256px;
+  }
+
+  .main-card:nth-child(3n) {
+    display: none;
+  }
+
+  .main-card-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .main-card-header {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 11x;
+    padding: 11px 19px 0 17px;
+    width: 100%;
+  }
+
+  .main-card-header-title {
+    color: #575a61;
+    font-family: Lato;
+    font-size: 10px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.36px;
+    justify-self: center;
+  }
+
+  .main-card-header-playIcon {
+    width: 16px;
+    height: 18px;
+  }
+
+  .main-card-teresa {
+    text-decoration: none;
+  }
+
+  .main-card-teresa-header-title {
+    color: #fff;
+  }
+
+  .main-card-logo {
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 9999px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+  }
+
+  .main-card-name {
+    color: #2f3a5b;
+    font-family: Aleo;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.56px;
+    line-height: normal;
+    margin-bottom: 8px;
+  }
+
+  .main-card-name-stars {
+    margin-bottom: 12px;
+  }
+
+  .main-card-name-stars picture {
+    margin-left: 4px;
+    margin-right: 8px;
+  }
+
+  .main-card-name-stars img {
+    margin-right: 8px;
+  }
+
+  .main-card-name-stars img:last-child {
+    margin-right: 0;
+  }
+
+  .main-card-statistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F9F9F9;
+    border-radius: 4px;
+    width: 240px;
+    height: 72px;
+    padding: 16px 22px;
+  }
+
+  .main-card-statistics-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-card-statistics-item__subtitle {
+    color: #9169db;
+    font-family: Lato;
+    font-size: 11px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.26px;
+    line-height: 18px;
+  }
+
+  .main-card-statistics-item__title {
+    color: #575a61;
+    font-family: Aleo;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.56px;
+  }
+
+  .main-card-skills {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 8px;
+  }
+
+  .main-card-skills-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-card-skills-text {
+    color: #2f3a5b;
+    font-family: Lato;
+    font-size: 13px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.23px;
+    line-height: normal;
+    margin-bottom: 14px;
+  }
+
+  .main-card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-card-footer-text {
+    color: #9169db;
+    font-family: Lato;
+    font-size: 10px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.96px;
+    line-height: normal;
+  }
+
+  .main-card-footer-svg {
+    margin-top: 6px;
+    margin-bottom: 1px;
+  }
+
+  .main-card-row {
+    margin-bottom: 64px;
+  }
+
+  .main-card-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .main-card-row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-width: 768px) {
+  .main-card-svg {
+    width: 224px;
+  }
+
+  .main-card-statistics {
+    width: 208px;
+    padding: 16px 16px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .container {
     width: 730px;
+  }
+
+  .indexbody::after {
+    background: url("/img/hero/bodyAfterSM.png");
+    width: 768px;
+    height: 1158px;
   }
 
   .header .header-container::after {
@@ -2565,6 +2718,52 @@ body {
 
   .header #dnOnSM {
     display: none;
+  }
+
+  .hero-teresa-card {
+    width: 560px;
+    left: -254px;
+    bottom: -50px;
+  }
+
+  .hero-filters {
+    width: 736px;
+    height: 272px;
+    padding: 32px;
+    flex-wrap: wrap;
+  }
+
+  .hero-filters-row1 {
+    flex-wrap: wrap;
+  }
+
+  .hero-filters-down-element {
+    width: 600px;
+  }
+
+  .hero-filters-dropdown {
+    width: 320px;
+  }
+
+  .hero-filters-search {
+    width: 320px;
+  }
+
+  .hero-filters-countOnPage-text {
+    margin-left: 10px;
+    margin-right: 15px;
+  }
+
+  .hero-filters-countOnPage-radio__label {
+    margin-right: 6px;
+  }
+
+  .hero-filters-apply {
+    right: 32px;
+  }
+
+  .main-card {
+    width: 224px;
   }
 }
 
@@ -2596,6 +2795,8 @@ body {
 
 .webp .header-container::after{ background: url(/img/header/headerDropElement.webp); }
 
+.webp .hero-teresa-foto{ background: url(/img/hero/heroFoto.webp); }
+
 .webp .hero-teresa-foto::after{ background: url(/img/hero/purpleSubstrate.webp); }
 
 .webp .hero-teresa-foto::before{ background: url(/img/hero/whiteSubstrate.webp); }
@@ -2605,6 +2806,8 @@ body {
 .webp .planningMain-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
 
 .webp .recrument-form::before{ background-image: url(/img/others/recrumentBefore.webp); }
+
+.webp .aboutUs-container::before{ background-image: url(/img/aboutUs/aboutUsBefore.webp); }
 
 .webp .aboutUs-teresa-photo::after{ background-image: url(/img/aboutUs/aboutUs-teresaPhotoafter.webp); }
 
@@ -2628,4 +2831,14 @@ body {
 @media screen and (min-width: 1441px){
 
   .webp .VoyanceBody::after{ background-image: url(/img/Voyance/HolderXXL.webp); }
+}
+
+@media screen and (max-width: 1024px){
+
+  .webp .hero-teresa-foto{ background: url(/img/hero/heroFotoMD.webp); }
+}
+
+@media screen and (max-width: 768px){
+
+  .webp .indexbody::after{ background: url(/img/hero/bodyAfterSM.webp); }
 }

@@ -19,7 +19,8 @@ let path={
         css: surceFolder + '/sass/styles.sass',
         js: surceFolder + '/js/script.js',
         img: surceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
-        fonts: surceFolder + '/fonts/*.ttf'
+        fonts: surceFolder + '/fonts/*.ttf',
+        htaccess: surceFolder + '/.htaccess'
     },
 
     watch: {
@@ -66,6 +67,11 @@ function html(){
         .pipe(webphtml())
         .pipe(dest(path.build.html))
         .pipe(browsersync.stream())
+}
+
+function hta(){
+    return src(path.src.htaccess)
+        .pipe(dest(path.build.html))
 }
 
 gulp.task('svgSprite', function(){
@@ -137,13 +143,14 @@ function clean(params){
     return deletel(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js,css, images, html));
+let build = gulp.series(clean, gulp.parallel(js,css, images, html, hta));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.images = images;
 exports.js = js;
 exports.css = css;
 exports.html = html;
+exports.hta = hta;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;

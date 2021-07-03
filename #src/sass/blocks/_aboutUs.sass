@@ -4,6 +4,28 @@
         margin-bottom: 105px
         display: flex
         align-items: flex-start
+        position: relative
+        &::after
+            position: absolute
+            top: -550px
+            left: -360px
+            z-index: -99999
+            display: block
+            content: ''
+            width: 1875px
+            height: 1300px
+            background-image: url('/img/aboutUs/aboutUsAfter.svg')
+            transform: rotate(328deg)
+        &::before
+            position: absolute
+            top: 791px
+            left: 414px
+            z-index: -99999
+            display: block
+            content: ''
+            width: 135px
+            height: 117px
+            background-image: url('/img/aboutUs/aboutUsBefore.png')
     &-teresa
         display: flex
         flex-direction: column
