@@ -14,7 +14,13 @@
         width: 100%
         display: flex
         justify-content: space-between
-        align-items: center
+        align-items: center      
+        @media screen and ( max-width:  320px)
+            flex-direction: column
+            align-items: flex-start
+            &_documents
+                align-items: center
+
     &-logo
         color: #2f3a5b
         text-decoration: none
@@ -23,11 +29,18 @@
         font-weight: 400
         letter-spacing: 0.56px
         z-index: 999999
+        @media screen and ( max-width:  320px)
+            font-size: 20px
+            margin: 32px auto 32px 0
 
     &-links
         display: inline-block
         text-decoration: none
         z-index: 9999999
+        @media screen and ( max-width:  320px)
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
         &__link
             color:#252729
             text-decoration: none
@@ -40,6 +53,16 @@
             -moz-transition: 0.2s 0.1s ease-in
             -o-transition: 0.2s 0.1s ease-in
             -webkit-transition: 0.2s 0.1s ease-in
+            @media screen and ( max-width:  320px)
+                font-family: Lato
+                font-size: 15px
+                font-weight: 600
+                font-style: normal
+                letter-spacing: 0.28px
+                line-height: 19px
+                margin-bottom: 22px
+
+
             &:last-child
                 margin: 0
 
@@ -71,17 +94,25 @@
             background-color: #f0f1f3
             height: 100px
             width: 100%
+            @media screen and ( max-width:  320px)
+                width: 320px
+                height: 180px
         &2
             height: 70px
             background-color: #9169db
             display: flex
             align-items: center
+            @media screen and ( max-width:  320px)
+                height: 128px
         &3
             display: flex
             justify-content: center
             align-items: center
             background-color: #f0f1f3
             height: 48px
+            @media screen and ( max-width:  320px)
+                height: 128px
+
     &-documents
         color: #ffffff
         font-family: Lato
@@ -91,6 +122,15 @@
         letter-spacing: 0.28px
         line-height: 19px
         text-decoration: none
+        @media screen and ( max-width:  320px)
+            text-align: center
+            font-family: Lato
+            font-size: 15px
+            font-weight: 600
+            font-style: normal
+            letter-spacing: 0.28px
+            line-height: 19px
+            margin-bottom: 22px
     &-text
         color: #252729
         font-family: Lato
@@ -99,3 +139,14 @@
         font-style: normal
         letter-spacing: 0.36px
         line-height: normal
+        @media screen and ( max-width:  320px)
+            width: 256px
+            height: 36px
+            color: #252729
+            font-family: Lato
+            font-size: 10px
+            font-weight: 700
+            font-style: normal
+            letter-spacing: 0.36px
+            line-height: normal
+            text-align: center

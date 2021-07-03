@@ -2,13 +2,24 @@
     &-container
         display: flex
         justify-content: space-between
+        @media screen and ( max-width:  320px)
+            flex-direction: column
+            align-items: center
     &-text
         margin-top: 130px
+        @media screen and ( max-width:  320px)
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-top: 54px
         &-title
             font-family: Aleo
             font-size: 48px
             letter-spacing: -1.15px
             font-weight: 400
+            @media screen and ( max-width:  320px)
+                font-size: 24px
+                letter-spacing: 0.72px
         &-subtitile
             font-family: Aleo
             letter-spacing: 0.72px
@@ -16,6 +27,13 @@
             font-size: 24px
             font-weight: 700
             margin-top: 7px
+            @media screen and ( max-width:  320px)
+                font-size: 13px
+                width: 176px
+                text-align: center
+                letter-spacing: 0.23px
+            @media screen and ( max-width:  768px)
+                width: 289px
     &-teresa
         &-foto
             position: relative
@@ -28,6 +46,12 @@
                 background: url("/img/hero/heroFotoMD.png")
                 margin-top: 111px
                 margin-right: -58px
+            @media screen and ( max-width:  320px)
+                height: 301px
+                width: 292px
+                margin-top: 45px
+                margin-right: 0
+                background: url("/img/hero/heroFotoXS.png")
             &::after
                 content: ''
                 background: url("/img/hero/purpleSubstrate.png")
@@ -43,6 +67,12 @@
                     height: 378px
                     left: -171px
                     top: 23px
+                @media screen and ( max-width:  320px)
+                    background: url("/img/hero/PSXS.png")
+                    width: 330px
+                    height: 264px
+                    left: -42px
+                    top: 48px
             &::before
                 content: ''
                 background: url("/img/hero/whiteSubstrate.png")
@@ -56,6 +86,10 @@
                     background: url("/img/hero/whiteSubstrateMd.svg")
                     width: 284px
                     height: 292px
+                @media screen and ( max-width:  320px)
+                    background: url("/img/hero/WSXS.svg")
+                    width: 292px
+                    height: 301px
         &-card
             background-color: #fff
             width: 700px
@@ -67,6 +101,8 @@
             position: absolute
             bottom: -101px
             left: -96px
+            @media screen and ( max-width:  320px)
+                display: none
             @media screen and ( max-width:  1024px)
                 width: 640px
                 left: -254px 
@@ -192,6 +228,8 @@
             height: 272px
             padding: 32px
             flex-wrap: wrap
+        @media screen and ( max-width:  320px)
+            display: none
 
         &-row1
             display: flex
@@ -209,6 +247,8 @@
                 width: 600px
         &-container
             margin-top: 220px
+            @media screen and ( max-width:  320px)
+                margin-top: 126px
         &-dropdown
             width: 352px
             height: 48px
@@ -346,6 +386,61 @@
                     color: #fff
                     background-color: #9169db
                     letter-spacing: 0.80px
+    &-mobile-filter
+        display: none
+        @media screen and ( max-width:  320px)
+            display: flex
+            align-items: center
+            width: 360px
+            height: 112px
+            box-shadow: 0 8px 16px rgba(37, 39, 41, 0.12)
+            border-radius: 1px
+            background-color: #ffffff
+            position: absolute
+            bottom: -58px
+            left: -50px
+            &-settings
+                width: 192px
+                height: 48px
+                border-radius: 1px
+                border: 1px solid #f0f1f3
+                background-color: #ffffff
+                padding-left: 48px
+                background: url(/img/hero/settingsIcon.png)
+                background-repeat: no-repeat
+                background-position: 15px 15px
+                display: flex
+                align-items: center
+                color: #2f3a5b
+                font-family: Lato
+                font-size: 15px
+                font-weight: 400
+                font-style: normal
+                letter-spacing: 0.28px
+                line-height: 19px
+                margin-left: 64px
+
+            &-search
+                width: 48px
+                height: 48px
+                border-radius: 4px
+                border: 1px solid #f0f1f3
+                background-color: #ffffff
+                margin-left: 16px
+                outline: none
+                padding-left: 48px
+                background-image: url(/img/hero/searchIcon.png)
+                background-repeat: no-repeat
+                background-position: 12px 12px 
+                &:hover
+                    &.hero-mobile-filter-search 
+                        border-color: #9169db
+                &:focus
+                    width: 320px
+                    &.hero-mobile-filter-settings
+                        display: none
+
+
 
 .fw-700
     font-weight: 700

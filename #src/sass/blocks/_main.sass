@@ -8,17 +8,32 @@
         border-radius: 4px
         display: flex
         flex-direction: column
+        margin-right: 30px
+        margin-bottom: 64px
         align-items: center
         position: relative
         text-decoration: none
         background-color: #fff
+        @media screen and ( max-width:  320px)
+            width: 256px
+            margin-bottom: 32px
+        @media screen and ( min-width:  1440px)
+            &:nth-child(4n)
+                margin-right: 0
         @media screen and ( max-width:  768px)
                 width: 224px
-@media screen and ( max-width: 1024px )
-    .main-card
-        &:nth-child(3n)
-            display: none
-    
+        @media screen and ( max-width:  1024px)
+                &:nth-child(3n)
+                    margin-right: 0
+                margin-right: 29px
+        @media screen and ( max-width:  320px)
+            margin-right: 0
+        &-wrapper
+            display: flex
+            flex-wrap: wrap
+            @media screen and ( max-width:  320px)
+                flex-direction: column
+                align-items: center
         &-svg
             position: absolute
             top: 0
@@ -26,6 +41,8 @@
             z-index: 0
             @media screen and ( max-width:  768px)
                 width: 224px
+            @media screen and ( max-width:  320px)
+                width: 256px
         &-header
             z-index: 1
             display: flex
@@ -138,10 +155,6 @@
             &-svg
                 margin-top: 6px
                 margin-bottom: 1px
-        &-row
-            margin-bottom: 64px
-            &:last-child
-                margin-bottom: 0
         &-row
             display: flex
             justify-content: space-between

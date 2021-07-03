@@ -9,6 +9,18 @@
     padding: 96px 96px 54px 96px
     margin: 100px auto 74px auto
     position: relative
+    @media screen and ( max-width:  1024px )
+        width: 832px
+    @media screen and ( max-width:  768px )
+        width: 736px
+        height: 616px
+        padding: 64px 64px 46px 64px
+    @media screen and ( max-width:  320px )
+        width: 288px
+        height: 768px
+        padding: 64px 16px 48px 16px
+    &-container
+        
     &::after
         content: ''
         width: 1410px
@@ -18,6 +30,25 @@
         right: -360px
         background-image: url('/img/others/recrument.svg')
         z-index: -999999
+        @media screen and ( max-width:  1024px )
+            width: 907px
+            height: 786px
+            top: 0px
+            left: 0px
+            background-image: url('/img/others/recrumentMD.png')
+        @media screen and ( max-width:  768px )
+            width: 649px
+            height: 786px
+            top: 0px
+            left: 0px
+            background-image: url('/img/others/recrumentSM.svg')
+        @media screen and ( max-width:  320px )
+            width: 320px
+            height: 786px
+            top: 0px
+            left: 0px
+            background-image: url('/img/others/recrumentXS.svg')
+            
     &::before
         content: ''
         width: 448px
@@ -27,6 +58,24 @@
         right: -225px
         background-image: url('/img/others/recrumentBefore.png')
         z-index: -999998
+        @media screen and ( max-width:  1024px )
+            width: 448px
+            height: 399px
+            top: 0px
+            left: 0px
+            background-image: url('/img/others/recrumentBeforeMD.png')
+        @media screen and ( max-width:  768px )
+            width: 288px
+            height: 402px
+            top: 0px
+            left: 0px
+            background-image: url('/img/others/recrumentBeforeSM.png')
+        @media screen and ( max-width:  320px )
+            width: 119px
+            height: 402px
+            top: 0px
+            left: 0px
+            background-image: url('/img/others/recrumentBeforeXS.png')
 
 
     &-suptitle
@@ -46,6 +95,8 @@
         font-style: normal
         letter-spacing: 1.22px
         margin-bottom: 14px
+        @media screen and ( max-width: 320px )
+            width: 256px
     &-description
         width: 597px
         color: #252729
@@ -56,9 +107,14 @@
         letter-spacing: 0.28px
         line-height: 22px
         margin-bottom: 32px
+        @media screen and ( max-width: 320px )
+            width: 256px
     &-inputs
         display: flex
         justify-content: space-between
+        @media screen and ( max-width: 320px)
+            flex-direction: column
+            
         &__input
             width: 352px
             height: 48px
@@ -69,6 +125,13 @@
             padding-right: 0
             margin-bottom: 32px
             outline: none
+            @media screen and ( max-width:  1024px )
+                width: 328px
+            @media screen and ( max-width:  768px )
+                width: 288px
+            @media screen and ( max-width:  320px )
+                width: 256px
+                margin-bottom: 16px
             &:focus
                 &.recrument-form-inputs__input
                     border-color: #9169db
@@ -99,6 +162,12 @@
         padding: 16px
         resize: none
         margin-bottom: 32px
+        @media screen and ( max-width:  1024px )
+            width: 688px    
+        @media screen and ( max-width:  768px )
+            width: 608px
+        @media screen and ( max-width:  320px )
+            width: 256px
         &:placeholder
             color: #8c8ea1
             font-family: Lato
@@ -127,6 +196,8 @@
         font-style: normal
         letter-spacing: 0.66px
         margin-left: auto
+        @media screen and ( max-width: 320px  )
+            margin-right: auto
         &:hover
             &.recrument-form-apply
                 background-color: #9169db
