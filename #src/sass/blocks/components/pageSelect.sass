@@ -3,12 +3,19 @@
     display: flex
     align-items: center
     margin-bottom: 96px
-    &-nextPage
+    margin-top: 64px
+    height: 48px
+    @media screen and ( max-width: 320px  )
+        height: 40px
+    &-Page
         display: flex
         align-items: center
         justify-content: center
         width: 48px
         height: 48px
+        @media screen and ( max-width: 320px )
+            width: 40px
+            height: 40px
         border-radius: 4px
         border: 1px solid #f0f1f3
         background-color: #ffffff
@@ -19,16 +26,11 @@
             cursor: pointer
             &.page-select-radio__label
                 background-color: #9169db
-    &-text
-        margin-left: 18px
-        color: #8c8ea1
-        font-family: Lato
-        font-size: 15px
-        font-weight: 400
-        font-style: normal
-        letter-spacing: 0.28px
-        line-height: 19px
-        margin-right: 26px
+    &-previousPage
+        transform: rotate(180deg)
+        margin-right: 15px
+        @media screen and ( max-width: 320px )
+            margin-right: 14px            
     &-radio
         &__label
             display: flex
@@ -50,6 +52,12 @@
             -moz-transition: 0.2s 0.1s ease-in
             -o-transition: 0.2s 0.1s ease-in
             -webkit-transition: 0.2s 0.1s ease-in
+            @media screen and ( max-width: 320px )
+                width: 40px
+                height: 40px
+                margin-right: 14px
+                &:nth-child(9)
+                    display: none
             &:hover
                 cursor: pointer
                 &.page-select-radio__label

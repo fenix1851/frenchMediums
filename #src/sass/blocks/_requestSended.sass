@@ -15,9 +15,21 @@
         flex-direction: column
         align-items: center
         margin: 0 auto
+        @media screen and ( max-width: 320px )
+            width: 288px
+            height: 388px
         &-img
             margin-top: 64px
             margin-bottom: 20px
+            background-image: url('/img/others/messageImg.png')
+            width: 160px
+            height: 144px
+            @media screen and ( max-width: 320px )
+                background-image: url('/img/others/messageXS.png')
+                width: 129px
+                height: 116px
+                margin-top: 53px
+                margin-bottom: 23px
         &-title
             color: #9169db
             font-family: Aleo
@@ -25,7 +37,9 @@
             font-weight: 700
             font-style: normal
             letter-spacing: 0.56px
-            margin-bottom: 8px
+            margin-bottom: 32px
+            @media screen and ( max-width: 320px )
+                margin-bottom: 8px
         &-subtitle
             color: #252729
             font-family: Lato
@@ -35,6 +49,9 @@
             letter-spacing: 0.28px
             line-height: 22px
             margin-bottom: 32px
+            @media screen and ( max-width: 320px  )
+                width: 260px
+                text-align: center
         &-link
             color: #ffffff
             display: flex
@@ -50,3 +67,5 @@
             height: 48px
             border-radius: 4px
             background-color: #9169db
+            &:hover
+                box-shadow: 0px 3px 10px #9169db

@@ -228,7 +228,7 @@
         position: sticky
         top: 0
         left: 0
-        padding: 0        
+        padding-left: 12px
         @media screen and ( max-width: 1024px)
             width: 832px
         @media screen and ( max-width:  768px)
@@ -257,7 +257,7 @@
                 background-color: #ffffff
             &:after
                 content: ''
-                margin-left: 60px
+                margin-left: 64px
                 display: block
                 width: 0
                 height: 32px
@@ -312,6 +312,13 @@
         background-color: #ffffff
         margin-bottom: 16px
         position: relative
+        &:hover
+            background-color: #FBFBFC
+            border-color: #9169db
+            & .planningMain-shedule__name
+                color: #9169db
+                background-color: #FBFBFC
+                box-shadow: none
         @media screen and ( max-width: 1024px  )
             padding-left: 13px
             width: 832px
@@ -342,7 +349,7 @@
                 height: 46px
                 background-color: #ffffff
                 z-index: 1000
-                box-shadow: 3px 0px 2px #EEEEEE
+                box-shadow: 3px 0px 2px #EEEEEE                    
             &:after
                 content: ''
                 margin-left: 85px

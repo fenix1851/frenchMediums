@@ -14,6 +14,9 @@
         position: relative
         text-decoration: none
         background-color: #fff
+        &:hover
+            & .main-card-header-title
+                text-decoration: underline
         @media screen and ( max-width:  320px)
             width: 256px
             margin-bottom: 32px
@@ -26,6 +29,8 @@
                 &:nth-child(3n)
                     margin-right: 0
                 margin-right: 29px
+                &:last-child
+                    display: none
         @media screen and ( max-width:  320px)
             margin-right: 0
         &-wrapper

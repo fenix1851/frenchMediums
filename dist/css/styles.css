@@ -558,6 +558,10 @@ body {
   background-color: #fff;
 }
 
+.main-card:hover .main-card-header-title {
+  text-decoration: underline;
+}
+
 .main-card-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -730,9 +734,11 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 96px;
+  margin-top: 64px;
+  height: 48px;
 }
 
-.page-select-nextPage {
+.page-select-Page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -746,24 +752,17 @@ body {
   -webkit-transition: 0.2s 0.1s ease-in;
 }
 
-.page-select-nextPage:hover {
+.page-select-Page:hover {
   cursor: pointer;
 }
 
-.page-select-nextPage:hover.page-select-radio__label {
+.page-select-Page:hover.page-select-radio__label {
   background-color: #9169db;
 }
 
-.page-select-text {
-  margin-left: 18px;
-  color: #8c8ea1;
-  font-family: Lato;
-  font-size: 15px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0.28px;
-  line-height: 19px;
-  margin-right: 26px;
+.page-select-previousPage {
+  transform: rotate(180deg);
+  margin-right: 15px;
 }
 
 .page-select-radio__label {
@@ -1175,7 +1174,7 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  padding: 0;
+  padding-left: 12px;
 }
 
 .planningMain-time__description {
@@ -1192,7 +1191,7 @@ body {
 
 .planningMain-time__description:after {
   content: "";
-  margin-left: 60px;
+  margin-left: 64px;
   display: block;
   width: 0;
   height: 32px;
@@ -1241,6 +1240,17 @@ body {
   background-color: #ffffff;
   margin-bottom: 16px;
   position: relative;
+}
+
+.planningMain-shedule:hover {
+  background-color: #FBFBFC;
+  border-color: #9169db;
+}
+
+.planningMain-shedule:hover .planningMain-shedule__name {
+  color: #9169db;
+  background-color: #FBFBFC;
+  box-shadow: none;
 }
 
 .planningMain-shedule__name {
@@ -1336,7 +1346,7 @@ body {
   width: 1410px;
   height: 785px;
   position: absolute;
-  top: 176px;
+  top: 171px;
   right: -360px;
   background-image: url("/img/others/recrument.svg");
   z-index: -999999;
@@ -1505,6 +1515,9 @@ body {
 .requestSended-message-img {
   margin-top: 64px;
   margin-bottom: 20px;
+  background-image: url("/img/others/messageImg.png");
+  width: 160px;
+  height: 144px;
 }
 
 .requestSended-message-title {
@@ -1514,7 +1527,7 @@ body {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.56px;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
 }
 
 .requestSended-message-subtitle {
@@ -1543,6 +1556,10 @@ body {
   height: 48px;
   border-radius: 4px;
   background-color: #9169db;
+}
+
+.requestSended-message-link:hover {
+  box-shadow: 0px 3px 10px #9169db;
 }
 
 .aboutUs-container {
@@ -1697,7 +1714,7 @@ body {
   margin-right: 16px;
 }
 
-.teresaVoyanceMain-card-col1-col2 {
+.teresaVoyanceMain-card-col2 {
   display: flex;
   flex-direction: column;
 }
@@ -1808,6 +1825,9 @@ body {
 
 .teresaVoyanceMain-card-teresa-photo {
   margin-right: 16px;
+  width: 112px;
+  height: 112px;
+  background-image: url("/img/teresaVoyanceMain/teresaVoyanceMain-card-photo.png");
 }
 
 .teresaVoyanceMain-card-teresa-text {
@@ -2536,7 +2556,8 @@ body {
 
 .teresaVoyanceBody::after {
   content: " ";
-  display: block;
+  display: inline-block;
+  text-align: center;
   position: absolute;
   width: 1440px;
   height: 636px;
@@ -2726,6 +2747,10 @@ body {
     margin-right: 0;
   }
 
+  .main-card:last-child {
+    display: none;
+  }
+
   .planningMain-filters {
     width: 832px;
     flex-wrap: wrap;
@@ -2805,16 +2830,16 @@ body {
   .recrument-form::after {
     width: 907px;
     height: 786px;
-    top: 0px;
-    left: 0px;
+    top: 197px;
+    left: 18px;
     background-image: url("/img/others/recrumentMD.png");
   }
 
   .recrument-form::before {
     width: 448px;
     height: 399px;
-    top: 0px;
-    left: 0px;
+    top: 460px;
+    left: 430px;
     background-image: url("/img/others/recrumentBeforeMD.png");
   }
 
@@ -2824,6 +2849,48 @@ body {
 
   .recrument-form-textarea {
     width: 688px;
+  }
+
+  .teresaVoyanceMain-card {
+    width: 832px;
+    height: 248px;
+  }
+
+  .teresaVoyanceMain-card-col1 {
+    padding-right: 16px;
+  }
+
+  .teresaVoyanceMain-card-notes-note {
+    width: 88px;
+    height: 96px;
+    padding: 24px 20px 27px 8px;
+    margin-right: 11px;
+  }
+
+  .teresaVoyanceMain-card-notes-note__title {
+    font-size: 24px;
+  }
+
+  .teresaVoyanceMain-card-notes-note__subtitle {
+    font-size: 11px;
+  }
+
+  .teresaVoyanceMain-card-row1 {
+    width: 360px;
+  }
+
+  .teresaVoyanceMain-card-teresa-photo {
+    width: 88px;
+    height: 96px;
+    background-image: url("/img/teresaVoyanceMain/teresaVoyanceMain-card-photoMD.png");
+  }
+
+  .teresaVoyanceMain-card-player {
+    width: 320px;
+  }
+
+  .teresaVoyanceMain-card-player-wrapper {
+    align-items: flex-start;
   }
 }
 
@@ -2994,16 +3061,16 @@ body {
   .recrument-form::after {
     width: 649px;
     height: 786px;
-    top: 0px;
-    left: 0px;
-    background-image: url("/img/others/recrumentSM.svg");
+    top: 195px;
+    left: 100px;
+    background-image: url("/img/others/recrumentSM.png");
   }
 
   .recrument-form::before {
     width: 288px;
     height: 402px;
-    top: 0px;
-    left: 0px;
+    top: 360px;
+    left: 461px;
     background-image: url("/img/others/recrumentBeforeSM.png");
   }
 
@@ -3181,6 +3248,29 @@ body {
     width: 256px;
   }
 
+  .page-select {
+    height: 40px;
+  }
+
+  .page-select-Page {
+    width: 40px;
+    height: 40px;
+  }
+
+  .page-select-previousPage {
+    margin-right: 14px;
+  }
+
+  .page-select-radio__label {
+    width: 40px;
+    height: 40px;
+    margin-right: 14px;
+  }
+
+  .page-select-radio__label:nth-child(9) {
+    display: none;
+  }
+
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -3299,28 +3389,39 @@ body {
     padding: 64px 16px 48px 16px;
   }
 
+  .recrument-form-container {
+    width: 320px;
+  }
+
   .recrument-form::after {
     width: 320px;
     height: 786px;
-    top: 0px;
-    left: 0px;
-    background-image: url("/img/others/recrumentXS.svg");
+    top: 201px;
+    left: -16px;
+    background-image: url("/img/others/recrumentXS.png");
   }
 
   .recrument-form::before {
     width: 119px;
     height: 402px;
-    top: 0px;
-    left: 0px;
+    top: 413px;
+    left: 185px;
     background-image: url("/img/others/recrumentBeforeXS.png");
+  }
+
+  .recrument-form-suptitle {
+    font-size: 10px;
+    margin-bottom: 12px;
   }
 
   .recrument-form-title {
     width: 256px;
+    font-size: 24px;
   }
 
   .recrument-form-description {
     width: 256px;
+    font-size: 13px;
   }
 
   .recrument-form-inputs {
@@ -3337,7 +3438,30 @@ body {
   }
 
   .recrument-form-apply {
+    width: 100%;
     margin-right: auto;
+  }
+
+  .requestSended-message {
+    width: 288px;
+    height: 388px;
+  }
+
+  .requestSended-message-img {
+    background-image: url("/img/others/messageXS.png");
+    width: 129px;
+    height: 116px;
+    margin-top: 53px;
+    margin-bottom: 23px;
+  }
+
+  .requestSended-message-title {
+    margin-bottom: 8px;
+  }
+
+  .requestSended-message-subtitle {
+    width: 260px;
+    text-align: center;
   }
 }
 
@@ -3363,11 +3487,15 @@ body {
 
 .webp .recrument-form::before{ background-image: url(/img/others/recrumentBefore.webp); }
 
+.webp .requestSended-message-img{ background-image: url(/img/others/messageImg.webp); }
+
 .webp .aboutUs-container::before{ background-image: url(/img/aboutUs/aboutUsBefore.webp); }
 
 .webp .aboutUs-teresa-photo::after{ background-image: url(/img/aboutUs/aboutUs-teresaPhotoafter.webp); }
 
 .webp .aboutUs-teresa-photo::before{ background-image: url(/img/aboutUs/aboutUs-teresaPhotobefore.webp); }
+
+.webp .teresaVoyanceMain-card-teresa-photo{ background-image: url(/img/teresaVoyanceMain/teresaVoyanceMain-card-photo.webp); }
 
 .webp .teresaVoyanceMain-planning-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
 
@@ -3409,9 +3537,19 @@ body {
   .webp .recrument-form::before{ background-image: url(/img/others/recrumentBeforeMD.webp); }
 }
 
+@media screen and (max-width: 1024px){
+
+  .webp .teresaVoyanceMain-card-teresa-photo{ background-image: url(/img/teresaVoyanceMain/teresaVoyanceMain-card-photoMD.webp); }
+}
+
 @media screen and (max-width: 768px){
 
   .webp .indexbody::after{ background: url(/img/hero/bodyAfterSM.webp); }
+}
+
+@media screen and (max-width: 768px){
+
+  .webp .recrument-form::after{ background-image: url(/img/others/recrumentSM.webp); }
 }
 
 @media screen and (max-width: 768px){
@@ -3446,5 +3584,15 @@ body {
 
 @media screen and (max-width: 320px){
 
+  .webp .recrument-form::after{ background-image: url(/img/others/recrumentXS.webp); }
+}
+
+@media screen and (max-width: 320px){
+
   .webp .recrument-form::before{ background-image: url(/img/others/recrumentBeforeXS.webp); }
+}
+
+@media screen and (max-width: 320px){
+
+  .webp .requestSended-message-img{ background-image: url(/img/others/messageXS.webp); }
 }
