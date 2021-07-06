@@ -8,6 +8,7 @@
   -moz-transition: 0.2s 0.1s ease-in;
   -o-transition: 0.2s 0.1s ease-in;
   -webkit-transition: 0.2s 0.1s ease-in;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -34,6 +35,118 @@ body {
 
 .header {
   position: relative;
+}
+
+.header-burger {
+  display: none;
+  width: 20px;
+  height: 14px;
+  position: absolute;
+  border-style: none;
+  background-color: transparent;
+  padding: 0;
+  z-index: 1000000;
+}
+
+.header-burger-nonActive {
+  background-image: url("/img/header/burger-icon.png");
+}
+
+.header-burger-active {
+  width: 14px;
+  height: 14px;
+  background-image: url("/img/header/burgerX.png");
+}
+
+.header-burger-white-nonActive {
+  background-image: url("/img/header/burgerWhite.png");
+}
+
+.header-burger-white-active {
+  width: 14px;
+  height: 14px;
+  background-image: url("/img/header/burgerXwhite.png");
+}
+
+.header-mobile-menu__logo {
+  color: #2f3a5b;
+  text-decoration: none;
+  font-family: Aleo;
+  font-size: 27px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.56px;
+  margin-top: -20px;
+}
+
+.header-mobile-menu__logo_white {
+  color: #fff;
+}
+
+.header-mobile-menu__link {
+  text-decoration: none;
+  color: #252729;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+  position: relative;
+}
+
+.header-mobile-menu__link_white {
+  color: #fff;
+}
+
+.header-mobile-menu__link::after {
+  position: absolute;
+  content: "";
+  opacity: 0;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #252729;
+  -moz-transition: 0.2s 0.1s ease-in;
+  -o-transition: 0.2s 0.1s ease-in;
+  -webkit-transition: 0.2s 0.1s ease-in;
+}
+
+.header-mobile-menu__link:hover.header-mobile-menu__link {
+  color: #9169DB;
+}
+
+.header-mobile-menu__link:hover.header-mobile-menu__link::after {
+  opacity: 1;
+  width: 100%;
+  background-color: #9169DB;
+}
+
+.header-mobile-menu-wrapper {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999999;
+  position: absolute;
+  height: 400px;
+  width: 320px;
+  background-color: #fff;
+  top: 0px;
+  left: -32px;
+  opacity: 0;
+  height: 0;
+}
+
+.header-mobile-menu-wrapper_purple {
+  background-color: #9169db;
+}
+
+.header-mobile-menu-wrapper_active {
+  height: 400px;
+  opacity: 1;
 }
 
 .headerPlanning-container::after {
@@ -391,6 +504,10 @@ body {
   display: flex;
 }
 
+.hero-filters-dropdown-sortBy:hover .hero-filters-dropdown-option-wrapper-sortBy {
+  display: flex;
+}
+
 .hero-filters-dropdown > li {
   margin-top: 15px;
   height: 15px;
@@ -409,29 +526,50 @@ body {
   padding-left: 0;
 }
 
+.hero-filters-dropdown-option-skills {
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
 .hero-filters-dropdown-option:hover {
   background-color: #F9F7FC;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.hero-filters-dropdown-option:hover .hero-filters-dropdown-option-PurpleRadio {
-  background-image: url(/img/hero/icon-radio-hover.png);
-}
-
-.hero-filters-dropdown-option-input {
+.hero-filters-dropdown-option-input-sortBy {
   display: none;
+  position: absolute;
 }
 
-.hero-filters-dropdown-option-input:checked > label {
-  border: 1px solid #9169db;
-  background-color: #9169db;
-  color: #ffffff;
+.hero-filters-dropdown-option-input-sortBy:checked + label {
+  color: #9169db;
 }
 
-.hero-filters-dropdown-option-input:checked .hero-filters-dropdown-option {
-  background-color: red;
+.hero-filters-dropdown-option-input-skills {
+  display: none;
+  position: absolute;
+}
+
+.hero-filters-dropdown-option-input-skills:checked + label {
+  color: #9169db;
+}
+
+.hero-filters-dropdown-option-input-skills:checked + label + label {
+  background-image: url(/img/hero/purpleBox.png);
+}
+
+.hero-filters-dropdown-option-input-inAudiotel {
+  display: none;
+  position: absolute;
+}
+
+.hero-filters-dropdown-option-input-inAudiotel:checked + label {
   background-image: url(/img/hero/icon-radio-check.png);
+}
+
+.hero-filters-dropdown-option-input-inAudiotel:checked + label + label {
+  color: #9169db;
 }
 
 .hero-filters-dropdown-option-PurpleRadio {
@@ -444,6 +582,14 @@ body {
 
 .hero-filters-dropdown-option-PurpleRadio:checked {
   background-image: url(/img/hero/icon-radio-check.png);
+}
+
+.hero-filters-dropdown-option-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-left: 0;
+  background-image: url(/img/hero/whiteBox.png);
+  background-repeat: no-repeat;
 }
 
 .hero-filters-dropdown-option-wrapper {
@@ -460,6 +606,10 @@ body {
   background-color: #fff;
   z-index: 1000;
   display: none;
+}
+
+.hero-filters-dropdown-option-wrapper-sortBy {
+  height: 176px;
 }
 
 .hero-filters-dropdown-option-wrapper label {
@@ -1964,6 +2114,7 @@ body {
   width: 112px;
   height: 112px;
   background-image: url("/img/teresaVoyanceMain/teresaVoyanceMain-card-photo.png");
+  background-repeat: no-repeat;
 }
 
 .teresaVoyanceMain-card-teresa-text {
@@ -2341,7 +2492,7 @@ body {
 
 .teresaVoyanceMain-planning-time__description:after {
   content: "";
-  margin-left: 60px;
+  margin-left: 45px;
   display: block;
   width: 0;
   height: 32px;
@@ -2794,9 +2945,12 @@ body {
   width: 736px;
 }
 
-.VoyanceMain-card-foto {
-  background: url("/img/Voyance/Voyance.png");
-  transform: scale(0.85);
+.VoyanceMain-card-photo {
+  margin-right: 16px;
+  width: 112px;
+  height: 112px;
+  background-image: url("/img/Voyance/Voyance.png");
+  background-repeat: no-repeat;
 }
 
 .NotFound {
@@ -3187,10 +3341,11 @@ body {
   .teresaVoyanceMain-planning-time__description {
     font-size: 11px;
     letter-spacing: 0.23px;
+    margin-right: 29px;
   }
 
   .teresaVoyanceMain-planning-time__description::after {
-    margin-right: 0;
+    margin-right: -33px;
   }
 
   .teresaVoyanceMain-planning-time__description:after {
@@ -3264,8 +3419,10 @@ body {
     width: 688px;
   }
 
-  .VoyanceMain-card-foto {
-    background: url("/img/Voyance/Voyance.png");
+  .VoyanceMain-card-photo {
+    width: 88px;
+    height: 96px;
+    background-image: url("/img/Voyance/Voyance.png");
   }
 }
 
@@ -3590,14 +3747,14 @@ body {
   }
 
   .teresaVoyanceMain-planning-time {
-    position: sticky;
-    top: 0;
-    left: 0;
     padding: 0;
+    position: fixed;
+    top: 0px;
   }
 
   .teresaVoyanceMain-planning-time__description {
     position: sticky;
+    position: -webkit-sticky;
     left: 0;
     padding-left: 16px;
     width: 112px;
@@ -3607,7 +3764,8 @@ body {
   }
 
   .teresaVoyanceMain-planning-time__description:after {
-    margin-left: 0px;
+    margin-left: 9px;
+    position: static;
   }
 
   .teresaVoyanceMain-planning-time-timeline {
@@ -3681,6 +3839,7 @@ body {
 
   .teresaVoyanceMain-planning-shedule-overflowWrapper {
     overflow-x: scroll;
+    will-change: transform;
     margin-bottom: 40px;
   }
 
@@ -3693,11 +3852,6 @@ body {
   .teresaVoyanceMain-planning-shedule-overflowWrapper::-webkit-scrollbar-thumb {
     background: #9169db;
     border-radius: 1px;
-  }
-
-  .VoyanceMain-card-foto {
-    background: url("/img/Voyance/Voyance.png");
-    transform: scale(0.85);
   }
 }
 
@@ -3715,6 +3869,12 @@ body {
   .indexbody::after {
     background: url("/img/hero/bodyAfterXS.png");
     width: 320px;
+  }
+
+  .header-burger {
+    display: block;
+    right: -10px;
+    top: 20px;
   }
 
   .header .header-container::after {
@@ -3793,6 +3953,44 @@ body {
     margin-top: 126px;
   }
 
+  .hero-filters-dropdown {
+    width: 264px;
+    margin-bottom: 16px;
+  }
+
+  .hero-filters-countOnPage {
+    position: relative;
+    margin-top: 42px;
+  }
+
+  .hero-filters-countOnPage-text {
+    position: absolute;
+    left: -8px;
+    top: -25px;
+  }
+
+  .hero-filters-countOnPage-radio__label {
+    margin-right: 15px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 32px;
+  }
+
+  .hero-filters-apply {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 264px;
+    margin-left: 40px;
+    right: 20px;
+  }
+
+  .hero-filters-apply:hover.hero-filters-apply {
+    width: 264px;
+  }
+
   .hero-mobile-filter {
     display: flex;
     align-items: center;
@@ -3813,9 +4011,6 @@ body {
     border: 1px solid #f0f1f3;
     background-color: #ffffff;
     padding-left: 48px;
-    background: url(/img/hero/settingsIcon.png);
-    background-repeat: no-repeat;
-    background-position: 15px 15px;
     display: flex;
     align-items: center;
     color: #2f3a5b;
@@ -3826,10 +4021,65 @@ body {
     letter-spacing: 0.28px;
     line-height: 19px;
     margin-left: 64px;
+    position: relative;
+    background-repeat: no-repeat;
+  }
+
+  .hero-mobile-filter-settings::after {
+    content: "";
+    background: url(/img/hero/arrowDown.png);
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+
+  .hero-mobile-filter-settings_active {
+    border-color: #9169db;
+  }
+
+  .hero-mobile-filter-settings_active::after {
+    transform: rotate(180deg);
+  }
+
+  .hero-mobile-filter-settings-label {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    display: flex;
+    width: 86px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-mobile-filter-settings-label__title {
+    margin-left: 8px;
+    display: block;
   }
 
   .hero-mobile-filter-settings-wrapper {
+    position: relative;
+  }
+
+  .hero-mobile-filter-settings-inner {
+    position: absolute;
+    width: 324px;
+    left: 33px;
+    height: 0px;
+    background-color: #fff;
+    z-index: 1000;
+    top: 79px;
+    box-shadow: 0px 10px 10px #d1d3d4;
+    display: none;
+  }
+
+  .hero-mobile-filter-settings-inner_active {
+    height: 378px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-mobile-filter-settings_unactive {
@@ -4274,19 +4524,21 @@ body {
   }
 
   .teresaVoyanceMain-card-row1 {
-    flex-direction: column;
-    align-items: start;
+    flex-wrap: wrap;
+    align-items: flex-end;
     width: 209px;
-    display: block;
   }
 
   .teresaVoyanceMain-card-teresa {
-    width: 216px;
+    width: 320px;
   }
 
   .teresaVoyanceMain-card-teresa-photo {
-    width: 96px;
+    width: 320px;
     height: 96px;
+    margin-right: 0;
+    display: flex;
+    background-position-x: 80px;
     background-image: url("/img/teresaVoyanceMain/teresaVoyanceMain-card-photoXS.png");
   }
 
@@ -4363,6 +4615,10 @@ body {
 
   .teresaVoyanceMain-planning-description-flags-flag__indisponible {
     margin-right: 0;
+  }
+
+  .teresaVoyanceMain-planning-time__description {
+    margin-right: 12px;
   }
 
   .teresaVoyanceMain-form {
@@ -4445,12 +4701,25 @@ body {
     margin-right: 16px;
   }
 
-  .VoyanceMain-card-foto {
-    background: url("/img/Voyance/Voyance.png");
+  .VoyanceMain-card-photo {
+    width: 320px;
+    height: 96px;
+    margin-right: 0;
+    display: flex;
+    background-position-x: 80px;
+    background-image: url("/img/Voyance/Voyance.png");
   }
 }
 
 .webp .indexbody::after{ background: url(/img/hero/heroElement.webp); }
+
+.webp .header-burger-nonActive{ background-image: url(/img/header/burger-icon.webp); }
+
+.webp .header-burger-active{ background-image: url(/img/header/burgerX.webp); }
+
+.webp .header-burger-white-nonActive{ background-image: url(/img/header/burgerWhite.webp); }
+
+.webp .header-burger-white-active{ background-image: url(/img/header/burgerXwhite.webp); }
 
 .webp .header-container::after{ background: url(/img/header/headerDropElement.webp); }
 
@@ -4460,13 +4729,15 @@ body {
 
 .webp .hero-teresa-foto::before{ background: url(/img/hero/whiteSubstrate.webp); }
 
-.webp .hero-filters-dropdown-option:hover .hero-filters-dropdown-option-PurpleRadio{ background-image: url(/img/hero/icon-radio-hover.webp); }
+.webp .hero-filters-dropdown-option-input-skills:checked + label + label{ background-image: url(/img/hero/purpleBox.webp); }
 
-.webp .hero-filters-dropdown-option-input:checked .hero-filters-dropdown-option{ background-image: url(/img/hero/icon-radio-check.webp); }
+.webp .hero-filters-dropdown-option-input-inAudiotel:checked + label{ background-image: url(/img/hero/icon-radio-check.webp); }
 
 .webp .hero-filters-dropdown-option-PurpleRadio{ background-image: url(/img/hero/icon-radio.webp); }
 
 .webp .hero-filters-dropdown-option-PurpleRadio:checked{ background-image: url(/img/hero/icon-radio-check.webp); }
+
+.webp .hero-filters-dropdown-option-checkbox{ background-image: url(/img/hero/whiteBox.webp); }
 
 .webp .hero-filters-dropdown::after{ background: url(/img/hero/arrowDown.webp); }
 
@@ -4512,7 +4783,7 @@ body {
 
 .webp .VoyanceBody::after{ background-image: url(/img/Voyance/HolderXL.webp); }
 
-.webp .VoyanceMain-card-foto{ background: url(/img/Voyance/Voyance.webp); }
+.webp .VoyanceMain-card-photo{ background-image: url(/img/Voyance/Voyance.webp); }
 
 @media screen and (min-width: 1441px){
 
@@ -4586,7 +4857,7 @@ body {
 
 @media screen and (max-width: 1024px){
 
-  .webp .VoyanceMain-card-foto{ background: url(/img/Voyance/Voyance.webp); }
+  .webp .VoyanceMain-card-photo{ background-image: url(/img/Voyance/Voyance.webp); }
 }
 
 @media screen and (max-width: 768px){
@@ -4639,11 +4910,6 @@ body {
   .webp .teresaVoyanceMain-form::before{ background-image: url(/img/Voyance/formBeforeSM.webp); }
 }
 
-@media screen and (max-width: 768px){
-
-  .webp .VoyanceMain-card-foto{ background: url(/img/Voyance/Voyance.webp); }
-}
-
 @media screen and (max-width: 320px){
 
   .webp .indexbody::after{ background: url(/img/hero/bodyAfterXS.webp); }
@@ -4661,7 +4927,7 @@ body {
 
 @media screen and (max-width: 320px){
 
-  .webp .hero-mobile-filter-settings{ background: url(/img/hero/settingsIcon.webp); }
+  .webp .hero-mobile-filter-settings::after{ background: url(/img/hero/arrowDown.webp); }
 }
 
 @media screen and (max-width: 320px){
@@ -4736,5 +5002,5 @@ body {
 
 @media screen and (max-width: 320px){
 
-  .webp .VoyanceMain-card-foto{ background: url(/img/Voyance/Voyance.webp); }
+  .webp .VoyanceMain-card-photo{ background-image: url(/img/Voyance/Voyance.webp); }
 }

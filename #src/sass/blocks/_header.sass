@@ -1,5 +1,99 @@
 .header
     position: relative
+    &-burger
+        display: none
+        width: 20px
+        height: 14px
+        position: absolute
+        border-style: none
+        background-color: transparent
+        padding: 0
+        z-index: 1000000
+        @media screen and ( max-width: 320px )
+            display: block
+            right: -10px
+            top: 20px
+        &-nonActive
+            background-image: url("/img/header/burger-icon.png")
+        &-active
+            width: 14px
+            height: 14px
+            background-image: url("/img/header/burgerX.png")
+        &-white
+            &-nonActive
+                background-image: url("/img/header/burgerWhite.png")
+            &-active
+                width: 14px
+                height: 14px
+                background-image: url("/img/header/burgerXwhite.png")
+    &-mobile-menu
+        &__logo
+            color: #2f3a5b
+            text-decoration: none
+            font-family: Aleo
+            font-size: 27px
+            font-weight: 400
+            font-style: normal
+            letter-spacing: 0.56px
+            margin-top: -20px
+            &_white
+                color: #fff
+        &__link
+            text-decoration: none
+            color: #252729
+            font-family: Lato
+            font-size: 16px
+            font-weight: 600
+            font-style: normal
+            letter-spacing: 0.28px
+            line-height: 19px
+            position: relative
+            &_white
+                color: #fff
+            &::after
+                position: absolute
+                content: ''
+                opacity: 0
+                bottom: -5px
+                left: 0
+                width: 0
+                height: 2px
+                background-color: #252729
+                -moz-transition: 0.2s 0.1s ease-in
+                -o-transition: 0.2s 0.1s ease-in
+                -webkit-transition: 0.2s 0.1s ease-in
+
+            &:hover
+                &.header-mobile-menu__link
+                    color: #9169DB
+                    &::after
+                        opacity: 1
+                        width: 100%
+                        background-color: #9169DB
+
+        &-wrapper
+            text-decoration: none
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-around
+            z-index: 999999
+            position: absolute
+            height: 400px
+            width: 320px
+            background-color: #fff
+            top: 0px
+            left: -32px  
+            opacity: 0 
+            height: 0
+            &_purple
+                background-color: #9169db
+            &_active
+                height: 400px
+                opacity: 1
+
+                
+
     &Planning
         &-container
             &::after

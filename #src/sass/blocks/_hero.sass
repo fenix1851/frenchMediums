@@ -260,6 +260,9 @@
             margin-bottom: 32px
             position: relative
             list-style: none
+            @media screen and ( max-width: 320px )
+                width: 264px
+                margin-bottom: 16px
             &:hover
                 &::after
                     transform: rotate(180deg)
@@ -277,6 +280,10 @@
                 &:hover
                     & .hero-filters-dropdown-option-wrapper-skills
                         display: flex
+            &-sortBy
+                &:hover
+                    & .hero-filters-dropdown-option-wrapper-sortBy
+                        display: flex
             &>li
                 margin-top: 15px
                 height: 15px
@@ -289,25 +296,38 @@
                 display: flex
                 align-items: center
                 padding-left: 0
+                &-skills
+                    justify-content: space-between
+                    padding-right: 20px
                 &:hover
                     background-color: #F9F7FC
                     border-radius: 4px
                     cursor: pointer
-                    .hero-filters-dropdown-option-PurpleRadio
-                        background-image: url(/img/hero/icon-radio-hover.png)
                         
                         
                 &-input
-                    display: none
-                    &:checked
-                        & > label
-                            border: 1px solid #9169db
-                            background-color: #9169db
-                            color: #ffffff
-                    &:checked
-                        & .hero-filters-dropdown-option
-                            background-color: red
-                            background-image: url(/img/hero/icon-radio-check.png)
+                    &-sortBy
+                        display: none
+                        position: absolute
+                        &:checked
+                            & + label
+                                color: #9169db
+                    &-skills
+                        display: none
+                        position: absolute
+                        &:checked
+                            & + label
+                                color: #9169db
+                                & + label
+                                    background-image: url(/img/hero/purpleBox.png)
+                    &-inAudiotel
+                        display: none
+                        position: absolute
+                        &:checked
+                            & + label
+                                background-image: url(/img/hero/icon-radio-check.png)    
+                                & + label
+                                    color: #9169db
                 &-PurpleRadio
                     width: 20px
                     height: 20px
@@ -316,6 +336,13 @@
                     background-repeat: no-repeat
                     &:checked
                         background-image: url(/img/hero/icon-radio-check.png)
+                &-checkbox
+                    width: 20px
+                    height: 20px
+                    margin-left: 0
+                    background-image: url(/img/hero/whiteBox.png)
+                    background-repeat: no-repeat
+                    
 
                 &-wrapper
                     position: absolute
@@ -331,6 +358,8 @@
                     background-color: #fff
                     z-index: 1000
                     display: none
+                    &-sortBy
+                        height: 176px
                     & label
                         font-family: Lato
                         font-size: 15px
@@ -401,6 +430,9 @@
         &-countOnPage
             display: flex
             align-items: center
+            @media screen and ( max-width: 320px )
+                position: relative
+                margin-top: 42px
             &-text
                 margin-left: 18px
                 color: #8c8ea1
@@ -414,6 +446,10 @@
                 @media screen and ( max-width:  768px)
                     margin-left: 10px
                     margin-right: 15px
+                @media screen and ( max-width: 320px )
+                    position: absolute
+                    left: -8px
+                    top: -25px
 
             &-radio
                 &__label
@@ -438,6 +474,11 @@
                     -webkit-transition: 0.2s 0.1s ease-in
                     @media screen and ( max-width:  768px)
                         margin-right: 6px    
+                    @media screen and ( max-width: 320px )
+                        margin-right: 15px
+                        height: 50px
+                        width: 50px
+                        margin-bottom: 32px
                     &:hover
                         cursor: pointer
                         &.hero-filters-countOnPage-radio__label
@@ -465,6 +506,19 @@
             right: 16px
             @media screen and ( max-width:  768px)
                 right: 32px
+            @media screen and ( max-width: 320px )
+                position: relative
+                display: flex
+                width: 100%
+                justify-content: center
+                align-items: center
+                width: 264px
+                margin-left: 40px
+                right: 20px
+                &:hover
+                    &.hero-filters-apply
+                        width: 264px
+                    
             &:hover
                 &.hero-filters-apply
                     width: 150px
@@ -491,9 +545,6 @@
                 border: 1px solid #f0f1f3
                 background-color: #ffffff
                 padding-left: 48px
-                background: url(/img/hero/settingsIcon.png)
-                background-repeat: no-repeat
-                background-position: 15px 15px
                 display: flex
                 align-items: center
                 color: #2f3a5b
@@ -504,12 +555,53 @@
                 letter-spacing: 0.28px
                 line-height: 19px
                 margin-left: 64px
-                &-wrapper
+                position: relative
+                background-repeat: no-repeat
+                &::after
+                    content: ''
+                    background: url(/img/hero/arrowDown.png)
+                    width: 16px
+                    height: 16px
+                    display: block
+                    position: absolute
+                    right: 16px
+                    top: 16px
+                &_active
+                    border-color: #9169db
+                    &::after
+                        transform: rotate(180deg)
+                &-label
+                    position: absolute
+                    top: 14px
+                    left: 16px
                     display: flex
-                    & > span
-
+                    width: 86px
+                    justify-content: space-between
+                    align-items: center
+                    &__title
+                        margin-left: 8px
+                        display: block
+                &-wrapper
+                    position: relative
+                &-inner
+                    position: absolute
+                    width: 324px
+                    left: 33px
+                    height: 0px
+                    background-color: #fff
+                    z-index: 1000
+                    top: 79px
+                    box-shadow: 0px 10px 10px #d1d3d4 
+                    display: none
+                    &_active
+                        height: 378px 
+                        display: flex    
+                        flex-direction: column
+                        align-items: center
+                         
                 &_unactive
                     display: none
+                    
             &-search
                 width: 48px
                 height: 48px

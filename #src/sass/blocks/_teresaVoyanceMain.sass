@@ -212,27 +212,31 @@
                 width: 454px
                 margin-right: 0
             @media screen and ( max-width: 320px )
-                flex-direction: column
-                align-items: start
+                flex-wrap: wrap
+                align-items: flex-end
                 width: 209px  
-                display: block          
+                // display: block          
         &-teresa
             display: flex
             align-items: center
             @media screen and ( max-width: 320px )
-                width: 216px
+                width: 320px
             &-photo
                 margin-right: 16px
                 width: 112px
                 height: 112px
                 background-image: url('/img/teresaVoyanceMain/teresaVoyanceMain-card-photo.png')
+                background-repeat: no-repeat
                 @media screen and ( max-width: 1024px )
                     width: 88px
                     height: 96px
                     background-image: url('/img/teresaVoyanceMain/teresaVoyanceMain-card-photoMD.png')
                 @media screen and ( max-width: 320px )
-                    width: 96px
+                    width: 320px
                     height: 96px
+                    margin-right: 0
+                    display: flex
+                    background-position-x: 80px
                     background-image: url('/img/teresaVoyanceMain/teresaVoyanceMain-card-photoXS.png')
             &-text
                 display: flex
@@ -567,10 +571,9 @@
             @media screen and ( max-width: 1024px)
                 width: 832px
             @media screen and ( max-width:  768px)
-                position: sticky
-                top: 0
-                left: 0
                 padding: 0
+                position: fixed
+                top: 0px
             &__description
                 color: #8c8ea1
                 font-family: Lato
@@ -585,19 +588,23 @@
                 @media screen and ( max-width: 1024px)
                     font-size: 11px
                     letter-spacing: 0.23px
+                    margin-right: 29px
                     &::after
-                        margin-right: 0
+                        margin-right: -33px
                 @media screen and ( max-width: 768px  )
                     position: sticky
+                    position: -webkit-sticky
                     left: 0
                     padding-left: 16px
                     width: 112px
                     height: 46px
                     background-color: #ffffff
                     letter-spacing: 0.26px
+                @media screen and ( max-width: 320px )
+                    margin-right: 12px
                 &:after
                     content: ''
-                    margin-left: 60px
+                    margin-left: 45px
                     display: block
                     width: 0
                     height: 32px
@@ -608,7 +615,9 @@
                         position: absolute
                         right: 7px
                     @media screen and ( max-width: 768px )
-                        margin-left: 0px
+                        margin-left: 9px
+                        position: static
+
                         
             &-timeline
                 display: flex
@@ -1105,6 +1114,7 @@
 @media screen and ( max-width: 768px )
     .teresaVoyanceMain-planning-shedule-overflowWrapper 
         overflow-x: scroll
+        will-change: transform
         margin-bottom: 40px
         &::-webkit-scrollbar
             width: 1px
@@ -1121,18 +1131,25 @@
         // @media screen and ( max-width: 320px )
         //     display: block
         
-.VoyanceMain-card-foto
-    background: url('/img/Voyance/Voyance.png')
-    transform: scale(0.85)
-    @media screen and ( max-width: 1024px )
-        background: url('/img/Voyance/Voyance.png')
-    @media screen and ( max-width: 768px )
-        background: url('/img/Voyance/Voyance.png')
-        transform: scale(0.85)
-    @media screen and ( max-width: 320px  )
-        background: url('/img/Voyance/Voyance.png')
 
-    
+.VoyanceMain-card-photo
+    margin-right: 16px
+    width: 112px
+    height: 112px
+    background-image: url('/img/Voyance/Voyance.png')
+    background-repeat: no-repeat
+    @media screen and ( max-width: 1024px )
+        width: 88px
+        height: 96px
+        background-image: url('/img/Voyance/Voyance.png')
+    @media screen and ( max-width: 320px )
+        width: 320px
+        height: 96px
+        margin-right: 0
+        display: flex
+        background-position-x: 80px
+        background-image: url('/img/Voyance/Voyance.png')
+
 
 
         
