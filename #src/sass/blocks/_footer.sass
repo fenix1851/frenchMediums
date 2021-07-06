@@ -6,10 +6,38 @@
         align-items: center
         height: 128px
         background-color: #fff
+        @media screen and ( max-width: 1024px )
+            height: 108px
+        @media screen and ( max-width: 320px )
+            height: 144px
+
         &-inner
             display: flex
             align-items: center
             justify-content: space-between
+            @media screen and ( max-width: 320px )
+                flex-direction: column
+
+
+        &__tel
+            width: 502px
+            height: 56px
+            background: url('/img/teresaVoyanceMain/tel.jpg')
+            @media screen and ( max-width: 1024px )
+                width: 402px
+                height: 44px
+                background: url('/img/teresaVoyanceMain/telMD.jpg')
+            @media screen and ( max-width: 768px )
+                width: 354px
+                height: 40px
+                background: url('/img/teresaVoyanceMain/telSM.jpg')
+            @media screen and ( max-width: 320px )
+                width: 256px
+                height: 32px
+                margin-bottom: 16px
+                background: url('/img/teresaVoyanceMain/telXS.png')
+
+
     &-inner
         width: 100%
         display: flex

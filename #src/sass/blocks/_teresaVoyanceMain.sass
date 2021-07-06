@@ -3,6 +3,9 @@
         margin-top: 132px
         margin-bottom: 64px
         position: relative
+        @media screen and ( max-width:  320px)
+            width: 320px
+            margin-top: 86px
     &-card
         width: 1120px
         height: 264px
@@ -12,9 +15,17 @@
         display: flex
         margin: 0 auto
         padding: 32px 16px
+        position: relative
         @media screen and ( max-width: 1024px  )
             width: 832px
             height: 248px
+        @media screen and ( max-width: 768px )
+            width: 736px
+            height: 344px
+        @media screen and ( max-width: 320px )
+            width: 288px
+            height: 712px
+            flex-direction: column
         &-col1
             display: flex
             flex-direction: column
@@ -24,6 +35,26 @@
             margin-right: 16px
             @media screen and ( max-width: 1024px )
                 padding-right: 16px
+            @media screen and ( max-width: 768px )
+                border-style: none
+                position: relative
+                &::after
+                    content: ''
+                    position: absolute
+                    right: 0
+                    top: 0
+                    height: 216px
+                    width: 2px
+                    background-color: #F8F8F9
+            @media screen and ( max-width: 320px )
+                padding-right: 0
+                padding-bottom: 16px
+                margin-bottom: 16px
+                margin-right: 0
+                border-bottom: 2px solid #F8F8F9
+                &::after
+                    display: none
+                
         &-col2
             display: flex
             flex-direction: column
@@ -31,6 +62,20 @@
             display: flex
             justify-content: space-between
             width: 100%
+            position: relative
+            @media screen and ( max-width: 768px )
+                flex-wrap: wrap
+                width: 224px
+            @media screen and ( max-width: 320px )
+                width: 272px
+                height: 176px
+                &::after
+                    content: ' '
+                    width: 256px
+                    height: 2px
+                    background-color: #F8F8F9
+                    position: absolute
+                    bottom: -16px
             &-note
                 width: 120px
                 height: 112px
@@ -42,6 +87,18 @@
                     height: 96px
                     padding: 24px 20px 27px 8px
                     margin-right: 11px
+                @media screen and ( max-width: 768px )
+                    width: 96px
+                    height: 88px
+                    margin-right: 16px
+                    &:nth-child(1)
+                        margin-bottom: 24px
+                        @media screen and ( max-width: 320px )
+                            margin-bottom: 16px
+                @media screen and ( max-width: 320px )
+                    width: 120px
+                    height: 80px
+                    padding: 16px 16px
                 &__title
                     color: #2f3a5b
                     font-family: Aleo
@@ -51,6 +108,8 @@
                     letter-spacing: 0.72px
                     @media screen and ( max-width: 1024px  )
                         font-size: 24px
+                    @media screen and ( max-width: 320px )
+                        margin-bottom: 4px
 
                 &__subtitle
                     color: #2f3a5b
@@ -74,11 +133,42 @@
             display: flex
             justify-content: space-between
             width: 100%
-            margin-top: 16px
+            padding-top: 16px
+            @media screen and ( max-width: 768px )
+                position: absolute
+                bottom: 32px
+                left: 0
+                justify-content: flex-start
+                border-top: 2px solid #F8F8F9
+            @media screen and ( max-width: 320px )
+                width: 274px
+                flex-wrap: wrap
+                border-top: none
+                justify-content: space-between
             &-item
                 display: flex
                 flex-direction: column
                 align-items: center
+                @media screen and ( max-width: 768px )
+                    flex-direction: row
+                    margin-right: 23px
+                    width: 160px
+                    &:first-child
+                        margin-left: 0px
+                        padding-left: 16px
+                @media screen and ( max-width: 320px )
+                    flex-direction: column
+                    width: 110px
+                    margin-right: 15px
+                    align-items: center
+                    &:last-child
+                        margin-right: 0
+                    &:first-child
+                        padding-left: 0
+                    &:nth-last-child(2n)
+                        margin-bottom: 16px 
+                    &:nth-child(2)
+                        margin-right: 0                           
                 &:first-child
                     margin-left: 36px
                 &:last-child
@@ -99,6 +189,15 @@
                     font-style: normal
                     letter-spacing: 0.26px
                     margin-top: 8px
+                    @media screen and ( max-width: 768px )
+                        color: #2f3a5b
+                        font-family: Lato
+                        font-size: 13px
+                        font-weight: 700
+                        margin-left: 17px
+                    @media screen and ( max-width: 320px )
+                        margin-left: 0
+                            
 
         &-row1
             margin-bottom: 16px
@@ -109,9 +208,19 @@
             margin-right: 16px
             @media screen and ( max-width: 1024px  )
                 width: 360px
+            @media screen and ( max-width: 768px )
+                width: 454px
+                margin-right: 0
+            @media screen and ( max-width: 320px )
+                flex-direction: column
+                align-items: start
+                width: 209px  
+                display: block          
         &-teresa
             display: flex
             align-items: center
+            @media screen and ( max-width: 320px )
+                width: 216px
             &-photo
                 margin-right: 16px
                 width: 112px
@@ -121,6 +230,10 @@
                     width: 88px
                     height: 96px
                     background-image: url('/img/teresaVoyanceMain/teresaVoyanceMain-card-photoMD.png')
+                @media screen and ( max-width: 320px )
+                    width: 96px
+                    height: 96px
+                    background-image: url('/img/teresaVoyanceMain/teresaVoyanceMain-card-photoXS.png')
             &-text
                 display: flex
                 flex-direction: column
@@ -131,14 +244,33 @@
                     font-weight: 700
                     font-style: normal
                     letter-spacing: 0.72px
-                &__stars
-                    picture
+                    @media screen and ( max-width: 320px )
+                        margin-bottom: 10px
+                &-stars
+                    display: flex
+                    &__star
                         margin-left: 4px
                         margin-right: 8px
-                    img
-                        margin-right: 8px
-                        &:last-child
-                            margin-right: 0
+                        width: 16px
+                        height: 16px
+                        display: flex
+                        background: url('/img/teresaVoyanceMain/Star.svg')
+                        @media screen and ( max-width: 320px )
+                            width: 12px
+                            height: 12px
+                            background: url('/img/teresaVoyanceMain/starXS.png') 
+                            margin-right: 4.5px                    
+                        &UnActive
+                            margin-left: 4px
+                            margin-right: 0px
+                            width: 16px
+                            height: 16px
+                            background: url('/img/teresaVoyanceMain/UnActiveStar.svg')
+                            @media screen and ( max-width: 320px  )
+                                background: url('/img/teresaVoyanceMain/starUnActiveXS.png')
+                                width: 12px
+                                height: 12px
+                        
         &-consult
             color: #2f3a5b
             font-family: Lato
@@ -151,6 +283,8 @@
             display: flex
             flex-direction: column
             align-items: flex-end
+            @media screen and ( max-width: 320px )
+                margin-right: -43px
             &__code
                 color: #9169db
                 font-family: Aleo
@@ -178,6 +312,10 @@
             margin-bottom: 8px
             @media screen and ( max-width: 1024px  )
                 width: 320px
+            @media screen and ( max-width: 768px )
+                width: 390px
+            @media screen and ( max-width: 320px )
+                width: 192px
             &-play
                 border-style: none
                 background-color: transparent
@@ -241,6 +379,13 @@
         background-color: #ffffff
         display: flex
         padding: 24px 32px 24px 16px
+        @media screen and ( max-width: 768px )
+            width: 608px
+            justify-content: space-between
+        @media screen and ( max-width: 320px )
+            flex-direction: column
+            width: 288px
+            height: 224px
         &-block
             display: flex
             align-items: center
@@ -295,6 +440,11 @@
         background-color: #ffffff
         margin: 64px auto
         padding: 64px 32px
+        @media screen and ( max-width: 320px )
+            width: 288px
+            height: 472px
+            padding: 64px 16px
+            margin-bottom: 96px 
         &__title
             color: #575a61
             font-family: Aleo
@@ -308,6 +458,9 @@
             background-color: #f0f1f3
             margin-bottom: 32px
             margin-left: 140px
+            @media screen and ( max-width: 320px )
+                width: 258px
+                margin-left: 0
         &__paragraph
             color: #2f3a5b
             font-family: Lato
@@ -334,6 +487,10 @@
             justify-content: space-between
             align-items: center
             margin-bottom: 16px
+            @media screen and ( max-width: 320px )
+                flex-direction: column
+                align-items: start
+                justify-content: flex-start
             &__title
                 color: #9169db
                 font-family: Aleo
@@ -341,9 +498,17 @@
                 font-weight: 700
                 font-style: normal
                 letter-spacing: 0.72px
+                @media screen and ( max-width: 320px )
+                    margin-left: 32px
+                    margin-bottom: 19px
             &-flags
                 display: flex
                 align-items: center
+                @media screen and ( max-width: 320px  )
+                    margin-left: 32px
+                    margin-bottom: 47px
+                    flex-wrap: wrap
+                    width: 255px
                 &__flag
                     color: #2f3a5b
                     font-family: Lato
@@ -365,13 +530,24 @@
                 &-flag
                     &__audiotel
                         margin-right: 39px
+                        order: 1
+                        @media screen and ( max-width: 320px )
+                            margin-right: 57px
                         &::before
                             background-color: #81e7c2
                     &__CB
                         margin-right: 39px
+                        @media screen and ( max-width: 320px )
+                            margin-right: 130px
+                            order: 0
+                            margin-bottom: 14px
+
                         &::before
                             background-color: #dadcde
                     &__indisponible
+                        order: 2
+                        @media screen and ( max-width: 320px )
+                            margin-right: 0
                         &::before
                             background-color: #f57183
         &-time
@@ -384,16 +560,41 @@
             border: 1px solid #f0f1f3
             background-color: #ffffff
             margin-bottom: 16px
+            position: sticky
+            top: 0
+            left: 0
+            padding-left: 16px
+            @media screen and ( max-width: 1024px)
+                width: 832px
+            @media screen and ( max-width:  768px)
+                position: sticky
+                top: 0
+                left: 0
+                padding: 0
             &__description
                 color: #8c8ea1
                 font-family: Lato
-                font-size: 15px
+                font-size: 13px
                 font-weight: 700
                 font-style: normal
                 letter-spacing: 0.23px
                 display: flex
                 align-items: center
                 margin-right: 4px
+                position: relative
+                @media screen and ( max-width: 1024px)
+                    font-size: 11px
+                    letter-spacing: 0.23px
+                    &::after
+                        margin-right: 0
+                @media screen and ( max-width: 768px  )
+                    position: sticky
+                    left: 0
+                    padding-left: 16px
+                    width: 112px
+                    height: 46px
+                    background-color: #ffffff
+                    letter-spacing: 0.26px
                 &:after
                     content: ''
                     margin-left: 60px
@@ -401,10 +602,20 @@
                     width: 0
                     height: 32px
                     border: 1px solid #f0f1f3
+                    margin-right: 5px
+                    @media screen and ( max-width: 1024px)
+                        margin-left: 24px
+                        position: absolute
+                        right: 7px
+                    @media screen and ( max-width: 768px )
+                        margin-left: 0px
+                        
             &-timeline
                 display: flex
                 align-items: center
                 justify-content: space-between
+                @media screen and ( max-width: 768px )
+                    margin-left: 15px                    
                 &__item
                     color: #8c8ea1
                     font-family: Lato
@@ -415,64 +626,103 @@
                     line-height: normal
                     display: flex
                     align-items: center
+                    @media screen and ( max-width: 1024px)
+                        font-size: 11px
+                        letter-spacing: 0.26px
                     &::after
                         content: ''
                         width: 4px
                         height: 5px
                         background: url('/img/planning/Main/arrowRight.png')
                         display: inline-block
-                        margin: 0 6px
+                        margin: 0 5.9px
+                        @media screen and ( max-width: 1024px  )
+                            margin: 0 3px
+                            background: url('/img/planning/Main/arrowRightMD.png')
                     &:last-child
                         &::after
                             display: none
         &-shedule
-            display: flex
-            align-items: center
-            padding-left: 16px
-            width: 100%
-            height: 48px
-            border-radius: 4px
-            border: 1px solid #f0f1f3
-            background-color: #ffffff
-            margin-bottom: 16px
-            &__name
-                color: #252729
-                font-family: Lato
-                font-size: 15px
-                font-weight: 600
-                font-style: normal
-                letter-spacing: 0.28px
-                line-height: 19px
                 display: flex
                 align-items: center
-                &:after
-                    content: ''
-                    margin-left: 78px
-                    margin-right: 5px
-                    display: block
-                    width: 1px
-                    height: 32px
-                    background-color: #f0f1f3
-            &-timeline
-                display: flex
-                align-items: center
-                &__hour
+                padding-left: 0
+                width: 100%
+                height: 48px
+                border-radius: 4px
+                border: 1px solid #f0f1f3
+                margin-bottom: 16px
+                @media screen and ( max-width: 1024px  )
+                    width: 832px
+                    background-color: #fff
+                @media screen and ( max-width: 768px )
+                    padding-left: 0
+                
+                &.teresaVoyanceMain-planning-shedule
+                    color: #9169db
+                    background-color: #fff
+                    box-shadow: none
+                    &:hover
+                        background-color: #FBFBFC
+                        border-color: #9169db
+                        & .teresaVoyanceMain-planning-shedule__name
+                            color: #9169db
+                            background-color: #FBFBFC
+                            box-shadow: none
+                &__name
+                    color: #252729
+                    font-family: Lato
+                    font-size: 15px
+                    font-weight: 600
+                    font-style: normal
+                    letter-spacing: 0.28px
+                    line-height: 19px
                     display: flex
                     align-items: center
+                    @media screen and ( max-width: 1024px )
+                        font-size: 13px
+                        margin-right: 31px
+                        padding-left: 16px
+                        &:after
+                            display: none
+                    @media screen and ( max-width: 768px  )
+                        position: sticky
+                        left: 0
+                        width: 130px
+                        height: 44px
+                        background-color: #ffffff
+                        z-index: 1000
+                        box-shadow: 3px 0px 2px #EEEEEE
+                        margin-right: 27px 
                     &:after
                         content: ''
-                        margin: 0 4px
+                        margin-left: 65px
+                        margin-right: 5px
                         display: block
                         width: 1px
                         height: 32px
                         background-color: #f0f1f3
-                    &:last-child
-                        &::after
-                            display: none
-                &__quoter
-                    margin-right: 2px
-                    &:last-child
-                        margin-right: 0
+                &-timeline
+                    display: flex
+                    align-items: center
+                    &__hour
+                        display: flex
+                        align-items: center
+                        &:after
+                            content: ''
+                            margin: 0 4px
+                            display: block
+                            width: 1px
+                            height: 32px
+                            background-color: #f0f1f3
+                        &:last-child
+                            &::after
+                                display: none
+                    &__quoter
+                        margin-right: 2px
+                        @media screen and ( max-width: 1024px )
+                            margin-right: 1.6px
+                        &:last-child
+                            margin-right: 0
     &-form
         width: 928px
         height: 458px
@@ -484,6 +734,17 @@
         padding: 64px 96px 76px 96px
         margin: 100px auto 96px auto
         position: relative
+        @media screen and ( max-width: 1024px )
+            width: 832px
+            height: 474px
+            padding: 64px 72px 76px 72px
+        @media screen and ( max-width: 768px )
+            width: 736px
+            padding: 64px
+        @media screen and ( max-width: 320px )
+            width: 288px
+            height: 536px
+            padding: 32px 16px
         &::after
             content: ' '
             position: absolute
@@ -492,7 +753,13 @@
             top: -33px
             right: 70px
             z-index: -9999999
-            background-image: url('/img/Voyance/formAfter.png')
+            background-image: url('/img/Voyance/formAfterXL.png')
+            @media screen and ( max-width: 768px )
+                background-image: url('/img/Voyance/formAfterSM.png')
+                width: 720px
+                height: 497px
+                top: -14px
+                right: -11px
         &::before
             content: ' '
             position: absolute
@@ -501,7 +768,13 @@
             top: -20px
             right: 298px
             z-index: -9999999
-            background-image: url('/img/Voyance/formBefore.png')
+            background-image: url('/img/Voyance/formBeforeXL.png')
+            @media screen and ( max-width: 768px )
+                background-image: url('/img/Voyance/formBeforeSM.png')
+                width: 52px
+                height: 45px
+                top: -3px
+                right: 200px
         &-rating
             display: flex
             align-items: center
@@ -514,19 +787,22 @@
                 letter-spacing: 0.72px
                 line-height: normal
                 margin-right: 6px
+            &-stars
+                display: flex
+                &__star
+                    margin-left: 0px
+                    margin-right: 5.6px
+                    width: 18px
+                    height: 18px
+                    background: url('/img/teresaVoyanceMain/Star18px.png')                  
+                    
         &-row
             display: flex
             justify-content: space-between
             align-items: center
-        &-suptitle
-            color: #9169db
-            font-family: Lato
-            font-size: 10px
-            font-weight: 700
-            font-style: normal
-            letter-spacing: 0.96px
-            margin-bottom: 5px
-            text-transform: uppercase
+            @media screen and ( max-width: 320px )
+                flex-direction: column
+                align-items: start
         &-title
             color: #2f3a5b
             font-family: Aleo
@@ -535,6 +811,10 @@
             font-style: normal
             letter-spacing: 1.22px
             margin-bottom: 14px
+            @media screen and ( max-width:  1024px)
+                margin-bottom: 2px
+            @media screen and ( max-width: 320px )
+                font-size: 24px
         &-description
             width: 597px
             color: #252729
@@ -545,9 +825,23 @@
             letter-spacing: 0.28px
             line-height: 22px
             margin-bottom: 16px
+            @media screen and ( max-width:  1024px)
+                margin-bottom: 8px
+            @media screen and ( max-width: 768px )
+                margin-bottom: 16px
+            @media screen and ( max-width: 320px )
+                font-size: 15px
+                width: 256px
+
         &-inputs
             display: flex
             justify-content: space-between
+            width: 100%
+            @media screen and ( max-width: 768px )
+                width: 608px
+            @media screen and ( max-width: 320px )
+                flex-direction: column
+                width: 256px
             &__input
                 width: 352px
                 height: 48px
@@ -558,6 +852,13 @@
                 padding-right: 0
                 margin-bottom: 16px
                 outline: none
+                @media screen and ( max-width:  1024px)
+                    width: 328px
+                @media screen and ( max-width: 768px )
+                    width: 288px
+                @media screen and ( max-width: 320px )
+                    width: 256px
+            
                 &:hover
                     &.teresaVoyanceMain-form-inputs__input
                         border-color: #9169db
@@ -584,6 +885,16 @@
             padding: 16px
             resize: none
             margin-bottom: 16px
+            @media screen and ( max-width: 1024px )
+                width: 688px
+                height: 128px
+                margin-bottom: 32px
+            @media screen and ( max-width: 768px  )
+                width: 608px
+                height: 128px
+            @media screen and ( max-width: 320px )
+                width: 256px
+                
             &:hover
                 &.teresaVoyanceMain-form-textarea
                     border-color: #9169db
@@ -612,6 +923,9 @@
             font-style: normal
             letter-spacing: 0.66px
             margin-left: auto
+            @media screen and ( max-width: 320px  )
+                width: 100%
+                margin-top: 32px
             &:hover
                 &.teresaVoyanceMain-form-apply
                     background-color: #9169db
@@ -626,6 +940,29 @@
         display: flex
         position: relative
         padding: 32px
+        @media screen and ( max-width: 1024px )
+            width: 688px
+        @media screen and ( max-width: 768px )
+            width: 736px
+        @media screen and ( max-width: 320px )
+            width: 288px
+            height: 280px
+            padding: 32px 16px 28px
+            position: relative
+        &-img
+            width: 112px
+            height: 112px
+            background-image: url("/img/teresaVoyanceMain/avatar1.jpg")
+            @media screen and ( max-width: 320px  )
+                width: 56px
+                height: 56px
+                background-image: url("/img/teresaVoyanceMain/avatar1XS.png") 
+            &__woman
+                background-image: url("/img/teresaVoyanceMain/avatar2.jpg")
+                @media screen and ( max-width: 320px  )
+                    background-image: url("/img/teresaVoyanceMain/avatar2XS.png") 
+
+
         &::after
             content: 'fév. 17.02.2020'
             position: absolute
@@ -641,10 +978,16 @@
             right: 32px
         &-text
             margin-left: 16px
+            @media screen and ( max-width: 320px )
+                width: 165px
+                
             &__row1
                 display: flex
                 justify-content: space-between
                 margin-bottom: 16px
+                @media screen and ( max-width: 320px )
+                    height: 56px
+                    align-items: center
             &__title
                 color: #2f3a5b
                 font-family: Aleo
@@ -677,9 +1020,23 @@
                 font-style: normal
                 letter-spacing: 0.28px
                 line-height: 20px
+                @media screen and ( min-width: 1024px  )
+                    width: 496px
+                @media screen and ( min-width: 768px  )
+                    width: 544px
+                @media screen and ( max-width: 320px )
+                    position: absolute
+                    left: 16px
+                    top: 100px
     &-page-select
         margin: 64px auto
         width: 736px
+        @media screen and ( max-width: 1024px  )
+            width: 688px
+        @media screen and ( max-width: 768px  )
+            width: 736px
+        @media screen and ( max-width: 320px )
+            width: 288px
 .teresaVoyance
     &Body
         position: relative
@@ -723,6 +1080,17 @@
         &-container
             &::after
                 display: none
+
+.teresaVoyance-pageSelect
+    justify-content: flex-end
+    &-container
+        width: 736px
+        @media screen and ( max-width: 1024px )
+            width: 688px
+        @media screen and ( max-width: 768px )
+            width: 736px
+
+        
 @media screen and ( min-width: 1441px)
     .teresaVoyanceBody
         &::after
@@ -734,8 +1102,35 @@
             background-image: url(/img/Voyance/HolderXXL.png)
             right: 1px
             width: 1920px
+@media screen and ( max-width: 768px )
+    .teresaVoyanceMain-planning-shedule-overflowWrapper 
+        overflow-x: scroll
+        margin-bottom: 40px
+        &::-webkit-scrollbar
+            width: 1px
+            height: 2px
+            background-color: #E6DEF5
+            &-thumb
+                background: #9169db
+                border-radius: 1px
+@media screen and ( max-width: 320px )
+    .teresaVoyance-page-select-previousPage
+        display: flex
+        margin: 0
+        margin-right: 16px
+        // @media screen and ( max-width: 320px )
+        //     display: block
         
-
+.VoyanceMain-card-foto
+    background: url('/img/Voyance/Voyance.png')
+    transform: scale(0.85)
+    @media screen and ( max-width: 1024px )
+        background: url('/img/Voyance/Voyance.png')
+    @media screen and ( max-width: 768px )
+        background: url('/img/Voyance/Voyance.png')
+        transform: scale(0.85)
+    @media screen and ( max-width: 320px  )
+        background: url('/img/Voyance/Voyance.png')
 
     
 

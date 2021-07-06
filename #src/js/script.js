@@ -1,3 +1,17 @@
+$('.hero-mobile-filter-search').on('click', function(d){
+    d.preventDefault;
+    $(this).toggleClass('hero-mobile-filter-search_active')
+    $('.hero-mobile-filter-settings').toggleClass('hero-mobile-filter-settings_unactive')
+    &('hero-mobile-filter').toggleClass('hero-mobile-filter_unactive')
+})
+
+$('.hero-mobile-filter-settings').on('click', function(e){
+    e.preventDefault;
+    $(this).toggleClass('hero-mobile-filter-search_active')
+    $('.hero-mobile-filter-settings').toggleClass('hero-mobile-filter-settings_unactive')
+    &('hero-mobile-filter').toggleClass('hero-mobile-filter_unactive')
+})
+
 function testWebP(callback) {
 
     var webP = new Image();
@@ -15,3 +29,5 @@ testWebP(function (support) {
         document.querySelector('body').classList.add('no-webp');
     }
 });
+
+

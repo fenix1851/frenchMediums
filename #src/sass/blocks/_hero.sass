@@ -240,7 +240,7 @@
         &-down-element
             display: flex
             justify-content: start
-            width: 731px
+            width: 735px
             @media screen and ( max-width:  1024px)
                 width: 530px
             @media screen and ( max-width:  768px)
@@ -258,6 +258,91 @@
             background-color: #ffffff
             position: relative
             margin-bottom: 32px
+            position: relative
+            list-style: none
+            &:hover
+                &::after
+                    transform: rotate(180deg)
+            &::before
+                content: ''
+                position: absolute
+                bottom: -30px
+                height: 30px
+                width: 100%
+            &-InAudiotel
+                &:hover
+                    & .hero-filters-dropdown-option-wrapper
+                        display: flex
+            &-Skills
+                &:hover
+                    & .hero-filters-dropdown-option-wrapper-skills
+                        display: flex
+            &>li
+                margin-top: 15px
+                height: 15px
+                &:hover
+                    cursor: pointer
+            &-option
+                margin-bottom: 5px
+                height: 48px
+                padding: 5px 0
+                display: flex
+                align-items: center
+                padding-left: 0
+                &:hover
+                    background-color: #F9F7FC
+                    border-radius: 4px
+                    cursor: pointer
+                    .hero-filters-dropdown-option-PurpleRadio
+                        background-image: url(/img/hero/icon-radio-hover.png)
+                        
+                        
+                &-input
+                    display: none
+                    &:checked
+                        & > label
+                            border: 1px solid #9169db
+                            background-color: #9169db
+                            color: #ffffff
+                    &:checked
+                        & .hero-filters-dropdown-option
+                            background-color: red
+                            background-image: url(/img/hero/icon-radio-check.png)
+                &-PurpleRadio
+                    width: 20px
+                    height: 20px
+                    margin-left: 0
+                    background-image: url(/img/hero/icon-radio.png)
+                    background-repeat: no-repeat
+                    &:checked
+                        background-image: url(/img/hero/icon-radio-check.png)
+
+                &-wrapper
+                    position: absolute
+                    top: 66px
+                    left: 0px
+                    border-radius: 4px
+                    width: 100%
+                    flex-direction: column
+                    justify-content: space-between
+                    height: 235px
+                    border: 1px solid #9169db
+                    padding: 5px
+                    background-color: #fff
+                    z-index: 1000
+                    display: none
+                    & label
+                        font-family: Lato
+                        font-size: 15px
+                        line-height: 19px
+                        letter-spacing: 0.29px
+                        color: #8c8ea1
+                        margin-left: 20px
+                        &:hover
+                            color: #9169db
+                        &:checked
+                            color: #9169db
+
             @media screen and ( max-width:  1024px)
                 width: 256px
             @media screen and ( max-width:  768px)
@@ -419,7 +504,12 @@
                 letter-spacing: 0.28px
                 line-height: 19px
                 margin-left: 64px
+                &-wrapper
+                    display: flex
+                    & > span
 
+                &_unactive
+                    display: none
             &-search
                 width: 48px
                 height: 48px
@@ -435,11 +525,13 @@
                 &:hover
                     &.hero-mobile-filter-search 
                         border-color: #9169db
-                &:focus
-                    width: 320px
-                    &.hero-mobile-filter-settings
-                        display: none
+                &_active                    
+                    width: 83%
+                    margin-left: 48px
+  
 
+.webp
+    background-repeat: no-repeat
 
 
 .fw-700
