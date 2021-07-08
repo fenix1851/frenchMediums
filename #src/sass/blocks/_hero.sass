@@ -260,10 +260,13 @@
             margin-bottom: 32px
             position: relative
             list-style: none
+            &-wrapper
+                position: relative
             @media screen and ( max-width: 320px )
                 width: 264px
                 margin-bottom: 16px
-            &:hover
+            &_active
+                border-color: #9169db
                 &::after
                     transform: rotate(180deg)
             &::before
@@ -360,6 +363,14 @@
                     display: none
                     &-sortBy
                         height: 176px
+                        &-active
+                            display: flex
+                    &-inAudiotel
+                        &-active
+                            display: flex
+                    &-skills
+                        &-active
+                            display: flex
                     & label
                         font-family: Lato
                         font-size: 15px
@@ -401,7 +412,7 @@
             padding-left: 52px
             width: 352px
             height: 48px
-            caret-color: transparent
+            caret-color: black
             outline-color: none
             border-radius: 1px
             border: 1px solid #f0f1f3
@@ -425,8 +436,9 @@
                 letter-spacing: 0.28px
                 line-height: 19px
             &:focus
-                &.hero-filters-search
-                    outline: none
+                outline: none
+                &::-webkit-input-placeholder
+                    color: transparent
         &-countOnPage
             display: flex
             align-items: center

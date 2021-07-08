@@ -201,7 +201,7 @@
         background: url('/img/hero/searchIcon.svg')
         background-repeat: no-repeat
         background-position: 12px 12px
-        caret-color: transparent      
+        caret-color: black      
 
         &::placeholder
             color: #2f3a5b
@@ -213,8 +213,10 @@
             line-height: 19px
             padding: auto
         &:focus
-            &.planningMain-search
-                outline: none
+            outline: none
+            border-color: #9169db
+            &::-webkit-input-placeholder
+                color: transparent
     &-time
         display: flex
         align-items: center
@@ -258,6 +260,7 @@
             &:after
                 content: ''
                 margin-left: 64px
+                margin-right: 2px
                 display: block
                 width: 0
                 height: 32px
@@ -294,7 +297,7 @@
                     height: 5px
                     background: url('/img/planning/Main/arrowRight.png')
                     display: inline-block
-                    margin: 0 5.9px
+                    margin: 0 6.75px
                     @media screen and ( max-width: 1024px  )
                         margin: 0 3px
                         background: url('/img/planning/Main/arrowRightMD.png')
@@ -353,7 +356,7 @@
             &:after
                 content: ''
                 margin-left: 85px
-                margin-right: 5px
+                margin-right: 4.8px
                 display: block
                 width: 1px
                 height: 32px
@@ -368,7 +371,7 @@
                 align-items: center
                 &:after
                     content: ''
-                    margin: 0 4px
+                    margin: 0 4.8px
                     @media screen and ( max-width: 1024px  )
                         margin: 0 3.37px
                     display: block

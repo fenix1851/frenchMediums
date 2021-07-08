@@ -154,6 +154,22 @@
                 font-style: normal
                 letter-spacing: 0.28px
                 line-height: 19px
+            &::-webkit-input-placeholder
+                color: #8c8ea1
+                font-family: Lato
+                font-size: 15px
+                font-weight: 400
+                font-style: normal
+                letter-spacing: 0.28px
+                line-height: 19px
+            &::-moz-placeholder
+                color: #8c8ea1
+                font-family: Lato
+                font-size: 15px
+                font-weight: 400
+                font-style: normal
+                letter-spacing: 0.28px
+                line-height: 19px
         &-col
             margin-right: 32px
             &:last-child
@@ -174,21 +190,36 @@
             width: 608px
         @media screen and ( max-width:  320px )
             width: 256px
-        &:placeholder
+        &::placeholder
             color: #8c8ea1
             font-family: Lato
             font-size: 15px
             font-weight: 400
             font-style: normal
             letter-spacing: 0.28px
+            line-height: 19px
+        &::-webkit-input-placeholder
+            color: #8c8ea1
+            font-family: Lato
+            font-size: 15px
+            font-weight: 400
+            font-style: normal
+            letter-spacing: 0.28px
+            line-height: 19px
+        &::-moz-placeholder
+            color: #8c8ea1
+            font-family: Lato
+            font-size: 15px
+            font-weight: 400
+            font-style: normal
+            letter-spacing: 0.28px
+            line-height: 19px
         &:hover
-            &.recrument-form-textarea
-                border-color: #9169db
-                outline: none
+            border-color: #9169db
+            outline: none
         &:focus
-            &.recrument-form-textarea
-                border-color: #9169db
-                outline: none
+            border-color: #9169db
+            outline: none
     &-apply
         width: 219px
         height: 48px

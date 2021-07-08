@@ -56,6 +56,9 @@
             padding-top: 11x
             padding: 11px 19px 0 17px
             width: 100%
+            position: relative
+            
+
             &-title
                 color: #575a61
                 font-family: Lato
@@ -64,13 +67,47 @@
                 font-style: normal
                 letter-spacing: 0.36px
                 justify-self: center
-            &-playIcon 
+                display: block
+                &_hidden
+                    display: none            
+            &-playButton 
                 width: 16px
                 height: 18px
+                border-style: none
+                background-color: transparent
+                background-image: url('/img/main/playerIconPurple.png')
+                position: relative
+
         &-teresa
             text-decoration: none
-            &-header-title
-                color: #fff
+            &-header
+                position: relative
+                &-player
+                    &-playBar
+                        width: 112px
+                        height: 8px
+                        background-color: #fff
+                        display: none
+                        position: relative
+                        &_active
+                            display: block
+                        &-line
+                            position: absolute
+                            border-radius: 1px
+                            background-color: #9169db
+                            width: 1%
+                            top: 2.25px
+                            left: 2px
+                            height: 4px
+                &-playButton
+                    background-image: url('/img/main/playButton.png')
+                    &_active
+                        background-image: url('/img/main/playButtonActive.png')
+                &-title
+                    color: #fff
+                    text-decoration: none
+                    &_hidden
+                        opacity: 0
         &-logo
             z-index: 1
             background-color: #fff

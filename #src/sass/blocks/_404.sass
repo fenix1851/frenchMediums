@@ -2,9 +2,27 @@
     display: flex
     flex-direction: column
     align-items: center
-    margin: 173px auto 128px auto
+    margin: 135px auto 128px auto
     &-image
+        width: 928px
+        height: 345px
         margin-bottom: 34px
+        background-image: url('/img/others/404LG.png')
+        @media screen and ( max-width: 1024px )
+            width: 544px
+            height: 202px
+            background-image: url('/img/others/404MD.png')
+        @media screen and ( max-width: 1140px )
+            width: 480px
+            height: 178px
+            background-image: url('/img/others/404SM.png')
+        @media screen and ( max-width: 480px )
+            width: 256px
+            height: 95px
+            background-image: url('/img/others/404XS.png')
+
+    &-Body
+        background-color: #fbfbfc
     &__title
         color: #9169db
         font-family: Aleo
@@ -13,6 +31,8 @@
         font-style: normal
         letter-spacing: -1.15px
         margin-bottom: 16px
+        @media screen and ( max-width: 400px )
+            font-size: 24px
     &__subtitle
         color: #8c8ea1
         font-family: Lato
@@ -22,13 +42,16 @@
         letter-spacing: 0.28px
         line-height: 19px
         margin-bottom: 32px
+        @media screen and ( max-width: 400px )
+            font-size: 15px
+            text-align: center
     &__link
         width: 192px
         height: 48px
         box-shadow: 0 8px 12px rgba(113, 74, 189, 0.32)
         border-radius: 4px
         background-color: #9169db
-        padding: 15px 32px
+        padding: 15px 30px
         color: #ffffff
         font-family: Lato
         font-size: 15px

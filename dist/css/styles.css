@@ -484,7 +484,15 @@ body {
   list-style: none;
 }
 
-.hero-filters-dropdown:hover::after {
+.hero-filters-dropdown-wrapper {
+  position: relative;
+}
+
+.hero-filters-dropdown_active {
+  border-color: #9169db;
+}
+
+.hero-filters-dropdown_active::after {
   transform: rotate(180deg);
 }
 
@@ -612,6 +620,18 @@ body {
   height: 176px;
 }
 
+.hero-filters-dropdown-option-wrapper-sortBy-active {
+  display: flex;
+}
+
+.hero-filters-dropdown-option-wrapper-inAudiotel-active {
+  display: flex;
+}
+
+.hero-filters-dropdown-option-wrapper-skills-active {
+  display: flex;
+}
+
 .hero-filters-dropdown-option-wrapper label {
   font-family: Lato;
   font-size: 15px;
@@ -659,7 +679,7 @@ body {
   padding-left: 52px;
   width: 352px;
   height: 48px;
-  caret-color: transparent;
+  caret-color: black;
   outline-color: none;
   border-radius: 1px;
   border: 1px solid #f0f1f3;
@@ -703,8 +723,12 @@ body {
   line-height: 19px;
 }
 
-.hero-filters-search:focus.hero-filters-search {
+.hero-filters-search:focus {
   outline: none;
+}
+
+.hero-filters-search:focus::-webkit-input-placeholder {
+  color: transparent;
 }
 
 .hero-filters-countOnPage {
@@ -842,6 +866,7 @@ body {
   padding-top: 11x;
   padding: 11px 19px 0 17px;
   width: 100%;
+  position: relative;
 }
 
 .main-card-header-title {
@@ -852,19 +877,67 @@ body {
   font-style: normal;
   letter-spacing: 0.36px;
   justify-self: center;
+  display: block;
 }
 
-.main-card-header-playIcon {
+.main-card-header-title_hidden {
+  display: none;
+}
+
+.main-card-header-playButton {
   width: 16px;
   height: 18px;
+  border-style: none;
+  background-color: transparent;
+  background-image: url("/img/main/playerIconPurple.png");
+  position: relative;
 }
 
 .main-card-teresa {
   text-decoration: none;
 }
 
+.main-card-teresa-header {
+  position: relative;
+}
+
+.main-card-teresa-header-player-playBar {
+  width: 112px;
+  height: 8px;
+  background-color: #fff;
+  display: none;
+  position: relative;
+}
+
+.main-card-teresa-header-player-playBar_active {
+  display: block;
+}
+
+.main-card-teresa-header-player-playBar-line {
+  position: absolute;
+  border-radius: 1px;
+  background-color: #9169db;
+  width: 1%;
+  top: 2.25px;
+  left: 2px;
+  height: 4px;
+}
+
+.main-card-teresa-header-playButton {
+  background-image: url("/img/main/playButton.png");
+}
+
+.main-card-teresa-header-playButton_active {
+  background-image: url("/img/main/playButtonActive.png");
+}
+
 .main-card-teresa-header-title {
   color: #fff;
+  text-decoration: none;
+}
+
+.main-card-teresa-header-title_hidden {
+  opacity: 0;
 }
 
 .main-card-logo {
@@ -1014,10 +1087,7 @@ body {
 
 .page-select-Page:hover {
   cursor: pointer;
-}
-
-.page-select-Page:hover.page-select-radio__label {
-  background-color: #9169db;
+  border-color: #9169db;
 }
 
 .page-select-previousPage {
@@ -1189,6 +1259,23 @@ body {
   letter-spacing: 0.28px;
   line-height: 19px;
   text-decoration: none;
+  position: relative;
+}
+
+.footer-documents::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  opacity: 0;
+}
+
+.footer-documents:hover::after {
+  opacity: 1;
+  width: 100%;
 }
 
 .footer-text {
@@ -1199,6 +1286,7 @@ body {
   font-style: normal;
   letter-spacing: 0.36px;
   line-height: normal;
+  text-transform: uppercase;
 }
 
 .planningMain-section {
@@ -1387,7 +1475,7 @@ body {
   background: url("/img/hero/searchIcon.svg");
   background-repeat: no-repeat;
   background-position: 12px 12px;
-  caret-color: transparent;
+  caret-color: black;
 }
 
 .planningMain-search::-moz-placeholder {
@@ -1423,8 +1511,13 @@ body {
   padding: auto;
 }
 
-.planningMain-search:focus.planningMain-search {
+.planningMain-search:focus {
   outline: none;
+  border-color: #9169db;
+}
+
+.planningMain-search:focus::-webkit-input-placeholder {
+  color: transparent;
 }
 
 .planningMain-time {
@@ -1458,6 +1551,7 @@ body {
 .planningMain-time__description:after {
   content: "";
   margin-left: 64px;
+  margin-right: 2px;
   display: block;
   width: 0;
   height: 32px;
@@ -1488,7 +1582,7 @@ body {
   height: 5px;
   background: url("/img/planning/Main/arrowRight.png");
   display: inline-block;
-  margin: 0 5.9px;
+  margin: 0 6.75px;
 }
 
 .planningMain-time-timeline__item:last-child::after {
@@ -1534,7 +1628,7 @@ body {
 .planningMain-shedule__name:after {
   content: "";
   margin-left: 85px;
-  margin-right: 5px;
+  margin-right: 4.8px;
   display: block;
   width: 1px;
   height: 32px;
@@ -1553,7 +1647,7 @@ body {
 
 .planningMain-shedule-timeline__hour:after {
   content: "";
-  margin: 0 4px;
+  margin: 0 4.8px;
   display: block;
   width: 1px;
   height: 32px;
@@ -1699,6 +1793,26 @@ body {
   line-height: 19px;
 }
 
+.recrument-form-inputs__input::-webkit-input-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.recrument-form-inputs__input::-moz-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
 .recrument-form-inputs-col {
   margin-right: 32px;
 }
@@ -1719,21 +1833,62 @@ body {
   margin-bottom: 32px;
 }
 
-.recrument-form-textarea:placeholder {
+.recrument-form-textarea::-moz-placeholder {
   color: #8c8ea1;
   font-family: Lato;
   font-size: 15px;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.28px;
+  line-height: 19px;
 }
 
-.recrument-form-textarea:hover.recrument-form-textarea {
+.recrument-form-textarea:-ms-input-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.recrument-form-textarea::placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.recrument-form-textarea::-webkit-input-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.recrument-form-textarea::-moz-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.recrument-form-textarea:hover {
   border-color: #9169db;
   outline: none;
 }
 
-.recrument-form-textarea:focus.recrument-form-textarea {
+.recrument-form-textarea:focus {
   border-color: #9169db;
   outline: none;
 }
@@ -1878,8 +2033,8 @@ body {
 
 .aboutUs-teresa-photo::after {
   position: absolute;
-  top: -15px;
-  left: -127px;
+  top: -37px;
+  left: -96px;
   z-index: -9999;
   display: block;
   content: "";
@@ -2141,7 +2296,7 @@ body {
   width: 16px;
   height: 16px;
   display: flex;
-  background: url("/img/teresaVoyanceMain/Star.svg");
+  background: url("/img/teresaVoyanceMain/starXS.svg");
 }
 
 .teresaVoyanceMain-card-teresa-text-stars__starUnActive {
@@ -2203,6 +2358,13 @@ body {
   border-style: none;
   background-color: transparent;
   margin-right: 16px;
+  width: 16px;
+  height: 18px;
+  background-image: url("/img/main/playerIconPurple.png");
+}
+
+.teresaVoyanceMain-card-player-play_active {
+  background-image: url("/img/main/playerIconPurpleActive.png");
 }
 
 .teresaVoyanceMain-card-player-audioTrack {
@@ -2218,6 +2380,7 @@ body {
   height: 4px;
   border-radius: 1px;
   background-color: #9169db;
+  -webkit-transition: none;
 }
 
 .teresaVoyanceMain-card-player-wrapper {
@@ -2524,7 +2687,7 @@ body {
   height: 5px;
   background: url("/img/planning/Main/arrowRight.png");
   display: inline-block;
-  margin: 0 5.9px;
+  margin: 0 7.41px;
 }
 
 .teresaVoyanceMain-planning-time-timeline__item:last-child::after {
@@ -2534,7 +2697,7 @@ body {
 .teresaVoyanceMain-planning-shedule {
   display: flex;
   align-items: center;
-  padding-left: 0;
+  padding-left: 16px;
   width: 100%;
   height: 48px;
   border-radius: 4px;
@@ -2573,7 +2736,7 @@ body {
 
 .teresaVoyanceMain-planning-shedule__name:after {
   content: "";
-  margin-left: 65px;
+  margin-left: 51px;
   margin-right: 5px;
   display: block;
   width: 1px;
@@ -2593,7 +2756,7 @@ body {
 
 .teresaVoyanceMain-planning-shedule-timeline__hour:after {
   content: "";
-  margin: 0 4px;
+  margin: 0 5.5px;
   display: block;
   width: 1px;
   height: 32px;
@@ -2731,7 +2894,47 @@ body {
   outline: none;
 }
 
-.teresaVoyanceMain-form-inputs__input:placeholder {
+.teresaVoyanceMain-form-inputs__input::-moz-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-inputs__input:-ms-input-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-inputs__input::placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-inputs__input::-webkit-input-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-inputs__input::-moz-placeholder {
   color: #8c8ea1;
   font-family: Lato;
   font-size: 15px;
@@ -2751,6 +2954,56 @@ body {
   padding: 16px;
   resize: none;
   margin-bottom: 16px;
+}
+
+.teresaVoyanceMain-form-textarea::-moz-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-textarea:-ms-input-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-textarea::placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-textarea::-webkit-input-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
+}
+
+.teresaVoyanceMain-form-textarea::-moz-placeholder {
+  color: #8c8ea1;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.28px;
+  line-height: 19px;
 }
 
 .teresaVoyanceMain-form-textarea:hover.teresaVoyanceMain-form-textarea {
@@ -2826,11 +3079,12 @@ body {
   font-style: normal;
   letter-spacing: 0.36px;
   bottom: 32px;
-  right: 32px;
+  right: 7px;
 }
 
 .teresaVoyanceMain-commentCard-text {
   margin-left: 16px;
+  width: 100%;
 }
 
 .teresaVoyanceMain-commentCard-text__row1 {
@@ -2866,7 +3120,7 @@ body {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background-image: url(/img/teresaVoyanceMain/Star.png);
+  background-image: url(/img/teresaVoyanceMain/starXS.png);
 }
 
 .teresaVoyanceMain-commentCard-text__paragraph {
@@ -2957,11 +3211,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 173px auto 128px auto;
+  margin: 135px auto 128px auto;
 }
 
 .NotFound-image {
+  width: 928px;
+  height: 345px;
   margin-bottom: 34px;
+  background-image: url("/img/others/404LG.png");
+}
+
+.NotFound-Body {
+  background-color: #fbfbfc;
 }
 
 .NotFound__title {
@@ -2991,7 +3252,7 @@ body {
   box-shadow: 0 8px 12px rgba(113, 74, 189, 0.32);
   border-radius: 4px;
   background-color: #9169db;
-  padding: 15px 32px;
+  padding: 15px 30px;
   color: #ffffff;
   font-family: Lato;
   font-size: 15px;
@@ -3048,11 +3309,21 @@ body {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .container {
-    width: 826px;
+@media screen and (max-width: 1140px) {
+  .footer-tel__tel {
+    width: 354px;
+    height: 40px;
+    background: url("/img/teresaVoyanceMain/telSM.jpg");
   }
 
+  .NotFound-image {
+    width: 480px;
+    height: 178px;
+    background-image: url("/img/others/404SM.png");
+  }
+}
+
+@media screen and (max-width: 1024px) {
   .indexbody::after {
     background: url("/img/hero/bodyAfterMD.svg");
     width: 1024px;
@@ -3297,8 +3568,33 @@ body {
     height: 248px;
   }
 
+  .teresaVoyanceMain-card {
+    width: 736px;
+    height: 344px;
+  }
+
   .teresaVoyanceMain-card-col1 {
     padding-right: 16px;
+  }
+
+  .teresaVoyanceMain-card-col1 {
+    border-style: none;
+    position: relative;
+  }
+
+  .teresaVoyanceMain-card-col1::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 216px;
+    width: 2px;
+    background-color: #F8F8F9;
+  }
+
+  .teresaVoyanceMain-card-notes {
+    flex-wrap: wrap;
+    width: 224px;
   }
 
   .teresaVoyanceMain-card-notes-note {
@@ -3306,6 +3602,16 @@ body {
     height: 96px;
     padding: 24px 20px 27px 8px;
     margin-right: 11px;
+  }
+
+  .teresaVoyanceMain-card-notes-note {
+    width: 96px;
+    height: 88px;
+    margin-right: 16px;
+  }
+
+  .teresaVoyanceMain-card-notes-note:nth-child(1) {
+    margin-bottom: 24px;
   }
 
   .teresaVoyanceMain-card-notes-note__title {
@@ -3316,8 +3622,40 @@ body {
     font-size: 11px;
   }
 
+  .teresaVoyanceMain-card-skills {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    justify-content: flex-start;
+    border-top: 2px solid #F8F8F9;
+  }
+
+  .teresaVoyanceMain-card-skills-item {
+    flex-direction: row;
+    margin-right: 23px;
+    width: 160px;
+  }
+
+  .teresaVoyanceMain-card-skills-item:first-child {
+    margin-left: 0px;
+    padding-left: 16px;
+  }
+
+  .teresaVoyanceMain-card-skills-item-text {
+    color: #2f3a5b;
+    font-family: Lato;
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 17px;
+  }
+
   .teresaVoyanceMain-card-row1 {
     width: 360px;
+  }
+
+  .teresaVoyanceMain-card-row1 {
+    width: 454px;
+    margin-right: 0;
   }
 
   .teresaVoyanceMain-card-teresa-photo {
@@ -3327,15 +3665,30 @@ body {
   }
 
   .teresaVoyanceMain-card-player {
-    width: 320px;
+    width: 420px;
+  }
+
+  .teresaVoyanceMain-card-player {
+    width: 390px;
   }
 
   .teresaVoyanceMain-card-player-wrapper {
     align-items: flex-start;
   }
 
+  .teresaVoyanceMain-telephonecard {
+    width: 608px;
+    justify-content: space-between;
+  }
+
   .teresaVoyanceMain-planning-time {
     width: 832px;
+  }
+
+  .teresaVoyanceMain-planning-time {
+    padding: 0;
+    position: fixed;
+    top: 0px;
   }
 
   .teresaVoyanceMain-planning-time__description {
@@ -3348,10 +3701,30 @@ body {
     margin-right: -33px;
   }
 
+  .teresaVoyanceMain-planning-time__description {
+    position: sticky;
+    position: -webkit-sticky;
+    left: 0;
+    padding-left: 16px;
+    width: 112px;
+    height: 46px;
+    background-color: #ffffff;
+    letter-spacing: 0.26px;
+  }
+
   .teresaVoyanceMain-planning-time__description:after {
     margin-left: 24px;
     position: absolute;
     right: 7px;
+  }
+
+  .teresaVoyanceMain-planning-time__description:after {
+    margin-left: 9px;
+    position: static;
+  }
+
+  .teresaVoyanceMain-planning-time-timeline {
+    margin-left: 15px;
   }
 
   .teresaVoyanceMain-planning-time-timeline__item {
@@ -3369,6 +3742,10 @@ body {
     background-color: #fff;
   }
 
+  .teresaVoyanceMain-planning-shedule {
+    padding-left: 0;
+  }
+
   .teresaVoyanceMain-planning-shedule__name {
     font-size: 13px;
     margin-right: 31px;
@@ -3377,6 +3754,17 @@ body {
 
   .teresaVoyanceMain-planning-shedule__name:after {
     display: none;
+  }
+
+  .teresaVoyanceMain-planning-shedule__name {
+    position: sticky;
+    left: 0;
+    width: 130px;
+    height: 44px;
+    background-color: #ffffff;
+    z-index: 1000;
+    box-shadow: 3px 0px 2px #EEEEEE;
+    margin-right: 27px;
   }
 
   .teresaVoyanceMain-planning-shedule-timeline__quoter {
@@ -3389,6 +3777,27 @@ body {
     padding: 64px 72px 76px 72px;
   }
 
+  .teresaVoyanceMain-form {
+    width: 736px;
+    padding: 64px;
+  }
+
+  .teresaVoyanceMain-form::after {
+    background-image: url("/img/Voyance/formAfterSM.png");
+    width: 720px;
+    height: 497px;
+    top: -14px;
+    right: -11px;
+  }
+
+  .teresaVoyanceMain-form::before {
+    background-image: url("/img/Voyance/formBeforeSM.png");
+    width: 52px;
+    height: 45px;
+    top: -3px;
+    right: 200px;
+  }
+
   .teresaVoyanceMain-form-title {
     margin-bottom: 2px;
   }
@@ -3397,8 +3806,20 @@ body {
     margin-bottom: 8px;
   }
 
+  .teresaVoyanceMain-form-description {
+    margin-bottom: 16px;
+  }
+
+  .teresaVoyanceMain-form-inputs {
+    width: 608px;
+  }
+
   .teresaVoyanceMain-form-inputs__input {
     width: 328px;
+  }
+
+  .teresaVoyanceMain-form-inputs__input {
+    width: 288px;
   }
 
   .teresaVoyanceMain-form-textarea {
@@ -3407,16 +3828,50 @@ body {
     margin-bottom: 32px;
   }
 
+  .teresaVoyanceMain-form-textarea {
+    width: 608px;
+    height: 128px;
+  }
+
   .teresaVoyanceMain-commentCard {
     width: 688px;
+  }
+
+  .teresaVoyanceMain-commentCard {
+    width: 736px;
   }
 
   .teresaVoyanceMain-page-select {
     width: 688px;
   }
 
+  .teresaVoyanceMain-page-select {
+    width: 736px;
+  }
+
   .teresaVoyance-pageSelect-container {
     width: 688px;
+  }
+
+  .teresaVoyance-pageSelect-container {
+    width: 736px;
+  }
+
+  .teresaVoyanceMain-planning-shedule-overflowWrapper {
+    overflow-x: scroll;
+    will-change: transform;
+    margin-bottom: 40px;
+  }
+
+  .teresaVoyanceMain-planning-shedule-overflowWrapper::-webkit-scrollbar {
+    width: 1px;
+    height: 2px;
+    background-color: #E6DEF5;
+  }
+
+  .teresaVoyanceMain-planning-shedule-overflowWrapper::-webkit-scrollbar-thumb {
+    background: #9169db;
+    border-radius: 1px;
   }
 
   .VoyanceMain-card-photo {
@@ -3424,17 +3879,29 @@ body {
     height: 96px;
     background-image: url("/img/Voyance/Voyance.png");
   }
+
+  .NotFound-image {
+    width: 544px;
+    height: 202px;
+    background-image: url("/img/others/404MD.png");
+  }
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    width: 730px;
+@media screen and (max-width: 1024px) and (max-width: 700px) {
+  .teresaVoyanceMain-card-notes-note:nth-child(1) {
+    margin-bottom: 16px;
   }
+}
 
-  .indexbody::after {
-    background: url("/img/hero/bodyAfterSM.png");
-    width: 768px;
-    height: 1158px;
+@media screen and (max-width: 900px) {
+  .container {
+    width: 826px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .header .header-container {
+    width: 100vw;
   }
 
   .header .header-container::after {
@@ -3445,6 +3912,20 @@ body {
 
   .header #dnOnSM {
     display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 730px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .indexbody::after {
+    background: url("/img/hero/bodyAfterSM.png");
+    width: 768px;
+    height: 1158px;
   }
 
   .hero-text-subtitile {
@@ -3504,12 +3985,6 @@ body {
   .main-card-statistics {
     width: 208px;
     padding: 16px 16px;
-  }
-
-  .footer-tel__tel {
-    width: 354px;
-    height: 40px;
-    background: url("/img/teresaVoyanceMain/telSM.jpg");
   }
 
   .planningMain-filters {
@@ -3669,203 +4144,422 @@ body {
     height: 144px;
     background-image: url(/img/aboutUs/signatureSM.png);
   }
+}
 
-  .teresaVoyanceMain-card {
-    width: 736px;
-    height: 344px;
-  }
-
-  .teresaVoyanceMain-card-col1 {
-    border-style: none;
-    position: relative;
-  }
-
-  .teresaVoyanceMain-card-col1::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 216px;
-    width: 2px;
-    background-color: #F8F8F9;
-  }
-
-  .teresaVoyanceMain-card-notes {
-    flex-wrap: wrap;
-    width: 224px;
-  }
-
-  .teresaVoyanceMain-card-notes-note {
-    width: 96px;
-    height: 88px;
-    margin-right: 16px;
-  }
-
-  .teresaVoyanceMain-card-notes-note:nth-child(1) {
-    margin-bottom: 24px;
-  }
-
-  .teresaVoyanceMain-card-skills {
-    position: absolute;
-    bottom: 32px;
-    left: 0;
-    justify-content: flex-start;
-    border-top: 2px solid #F8F8F9;
-  }
-
-  .teresaVoyanceMain-card-skills-item {
-    flex-direction: row;
-    margin-right: 23px;
-    width: 160px;
-  }
-
-  .teresaVoyanceMain-card-skills-item:first-child {
-    margin-left: 0px;
-    padding-left: 16px;
-  }
-
-  .teresaVoyanceMain-card-skills-item-text {
-    color: #2f3a5b;
-    font-family: Lato;
-    font-size: 13px;
-    font-weight: 700;
-    margin-left: 17px;
-  }
-
-  .teresaVoyanceMain-card-row1 {
-    width: 454px;
+@media screen and (max-width: 730px) {
+  .header-links__link:nth-child(n+3) {
+    display: none;
     margin-right: 0;
   }
-
-  .teresaVoyanceMain-card-player {
-    width: 390px;
-  }
-
-  .teresaVoyanceMain-telephonecard {
-    width: 608px;
-    justify-content: space-between;
-  }
-
-  .teresaVoyanceMain-planning-time {
-    padding: 0;
-    position: fixed;
-    top: 0px;
-  }
-
-  .teresaVoyanceMain-planning-time__description {
-    position: sticky;
-    position: -webkit-sticky;
-    left: 0;
-    padding-left: 16px;
-    width: 112px;
-    height: 46px;
-    background-color: #ffffff;
-    letter-spacing: 0.26px;
-  }
-
-  .teresaVoyanceMain-planning-time__description:after {
-    margin-left: 9px;
-    position: static;
-  }
-
-  .teresaVoyanceMain-planning-time-timeline {
-    margin-left: 15px;
-  }
-
-  .teresaVoyanceMain-planning-shedule {
-    padding-left: 0;
-  }
-
-  .teresaVoyanceMain-planning-shedule__name {
-    position: sticky;
-    left: 0;
-    width: 130px;
-    height: 44px;
-    background-color: #ffffff;
-    z-index: 1000;
-    box-shadow: 3px 0px 2px #EEEEEE;
-    margin-right: 27px;
-  }
-
-  .teresaVoyanceMain-form {
-    width: 736px;
-    padding: 64px;
-  }
-
-  .teresaVoyanceMain-form::after {
-    background-image: url("/img/Voyance/formAfterSM.png");
-    width: 720px;
-    height: 497px;
-    top: -14px;
-    right: -11px;
-  }
-
-  .teresaVoyanceMain-form::before {
-    background-image: url("/img/Voyance/formBeforeSM.png");
-    width: 52px;
-    height: 45px;
-    top: -3px;
-    right: 200px;
-  }
-
-  .teresaVoyanceMain-form-description {
-    margin-bottom: 16px;
-  }
-
-  .teresaVoyanceMain-form-inputs {
-    width: 608px;
-  }
-
-  .teresaVoyanceMain-form-inputs__input {
-    width: 288px;
-  }
-
-  .teresaVoyanceMain-form-textarea {
-    width: 608px;
-    height: 128px;
-  }
-
-  .teresaVoyanceMain-commentCard {
-    width: 736px;
-  }
-
-  .teresaVoyanceMain-page-select {
-    width: 736px;
-  }
-
-  .teresaVoyance-pageSelect-container {
-    width: 736px;
-  }
-
-  .teresaVoyanceMain-planning-shedule-overflowWrapper {
-    overflow-x: scroll;
-    will-change: transform;
-    margin-bottom: 40px;
-  }
-
-  .teresaVoyanceMain-planning-shedule-overflowWrapper::-webkit-scrollbar {
-    width: 1px;
-    height: 2px;
-    background-color: #E6DEF5;
-  }
-
-  .teresaVoyanceMain-planning-shedule-overflowWrapper::-webkit-scrollbar-thumb {
-    background: #9169db;
-    border-radius: 1px;
-  }
 }
 
-@media screen and (max-width: 768px) and (max-width: 320px) {
-  .teresaVoyanceMain-card-notes-note:nth-child(1) {
-    margin-bottom: 16px;
-  }
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 700px) {
   .container {
     width: 256px;
   }
 
+  .footer-tel {
+    height: 144px;
+  }
+
+  .footer-tel-inner {
+    flex-direction: column;
+  }
+
+  .footer-tel__tel {
+    width: 256px;
+    height: 32px;
+    margin-bottom: 16px;
+    background: url("/img/teresaVoyanceMain/telXS.png");
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-inner_documents {
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+    margin: 32px auto 32px 0;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-links__link {
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.28px;
+    line-height: 19px;
+    margin-bottom: 22px;
+  }
+
+  .footer-row1 {
+    width: 320px;
+    height: 180px;
+    width: 100vw;
+  }
+
+  .footer-row2 {
+    height: 128px;
+  }
+
+  .footer-row3 {
+    height: 128px;
+  }
+
+  .footer-documents {
+    text-align: center;
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.28px;
+    line-height: 19px;
+    margin-bottom: 22px;
+  }
+
+  .footer-text {
+    width: 256px;
+    height: 36px;
+    color: #252729;
+    font-family: Lato;
+    font-size: 10px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.36px;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .teresaVoyanceMain-container {
+    width: 420px;
+    margin-top: 86px;
+  }
+
+  .teresaVoyanceMain-card {
+    width: 288px;
+    height: 712px;
+    flex-direction: column;
+  }
+
+  .teresaVoyanceMain-card-col1 {
+    padding-right: 0;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    margin-right: 0;
+    border-bottom: 2px solid #F8F8F9;
+  }
+
+  .teresaVoyanceMain-card-col1::after {
+    display: none;
+  }
+
+  .teresaVoyanceMain-card-notes {
+    width: 272px;
+    height: 176px;
+  }
+
+  .teresaVoyanceMain-card-notes::after {
+    content: " ";
+    width: 256px;
+    height: 2px;
+    background-color: #F8F8F9;
+    position: absolute;
+    bottom: -16px;
+  }
+
+  .teresaVoyanceMain-card-notes-note {
+    width: 120px;
+    height: 80px;
+    padding: 16px 16px;
+  }
+
+  .teresaVoyanceMain-card-notes-note__title {
+    margin-bottom: 4px;
+  }
+
+  .teresaVoyanceMain-card-skills {
+    width: 274px;
+    flex-wrap: wrap;
+    border-top: none;
+    justify-content: space-between;
+  }
+
+  .teresaVoyanceMain-card-skills-item {
+    flex-direction: column;
+    width: 110px;
+    margin-right: 15px;
+    align-items: center;
+  }
+
+  .teresaVoyanceMain-card-skills-item:last-child {
+    margin-right: 0;
+  }
+
+  .teresaVoyanceMain-card-skills-item:first-child {
+    padding-left: 0;
+  }
+
+  .teresaVoyanceMain-card-skills-item:nth-last-child(2n) {
+    margin-bottom: 16px;
+  }
+
+  .teresaVoyanceMain-card-skills-item:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .teresaVoyanceMain-card-skills-item-text {
+    margin-left: 0;
+  }
+
+  .teresaVoyanceMain-card-row1 {
+    flex-wrap: wrap;
+    align-items: flex-end;
+    width: 209px;
+  }
+
+  .teresaVoyanceMain-card-teresa {
+    width: 420px;
+  }
+
+  .teresaVoyanceMain-card-teresa-photo {
+    width: 420px;
+    height: 96px;
+    margin-right: 0;
+    display: flex;
+    background-position-x: 80px;
+    background-image: url("/img/teresaVoyanceMain/teresaVoyanceMain-card-photoXS.png");
+  }
+
+  .teresaVoyanceMain-card-teresa-text__name {
+    margin-bottom: 10px;
+  }
+
+  .teresaVoyanceMain-card-teresa-text-stars__star {
+    width: 12px;
+    height: 12px;
+    background: url("/img/teresaVoyanceMain/starXS.png");
+    margin-right: 4.5px;
+  }
+
+  .teresaVoyanceMain-card-teresa-text-stars__starUnActive {
+    background: url("/img/teresaVoyanceMain/starUnActiveXS.png");
+    width: 12px;
+    height: 12px;
+  }
+
+  .teresaVoyanceMain-card-phoneCode {
+    margin-right: -43px;
+  }
+
+  .teresaVoyanceMain-card-player {
+    width: 192px;
+  }
+
+  .teresaVoyanceMain-card-player-play {
+    width: 24px;
+    transform: scale(0.9);
+  }
+
+  .teresaVoyanceMain-telephonecard {
+    flex-direction: column;
+    width: 288px;
+    height: 224px;
+  }
+
+  .teresaVoyanceMain-descriptionCard {
+    width: 288px;
+    height: 472px;
+    padding: 64px 16px;
+    margin-bottom: 96px;
+  }
+
+  .teresaVoyanceMain-descriptionCard__splitter {
+    width: 258px;
+    margin-left: 0;
+  }
+
+  .teresaVoyanceMain-planning-description {
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+  }
+
+  .teresaVoyanceMain-planning-description__title {
+    margin-left: 32px;
+    margin-bottom: 19px;
+  }
+
+  .teresaVoyanceMain-planning-description-flags {
+    margin-left: 32px;
+    margin-bottom: 47px;
+    flex-wrap: wrap;
+    width: 255px;
+  }
+
+  .teresaVoyanceMain-planning-description-flags-flag__audiotel {
+    margin-right: 57px;
+  }
+
+  .teresaVoyanceMain-planning-description-flags-flag__CB {
+    margin-right: 130px;
+    order: 0;
+    margin-bottom: 14px;
+  }
+
+  .teresaVoyanceMain-planning-description-flags-flag__indisponible {
+    margin-right: 0;
+  }
+
+  .teresaVoyanceMain-planning-time__description {
+    margin-right: 12px;
+  }
+
+  .teresaVoyanceMain-form {
+    width: 288px;
+    height: 536px;
+    padding: 32px 16px;
+  }
+
+  .teresaVoyanceMain-form-row {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .teresaVoyanceMain-form-title {
+    font-size: 24px;
+  }
+
+  .teresaVoyanceMain-form-description {
+    font-size: 15px;
+    width: 256px;
+  }
+
+  .teresaVoyanceMain-form-inputs {
+    flex-direction: column;
+    width: 256px;
+  }
+
+  .teresaVoyanceMain-form-inputs__input {
+    width: 256px;
+  }
+
+  .teresaVoyanceMain-form-textarea {
+    width: 256px;
+  }
+
+  .teresaVoyanceMain-form-apply {
+    width: 100%;
+    margin-top: 32px;
+  }
+
+  .teresaVoyanceMain-commentCard {
+    width: 288px;
+    height: 280px;
+    padding: 32px 16px 28px;
+    position: relative;
+  }
+
+  .teresaVoyanceMain-commentCard-img {
+    width: 56px;
+    height: 56px;
+    background-image: url("/img/teresaVoyanceMain/avatar1XS.png");
+  }
+
+  .teresaVoyanceMain-commentCard-img__woman {
+    background-image: url("/img/teresaVoyanceMain/avatar2XS.png");
+  }
+
+  .teresaVoyanceMain-commentCard-text {
+    width: 165px;
+  }
+
+  .teresaVoyanceMain-commentCard-text__row1 {
+    height: 56px;
+    align-items: center;
+  }
+
+  .teresaVoyanceMain-commentCard-text__paragraph {
+    position: absolute;
+    left: 16px;
+    top: 100px;
+  }
+
+  .teresaVoyanceMain-page-select {
+    width: 288px;
+  }
+
+  .teresaVoyance-page-select-previousPage {
+    display: flex;
+    margin: 0;
+    margin-right: 16px;
+  }
+
+  .VoyanceMain-card-photo {
+    width: 420px;
+    height: 96px;
+    margin-right: 0;
+    display: flex;
+    background-position-x: 80px;
+    background-image: url("/img/Voyance/Voyance.png");
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .NotFound-image {
+    width: 256px;
+    height: 95px;
+    background-image: url("/img/others/404XS.png");
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .page-select {
+    height: 40px;
+  }
+
+  .page-select-Page {
+    width: 40px;
+    height: 40px;
+  }
+
+  .page-select-previousPage {
+    margin-right: 14px;
+  }
+
+  .page-select-radio__label {
+    width: 40px;
+    height: 40px;
+    margin-right: 14px;
+  }
+
+  .page-select-radio__label:nth-child(9) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .NotFound__title {
+    font-size: 24px;
+  }
+
+  .NotFound__subtitle {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
   .indexbody::after {
     background: url("/img/hero/bodyAfterXS.png");
     width: 320px;
@@ -3873,7 +4567,7 @@ body {
 
   .header-burger {
     display: block;
-    right: -10px;
+    right: 5px;
     top: 20px;
   }
 
@@ -4127,111 +4821,6 @@ body {
     width: 256px;
   }
 
-  .page-select {
-    height: 40px;
-  }
-
-  .page-select-Page {
-    width: 40px;
-    height: 40px;
-  }
-
-  .page-select-previousPage {
-    margin-right: 14px;
-  }
-
-  .page-select-radio__label {
-    width: 40px;
-    height: 40px;
-    margin-right: 14px;
-  }
-
-  .page-select-radio__label:nth-child(9) {
-    display: none;
-  }
-
-  .footer-tel {
-    height: 144px;
-  }
-
-  .footer-tel-inner {
-    flex-direction: column;
-  }
-
-  .footer-tel__tel {
-    width: 256px;
-    height: 32px;
-    margin-bottom: 16px;
-    background: url("/img/teresaVoyanceMain/telXS.png");
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-inner_documents {
-    align-items: center;
-  }
-
-  .footer-logo {
-    font-size: 20px;
-    margin: 32px auto 32px 0;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .footer-links__link {
-    font-family: Lato;
-    font-size: 15px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 0.28px;
-    line-height: 19px;
-    margin-bottom: 22px;
-  }
-
-  .footer-row1 {
-    width: 320px;
-    height: 180px;
-  }
-
-  .footer-row2 {
-    height: 128px;
-  }
-
-  .footer-row3 {
-    height: 128px;
-  }
-
-  .footer-documents {
-    text-align: center;
-    font-family: Lato;
-    font-size: 15px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 0.28px;
-    line-height: 19px;
-    margin-bottom: 22px;
-  }
-
-  .footer-text {
-    width: 256px;
-    height: 36px;
-    color: #252729;
-    font-family: Lato;
-    font-size: 10px;
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: 0.36px;
-    line-height: normal;
-    text-align: center;
-  }
-
   .planningMain-section {
     margin-top: 54px;
   }
@@ -4441,274 +5030,6 @@ body {
     height: 101px;
     background-image: url(/img/aboutUs/signatureXS.png);
   }
-
-  .teresaVoyanceMain-container {
-    width: 320px;
-    margin-top: 86px;
-  }
-
-  .teresaVoyanceMain-card {
-    width: 288px;
-    height: 712px;
-    flex-direction: column;
-  }
-
-  .teresaVoyanceMain-card-col1 {
-    padding-right: 0;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    margin-right: 0;
-    border-bottom: 2px solid #F8F8F9;
-  }
-
-  .teresaVoyanceMain-card-col1::after {
-    display: none;
-  }
-
-  .teresaVoyanceMain-card-notes {
-    width: 272px;
-    height: 176px;
-  }
-
-  .teresaVoyanceMain-card-notes::after {
-    content: " ";
-    width: 256px;
-    height: 2px;
-    background-color: #F8F8F9;
-    position: absolute;
-    bottom: -16px;
-  }
-
-  .teresaVoyanceMain-card-notes-note {
-    width: 120px;
-    height: 80px;
-    padding: 16px 16px;
-  }
-
-  .teresaVoyanceMain-card-notes-note__title {
-    margin-bottom: 4px;
-  }
-
-  .teresaVoyanceMain-card-skills {
-    width: 274px;
-    flex-wrap: wrap;
-    border-top: none;
-    justify-content: space-between;
-  }
-
-  .teresaVoyanceMain-card-skills-item {
-    flex-direction: column;
-    width: 110px;
-    margin-right: 15px;
-    align-items: center;
-  }
-
-  .teresaVoyanceMain-card-skills-item:last-child {
-    margin-right: 0;
-  }
-
-  .teresaVoyanceMain-card-skills-item:first-child {
-    padding-left: 0;
-  }
-
-  .teresaVoyanceMain-card-skills-item:nth-last-child(2n) {
-    margin-bottom: 16px;
-  }
-
-  .teresaVoyanceMain-card-skills-item:nth-child(2) {
-    margin-right: 0;
-  }
-
-  .teresaVoyanceMain-card-skills-item-text {
-    margin-left: 0;
-  }
-
-  .teresaVoyanceMain-card-row1 {
-    flex-wrap: wrap;
-    align-items: flex-end;
-    width: 209px;
-  }
-
-  .teresaVoyanceMain-card-teresa {
-    width: 320px;
-  }
-
-  .teresaVoyanceMain-card-teresa-photo {
-    width: 320px;
-    height: 96px;
-    margin-right: 0;
-    display: flex;
-    background-position-x: 80px;
-    background-image: url("/img/teresaVoyanceMain/teresaVoyanceMain-card-photoXS.png");
-  }
-
-  .teresaVoyanceMain-card-teresa-text__name {
-    margin-bottom: 10px;
-  }
-
-  .teresaVoyanceMain-card-teresa-text-stars__star {
-    width: 12px;
-    height: 12px;
-    background: url("/img/teresaVoyanceMain/starXS.png");
-    margin-right: 4.5px;
-  }
-
-  .teresaVoyanceMain-card-teresa-text-stars__starUnActive {
-    background: url("/img/teresaVoyanceMain/starUnActiveXS.png");
-    width: 12px;
-    height: 12px;
-  }
-
-  .teresaVoyanceMain-card-phoneCode {
-    margin-right: -43px;
-  }
-
-  .teresaVoyanceMain-card-player {
-    width: 192px;
-  }
-
-  .teresaVoyanceMain-telephonecard {
-    flex-direction: column;
-    width: 288px;
-    height: 224px;
-  }
-
-  .teresaVoyanceMain-descriptionCard {
-    width: 288px;
-    height: 472px;
-    padding: 64px 16px;
-    margin-bottom: 96px;
-  }
-
-  .teresaVoyanceMain-descriptionCard__splitter {
-    width: 258px;
-    margin-left: 0;
-  }
-
-  .teresaVoyanceMain-planning-description {
-    flex-direction: column;
-    align-items: start;
-    justify-content: flex-start;
-  }
-
-  .teresaVoyanceMain-planning-description__title {
-    margin-left: 32px;
-    margin-bottom: 19px;
-  }
-
-  .teresaVoyanceMain-planning-description-flags {
-    margin-left: 32px;
-    margin-bottom: 47px;
-    flex-wrap: wrap;
-    width: 255px;
-  }
-
-  .teresaVoyanceMain-planning-description-flags-flag__audiotel {
-    margin-right: 57px;
-  }
-
-  .teresaVoyanceMain-planning-description-flags-flag__CB {
-    margin-right: 130px;
-    order: 0;
-    margin-bottom: 14px;
-  }
-
-  .teresaVoyanceMain-planning-description-flags-flag__indisponible {
-    margin-right: 0;
-  }
-
-  .teresaVoyanceMain-planning-time__description {
-    margin-right: 12px;
-  }
-
-  .teresaVoyanceMain-form {
-    width: 288px;
-    height: 536px;
-    padding: 32px 16px;
-  }
-
-  .teresaVoyanceMain-form-row {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .teresaVoyanceMain-form-title {
-    font-size: 24px;
-  }
-
-  .teresaVoyanceMain-form-description {
-    font-size: 15px;
-    width: 256px;
-  }
-
-  .teresaVoyanceMain-form-inputs {
-    flex-direction: column;
-    width: 256px;
-  }
-
-  .teresaVoyanceMain-form-inputs__input {
-    width: 256px;
-  }
-
-  .teresaVoyanceMain-form-textarea {
-    width: 256px;
-  }
-
-  .teresaVoyanceMain-form-apply {
-    width: 100%;
-    margin-top: 32px;
-  }
-
-  .teresaVoyanceMain-commentCard {
-    width: 288px;
-    height: 280px;
-    padding: 32px 16px 28px;
-    position: relative;
-  }
-
-  .teresaVoyanceMain-commentCard-img {
-    width: 56px;
-    height: 56px;
-    background-image: url("/img/teresaVoyanceMain/avatar1XS.png");
-  }
-
-  .teresaVoyanceMain-commentCard-img__woman {
-    background-image: url("/img/teresaVoyanceMain/avatar2XS.png");
-  }
-
-  .teresaVoyanceMain-commentCard-text {
-    width: 165px;
-  }
-
-  .teresaVoyanceMain-commentCard-text__row1 {
-    height: 56px;
-    align-items: center;
-  }
-
-  .teresaVoyanceMain-commentCard-text__paragraph {
-    position: absolute;
-    left: 16px;
-    top: 100px;
-  }
-
-  .teresaVoyanceMain-page-select {
-    width: 288px;
-  }
-
-  .teresaVoyance-page-select-previousPage {
-    display: flex;
-    margin: 0;
-    margin-right: 16px;
-  }
-
-  .VoyanceMain-card-photo {
-    width: 320px;
-    height: 96px;
-    margin-right: 0;
-    display: flex;
-    background-position-x: 80px;
-    background-image: url("/img/Voyance/Voyance.png");
-  }
 }
 
 .webp .indexbody::after{ background: url(/img/hero/heroElement.webp); }
@@ -4741,6 +5062,12 @@ body {
 
 .webp .hero-filters-dropdown::after{ background: url(/img/hero/arrowDown.webp); }
 
+.webp .main-card-header-playButton{ background-image: url(/img/main/playerIconPurple.webp); }
+
+.webp .main-card-teresa-header-playButton{ background-image: url(/img/main/playButton.webp); }
+
+.webp .main-card-teresa-header-playButton_active{ background-image: url(/img/main/playButtonActive.webp); }
+
 .webp .footer-tel__tel{ background: url(/img/teresaVoyanceMain/tel.webp); }
 
 .webp .planningMain-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
@@ -4767,6 +5094,10 @@ body {
 
 .webp .teresaVoyanceMain-card-teresa-photo{ background-image: url(/img/teresaVoyanceMain/teresaVoyanceMain-card-photo.webp); }
 
+.webp .teresaVoyanceMain-card-player-play{ background-image: url(/img/main/playerIconPurple.webp); }
+
+.webp .teresaVoyanceMain-card-player-play_active{ background-image: url(/img/main/playerIconPurpleActive.webp); }
+
 .webp .teresaVoyanceMain-planning-time-timeline__item::after{ background: url(/img/planning/Main/arrowRight.webp); }
 
 .webp .teresaVoyanceMain-form::after{ background-image: url(/img/Voyance/formAfterXL.webp); }
@@ -4779,11 +5110,13 @@ body {
 
 .webp .teresaVoyanceMain-commentCard-img__woman{ background-image: url(/img/teresaVoyanceMain/avatar2.webp); }
 
-.webp .teresaVoyanceMain-commentCard-text-rating::after{ background-image: url(/img/teresaVoyanceMain/Star.webp); }
+.webp .teresaVoyanceMain-commentCard-text-rating::after{ background-image: url(/img/teresaVoyanceMain/starXS.webp); }
 
 .webp .VoyanceBody::after{ background-image: url(/img/Voyance/HolderXL.webp); }
 
 .webp .VoyanceMain-card-photo{ background-image: url(/img/Voyance/Voyance.webp); }
+
+.webp .NotFound-image{ background-image: url(/img/others/404LG.webp); }
 
 @media screen and (min-width: 1441px){
 
@@ -4798,6 +5131,16 @@ body {
 @media screen and (max-width: 1440px){
 
   .webp .aboutUs-container::after{ background-image: url(/img/aboutUs/aboutUsAfter.webp); }
+}
+
+@media screen and (max-width: 1140px){
+
+  .webp .footer-tel__tel{ background: url(/img/teresaVoyanceMain/telSM.webp); }
+}
+
+@media screen and (max-width: 1140px){
+
+  .webp .NotFound-image{ background-image: url(/img/others/404SM.webp); }
 }
 
 @media screen and (max-width: 1024px){
@@ -4857,17 +5200,27 @@ body {
 
 @media screen and (max-width: 1024px){
 
+  .webp .teresaVoyanceMain-form::after{ background-image: url(/img/Voyance/formAfterSM.webp); }
+}
+
+@media screen and (max-width: 1024px){
+
+  .webp .teresaVoyanceMain-form::before{ background-image: url(/img/Voyance/formBeforeSM.webp); }
+}
+
+@media screen and (max-width: 1024px){
+
   .webp .VoyanceMain-card-photo{ background-image: url(/img/Voyance/Voyance.webp); }
+}
+
+@media screen and (max-width: 1024px){
+
+  .webp .NotFound-image{ background-image: url(/img/others/404MD.webp); }
 }
 
 @media screen and (max-width: 768px){
 
   .webp .indexbody::after{ background: url(/img/hero/bodyAfterSM.webp); }
-}
-
-@media screen and (max-width: 768px){
-
-  .webp .footer-tel__tel{ background: url(/img/teresaVoyanceMain/telSM.webp); }
 }
 
 @media screen and (max-width: 768px){
@@ -4900,14 +5253,44 @@ body {
   .webp .aboutUs-description-signature{ background-image: url(/img/aboutUs/signatureSM.webp); }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 700px){
 
-  .webp .teresaVoyanceMain-form::after{ background-image: url(/img/Voyance/formAfterSM.webp); }
+  .webp .footer-tel__tel{ background: url(/img/teresaVoyanceMain/telXS.webp); }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 700px){
 
-  .webp .teresaVoyanceMain-form::before{ background-image: url(/img/Voyance/formBeforeSM.webp); }
+  .webp .teresaVoyanceMain-card-teresa-photo{ background-image: url(/img/teresaVoyanceMain/teresaVoyanceMain-card-photoXS.webp); }
+}
+
+@media screen and (max-width: 700px){
+
+  .webp .teresaVoyanceMain-card-teresa-text-stars__star{ background: url(/img/teresaVoyanceMain/starXS.webp); }
+}
+
+@media screen and (max-width: 700px){
+
+  .webp .teresaVoyanceMain-card-teresa-text-stars__starUnActive{ background: url(/img/teresaVoyanceMain/starUnActiveXS.webp); }
+}
+
+@media screen and (max-width: 700px){
+
+  .webp .teresaVoyanceMain-commentCard-img{ background-image: url(/img/teresaVoyanceMain/avatar1XS.webp); }
+}
+
+@media screen and (max-width: 700px){
+
+  .webp .teresaVoyanceMain-commentCard-img__woman{ background-image: url(/img/teresaVoyanceMain/avatar2XS.webp); }
+}
+
+@media screen and (max-width: 700px){
+
+  .webp .VoyanceMain-card-photo{ background-image: url(/img/Voyance/Voyance.webp); }
+}
+
+@media screen and (max-width: 480px){
+
+  .webp .NotFound-image{ background-image: url(/img/others/404XS.webp); }
 }
 
 @media screen and (max-width: 320px){
@@ -4933,11 +5316,6 @@ body {
 @media screen and (max-width: 320px){
 
   .webp .hero-mobile-filter-search{ background-image: url(/img/hero/searchIcon.webp); }
-}
-
-@media screen and (max-width: 320px){
-
-  .webp .footer-tel__tel{ background: url(/img/teresaVoyanceMain/telXS.webp); }
 }
 
 @media screen and (max-width: 320px){
@@ -4973,34 +5351,4 @@ body {
 @media screen and (max-width: 320px){
 
   .webp .aboutUs-description-signature{ background-image: url(/img/aboutUs/signatureXS.webp); }
-}
-
-@media screen and (max-width: 320px){
-
-  .webp .teresaVoyanceMain-card-teresa-photo{ background-image: url(/img/teresaVoyanceMain/teresaVoyanceMain-card-photoXS.webp); }
-}
-
-@media screen and (max-width: 320px){
-
-  .webp .teresaVoyanceMain-card-teresa-text-stars__star{ background: url(/img/teresaVoyanceMain/starXS.webp); }
-}
-
-@media screen and (max-width: 320px){
-
-  .webp .teresaVoyanceMain-card-teresa-text-stars__starUnActive{ background: url(/img/teresaVoyanceMain/starUnActiveXS.webp); }
-}
-
-@media screen and (max-width: 320px){
-
-  .webp .teresaVoyanceMain-commentCard-img{ background-image: url(/img/teresaVoyanceMain/avatar1XS.webp); }
-}
-
-@media screen and (max-width: 320px){
-
-  .webp .teresaVoyanceMain-commentCard-img__woman{ background-image: url(/img/teresaVoyanceMain/avatar2XS.webp); }
-}
-
-@media screen and (max-width: 320px){
-
-  .webp .VoyanceMain-card-photo{ background-image: url(/img/Voyance/Voyance.webp); }
 }

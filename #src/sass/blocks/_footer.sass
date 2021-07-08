@@ -8,14 +8,14 @@
         background-color: #fff
         @media screen and ( max-width: 1024px )
             height: 108px
-        @media screen and ( max-width: 320px )
+        @media screen and ( max-width:  700px )
             height: 144px
 
         &-inner
             display: flex
             align-items: center
             justify-content: space-between
-            @media screen and ( max-width: 320px )
+            @media screen and ( max-width:  700px )
                 flex-direction: column
 
 
@@ -27,11 +27,11 @@
                 width: 402px
                 height: 44px
                 background: url('/img/teresaVoyanceMain/telMD.jpg')
-            @media screen and ( max-width: 768px )
+            @media screen and ( max-width:  1140px )
                 width: 354px
                 height: 40px
                 background: url('/img/teresaVoyanceMain/telSM.jpg')
-            @media screen and ( max-width: 320px )
+            @media screen and ( max-width:  700px )
                 width: 256px
                 height: 32px
                 margin-bottom: 16px
@@ -43,7 +43,7 @@
         display: flex
         justify-content: space-between
         align-items: center      
-        @media screen and ( max-width:  320px)
+        @media screen and ( max-width:  700px)
             flex-direction: column
             align-items: flex-start
             &_documents
@@ -57,7 +57,7 @@
         font-weight: 400
         letter-spacing: 0.56px
         z-index: 999999
-        @media screen and ( max-width:  320px)
+        @media screen and ( max-width:  700px)
             font-size: 20px
             margin: 32px auto 32px 0
 
@@ -65,7 +65,7 @@
         display: inline-block
         text-decoration: none
         z-index: 9999999
-        @media screen and ( max-width:  320px)
+        @media screen and ( max-width:  700px)
             display: flex
             flex-wrap: wrap
             justify-content: space-between
@@ -81,7 +81,7 @@
             -moz-transition: 0.2s 0.1s ease-in
             -o-transition: 0.2s 0.1s ease-in
             -webkit-transition: 0.2s 0.1s ease-in
-            @media screen and ( max-width:  320px)
+            @media screen and ( max-width:  700px)
                 font-family: Lato
                 font-size: 15px
                 font-weight: 600
@@ -122,15 +122,16 @@
             background-color: #f0f1f3
             height: 100px
             width: 100%
-            @media screen and ( max-width:  320px)
+            @media screen and ( max-width:  700px)
                 width: 320px
                 height: 180px
+                width: 100vw
         &2
             height: 70px
             background-color: #9169db
             display: flex
             align-items: center
-            @media screen and ( max-width:  320px)
+            @media screen and ( max-width:  700px)
                 height: 128px
         &3
             display: flex
@@ -138,7 +139,7 @@
             align-items: center
             background-color: #f0f1f3
             height: 48px
-            @media screen and ( max-width:  320px)
+            @media screen and ( max-width:  700px)
                 height: 128px
 
     &-documents
@@ -150,7 +151,21 @@
         letter-spacing: 0.28px
         line-height: 19px
         text-decoration: none
-        @media screen and ( max-width:  320px)
+        position: relative
+        &::after
+            content: ''
+            width: 0%
+            height: 2px
+            background-color: #fff
+            position: absolute
+            left: 0
+            bottom: -4px
+            opacity: 0
+        &:hover
+            &::after
+                opacity: 1
+                width: 100%
+        @media screen and ( max-width:  700px)
             text-align: center
             font-family: Lato
             font-size: 15px
@@ -167,7 +182,8 @@
         font-style: normal
         letter-spacing: 0.36px
         line-height: normal
-        @media screen and ( max-width:  320px)
+        text-transform: uppercase
+        @media screen and ( max-width:  700px)
             width: 256px
             height: 36px
             color: #252729
