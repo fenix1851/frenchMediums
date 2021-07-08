@@ -2,22 +2,32 @@
     &-container
         display: flex
         justify-content: space-between
-        @media screen and ( max-width:  320px)
+        @media screen and ( max-width:  1365px )
+            width: 826px
+            margin: 0 auto
+        @media screen and ( max-width:  700px)
             flex-direction: column
             align-items: center
     &-text
-        margin-top: 130px
-        @media screen and ( max-width:  320px)
+        margin-top: 98px
+        @media screen and ( min-width: 1365px )
+            margin-top: 201px
+        @media screen and ( max-width:  700px)
             display: flex
             flex-direction: column
             align-items: center
             margin-top: 54px
+        
+
         &-title
             font-family: Aleo
             font-size: 48px
             letter-spacing: -1.15px
             font-weight: 400
-            @media screen and ( max-width:  320px)
+            @media screen and ( max-width: 768px  )
+                white-space: pre
+                font-size: 46px
+            @media screen and ( max-width:  700px)
                 font-size: 24px
                 letter-spacing: 0.72px
         &-subtitile
@@ -27,12 +37,13 @@
             font-size: 24px
             font-weight: 700
             margin-top: 7px
-            @media screen and ( max-width:  320px)
-                font-size: 13px
+            max-width: 450px
+            @media screen and ( max-width:  700px)
+                font-size: 15px
                 width: 176px
                 text-align: center
                 letter-spacing: 0.23px
-            @media screen and ( max-width:  768px)
+            @media screen and ( max-width:  1366px)
                 width: 289px
     &-teresa
         &-foto
@@ -42,11 +53,11 @@
             width: 351px
             height: 362px
             background: url("/img/hero/heroFoto.png")
-            @media screen and ( max-width:  1024px)
+            @media screen and ( max-width:  1365px)
                 background: url("/img/hero/heroFotoMD.png")
                 margin-top: 111px
-                margin-right: -58px
-            @media screen and ( max-width:  320px)
+                margin-right: -7px
+            @media screen and ( max-width:  700px)
                 height: 301px
                 width: 292px
                 margin-top: 45px
@@ -61,13 +72,13 @@
                 left: -180px
                 top: 11px
                 z-index: -10
-                @media screen and ( max-width:  1024px)
+                @media screen and ( max-width:  1365px)
                     background: url("/img/hero/purpleSubstratMD.svg")
                     width: 472px
                     height: 378px
                     left: -171px
                     top: 23px
-                @media screen and ( max-width:  320px)
+                @media screen and ( max-width:  700px)
                     background: url("/img/hero/PSXS.png")
                     width: 330px
                     height: 264px
@@ -82,11 +93,11 @@
                 left: -1px
                 top: -1px
                 z-index: -9
-                @media screen and ( max-width:  1024px)
+                @media screen and ( max-width:  1365px)
                     background: url("/img/hero/whiteSubstrateMd.svg")
-                    width: 284px
+                    width: 283px
                     height: 292px
-                @media screen and ( max-width:  320px)
+                @media screen and ( max-width:  700px)
                     background: url("/img/hero/WSXS.svg")
                     width: 292px
                     height: 301px
@@ -100,12 +111,12 @@
             padding: 0px 0px 24px 16px
             position: absolute
             bottom: -101px
-            left: -96px
-            @media screen and ( max-width:  320px)
+            left: -9.9vw
+            @media screen and ( max-width:  700px)
                 display: none
-            @media screen and ( max-width:  1024px)
+            @media screen and ( max-width:  1365px)
                 width: 640px
-                left: -254px 
+                left: -192px 
                 bottom: -50px
             @media screen and ( max-width:  768px)
                 width: 560px
@@ -176,6 +187,7 @@
                         letter-spacing: 0.26px
                         font-weight: 700
                         line-height: 18px
+        
                     &__title
                         color: #2f3a5b
                         font-family: Aleo
@@ -187,7 +199,7 @@
             &-skills
                 display: flex
                 justify-content: space-between
-                width: 100%
+                width: 96%
                 &-item
                     display: flex
                     flex-direction: column
@@ -221,14 +233,17 @@
         flex-direction: column
         justify-content: space-between
         position: relative
-        @media screen and ( max-width:  1024px)
+        margin-right: auto
+        margin-left: auto
+        position: relative
+        @media screen and ( max-width:  1365px)
             width: 832px
         @media screen and ( max-width:  768px)
             width: 736px
             height: 272px
             padding: 32px
             flex-wrap: wrap
-        @media screen and ( max-width:  320px)
+        @media screen and ( max-width:  700px)
             display: none
 
         &-row1
@@ -241,13 +256,15 @@
             display: flex
             justify-content: start
             width: 735px
-            @media screen and ( max-width:  1024px)
+            @media screen and ( max-width:  1365px)
                 width: 530px
             @media screen and ( max-width:  768px)
                 width: 600px
         &-container
             margin-top: 220px
-            @media screen and ( max-width:  320px)
+            @media screen and ( max-width:  1365px )
+                margin-top: 169px
+            @media screen and ( max-width:  700px)
                 margin-top: 126px
         &-dropdown
             width: 352px
@@ -262,7 +279,7 @@
             list-style: none
             &-wrapper
                 position: relative
-            @media screen and ( max-width: 320px )
+            @media screen and ( max-width:  700px )
                 width: 264px
                 margin-bottom: 16px
             &_active
@@ -275,18 +292,6 @@
                 bottom: -30px
                 height: 30px
                 width: 100%
-            &-InAudiotel
-                &:hover
-                    & .hero-filters-dropdown-option-wrapper
-                        display: flex
-            &-Skills
-                &:hover
-                    & .hero-filters-dropdown-option-wrapper-skills
-                        display: flex
-            &-sortBy
-                &:hover
-                    & .hero-filters-dropdown-option-wrapper-sortBy
-                        display: flex
             &>li
                 margin-top: 15px
                 height: 15px
@@ -299,6 +304,9 @@
                 display: flex
                 align-items: center
                 padding-left: 0
+                & > label
+                    &:hover
+                        cursor: pointer
                 &-skills
                     justify-content: space-between
                     padding-right: 20px
@@ -363,12 +371,15 @@
                     display: none
                     &-sortBy
                         height: 176px
+                        display: none
                         &-active
                             display: flex
                     &-inAudiotel
+                        display: none
                         &-active
                             display: flex
                     &-skills
+                        display: none
                         &-active
                             display: flex
                     & label
@@ -383,7 +394,7 @@
                         &:checked
                             color: #9169db
 
-            @media screen and ( max-width:  1024px)
+            @media screen and ( max-width:  1365px)
                 width: 256px
             @media screen and ( max-width:  768px)
                 width: 320px
@@ -420,10 +431,13 @@
             background: url('/img/hero/searchIcon.svg')
             background-repeat: no-repeat
             background-position: 12px 12px
-            @media screen and ( max-width:  1024px)
+            @media screen and ( max-width:  1365px)
                 width: 256px
             @media screen and ( max-width:  768px)
                 width: 320px
+                position: absolute
+                top: 112px
+                right: 32px
             &:hover
                 &.hero-filters-search
                     border-color: #9169db
@@ -442,7 +456,7 @@
         &-countOnPage
             display: flex
             align-items: center
-            @media screen and ( max-width: 320px )
+            @media screen and ( max-width:  700px )
                 position: relative
                 margin-top: 42px
             &-text
@@ -458,7 +472,7 @@
                 @media screen and ( max-width:  768px)
                     margin-left: 10px
                     margin-right: 15px
-                @media screen and ( max-width: 320px )
+                @media screen and ( max-width:  700px )
                     position: absolute
                     left: -8px
                     top: -25px
@@ -486,7 +500,7 @@
                     -webkit-transition: 0.2s 0.1s ease-in
                     @media screen and ( max-width:  768px)
                         margin-right: 6px    
-                    @media screen and ( max-width: 320px )
+                    @media screen and ( max-width:  700px )
                         margin-right: 15px
                         height: 50px
                         width: 50px
@@ -518,7 +532,7 @@
             right: 16px
             @media screen and ( max-width:  768px)
                 right: 32px
-            @media screen and ( max-width: 320px )
+            @media screen and ( max-width:  700px )
                 position: relative
                 display: flex
                 width: 100%
@@ -539,7 +553,7 @@
                     letter-spacing: 0.80px
     &-mobile-filter
         display: none
-        @media screen and ( max-width:  320px)
+        @media screen and ( max-width:  700px)
             display: flex
             align-items: center
             width: 360px
@@ -626,6 +640,9 @@
                 background-image: url(/img/hero/searchIcon.png)
                 background-repeat: no-repeat
                 background-position: 12px 12px 
+                -moz-transition: 0s 0s ease-in
+                -o-transition: 0s 0s ease-in
+                -webkit-transition: 0s 0s ease-in
                 &:hover
                     &.hero-mobile-filter-search 
                         border-color: #9169db

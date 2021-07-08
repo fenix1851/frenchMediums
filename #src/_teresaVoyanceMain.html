@@ -1194,7 +1194,7 @@
         </div>
         <!-- /.teresaVoyanceMain-planning -->
     <!-- /.teresaVoyanceMain-planning -->
-    <form action="commentSended.html" class="teresaVoyanceMain-form">
+    <form onsubmit="return false;" class="teresaVoyanceMain-form">
         <h3 class="teresaVoyanceMain-form-title">Commentaires</h3>
         <!-- /.recrutment-form-title -->
         <p class="teresaVoyanceMain-form-description">Pour laisser un commentaire, veuillez remplir le formulaire ci-dessous:</p>
@@ -1209,7 +1209,27 @@
         <div class="teresaVoyanceMain-form-row">
             <div class="teresaVoyanceMain-form-rating">
                 <h3 class="teresaVoyanceMain-form-rating__title">Votre note:</h3>
-                <div class="teresaVoyanceMain-form-rating-stars"><div class="teresaVoyanceMain-form-rating-stars__star"></div> <div class="teresaVoyanceMain-form-rating-stars__star"></div> <div class="teresaVoyanceMain-form-rating-stars__star"></div> <div class="teresaVoyanceMain-form-rating-stars__star"></div> <div class="teresaVoyanceMain-form-rating-stars__star"></div> </div>
+                <div class="teresaVoyanceMain-form-rating-stars">
+                    <input checked type="radio" class="teresaVoyanceMain-form-rating-stars__input" id="teresaVoyanceMain-form-rating-stars__star-1" name="rating" value="5">
+	                <label class="teresaVoyanceMain-form-rating-stars__label" for="teresaVoyanceMain-form-rating-stars__star-1" title="1"></label>
+
+                    
+                    <input type="radio" class="teresaVoyanceMain-form-rating-stars__input" id="teresaVoyanceMain-form-rating-stars__star-2" name="rating" value="4">
+	                <label class="teresaVoyanceMain-form-rating-stars__label" for="teresaVoyanceMain-form-rating-stars__star-2" title="2"></label>
+ 
+                    
+                    <input type="radio" class="teresaVoyanceMain-form-rating-stars__input" id="teresaVoyanceMain-form-rating-stars__star-3" name="rating" value="3">
+	                <label class="teresaVoyanceMain-form-rating-stars__label" for="teresaVoyanceMain-form-rating-stars__star-3" title="3"></label>
+ 
+                    
+                    <input type="radio" class="teresaVoyanceMain-form-rating-stars__input" id="teresaVoyanceMain-form-rating-stars__star-4" name="rating" value="2">
+	                <label class="teresaVoyanceMain-form-rating-stars__label" for="teresaVoyanceMain-form-rating-stars__star-4" title="4"></label>
+ 
+                    
+                    <input  type="radio" class="teresaVoyanceMain-form-rating-stars__input" id="teresaVoyanceMain-form-rating-stars__star-5" name="rating" value="1">
+	                <label class="teresaVoyanceMain-form-rating-stars__label" for="teresaVoyanceMain-form-rating-stars__star-5" title="5"></label>
+ 
+                </div>
             </div>
             <button class="teresaVoyanceMain-form-apply" type="submit">Envoyer Ma Demande</button>
             <!-- /.teresaVoyanceMain-form-apply -->
@@ -1244,3 +1264,20 @@
 
 </div>
 <!-- /.container teresaVoyanceMain-container -->
+
+<div class="requestSended-inner dn">
+    <div class="requestSended-message">
+        <div class="requestSended-message-img">
+            <img src="./img/others/messageImg.png" alt="messageImg">
+        </div>
+        <!-- /.requestSended-message-img -->
+        <span class="requestSended-message-title">Merci</span>
+        <!-- /.requestSended-message-title -->
+        <span class="requestSended-message-subtitle">Votre commentaire sera publié après modération</span>
+        <!-- /.requestSended-message-subtitle -->
+        <a class="requestSended-message-link">OK</a>
+        <!-- /.requestSended-message-link -->
+    </div>
+    <!-- /.requestSended-message -->
+</div>
+<!-- /.requestSended-inner -->

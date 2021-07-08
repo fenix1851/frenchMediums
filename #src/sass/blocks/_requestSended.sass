@@ -2,9 +2,18 @@
     &-inner
         width: 100vw
         height: 100vh
-        background-color: #F4F5F6
+        background-color: rgba(244, 245, 246, 0.7)
         display: flex
         align-items: center
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 1
+        z-index: 1000000
+        -moz-transition: 0.4s 0.1s ease-in
+        -o-transition: 0.4s 0.1s ease-in
+        -webkit-transition: 0.4s 0.1s ease-in
+        
     &-message
         width: 544px
         height: 436px
@@ -68,4 +77,8 @@
             border-radius: 4px
             background-color: #9169db
             &:hover
+                cursor: pointer
                 box-shadow: 0px 3px 10px #9169db
+.dn
+    opacity: 0
+    z-index: -999999

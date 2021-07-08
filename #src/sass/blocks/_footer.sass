@@ -1,12 +1,16 @@
 .footer
     &-container
         width: 1114px
+        @media screen and ( max-width:  1365px )
+            width: 826px
+            margin-left: auto
+            margin-right: auto
     &-tel
         display: flex
         align-items: center
         height: 128px
         background-color: #fff
-        @media screen and ( max-width: 1024px )
+        @media screen and ( max-width:  1365px )
             height: 108px
         @media screen and ( max-width:  700px )
             height: 144px
@@ -23,7 +27,7 @@
             width: 502px
             height: 56px
             background: url('/img/teresaVoyanceMain/tel.jpg')
-            @media screen and ( max-width: 1024px )
+            @media screen and ( max-width:  1365px )
                 width: 402px
                 height: 44px
                 background: url('/img/teresaVoyanceMain/telMD.jpg')
@@ -45,9 +49,13 @@
         align-items: center      
         @media screen and ( max-width:  700px)
             flex-direction: column
-            align-items: flex-start
+            align-items: center
+            height: 128px
+            justify-content: space-around
             &_documents
+                justify-content: space-around
                 align-items: center
+                height: 128px
 
     &-logo
         color: #2f3a5b
@@ -173,7 +181,7 @@
             font-style: normal
             letter-spacing: 0.28px
             line-height: 19px
-            margin-bottom: 22px
+            margin-bottom: 0
     &-text
         color: #252729
         font-family: Lato

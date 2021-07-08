@@ -5,15 +5,17 @@
     margin-bottom: 96px
     margin-top: 64px
     height: 48px
-    @media screen and ( max-width:  420px  )
+    @media screen and ( max-width:  720px  )
         height: 40px
+        margin-top: 32px
+        margin-bottom: 64px
     &-Page
         display: flex
         align-items: center
         justify-content: center
         width: 48px
         height: 48px
-        @media screen and ( max-width:  420px )
+        @media screen and ( max-width:  700px )
             width: 40px
             height: 40px
         border-radius: 4px
@@ -28,7 +30,7 @@
     &-previousPage
         transform: rotate(180deg)
         margin-right: 15px
-        @media screen and ( max-width:  420px )
+        @media screen and ( max-width:  700px )
             margin-right: 14px            
     &-radio
         &__label
@@ -51,7 +53,7 @@
             -moz-transition: 0.2s 0.1s ease-in
             -o-transition: 0.2s 0.1s ease-in
             -webkit-transition: 0.2s 0.1s ease-in
-            @media screen and ( max-width:  420px )
+            @media screen and ( max-width:  700px )
                 width: 40px
                 height: 40px
                 margin-right: 14px
@@ -72,8 +74,9 @@
                     color: #ffffff
 
 
-
-
+.pageSelect-container
+    @media screen and ( max-width: 1365px )
+        width: 826px
 
 
 

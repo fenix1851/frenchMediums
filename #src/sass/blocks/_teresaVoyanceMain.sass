@@ -4,8 +4,12 @@
         margin-bottom: 64px
         position: relative
         @media screen and ( max-width:  700px)
-            width: 420px
+            width: 320px
             margin-top: 86px
+    &-header
+        &-container
+            &::after
+                display: none
     &-card
         width: 1120px
         height: 264px
@@ -141,9 +145,10 @@
                 justify-content: flex-start
                 border-top: 2px solid #F8F8F9
             @media screen and ( max-width:  700px )
-                width: 274px
+                width: 250px
                 flex-wrap: wrap
                 border-top: none
+                margin-left: 18px
                 justify-content: space-between
             &-item
                 display: flex
@@ -172,7 +177,7 @@
                 &:first-child
                     margin-left: 36px
                 &:last-child
-                    margin-right: 36px
+                    margin-right: 21px
                 &-icon
                     display: flex
                     align-items: center
@@ -220,7 +225,7 @@
             display: flex
             align-items: center
             @media screen and ( max-width:  700px )
-                width: 420px
+                width: 320px
             &-photo
                 margin-right: 16px
                 width: 112px
@@ -232,7 +237,7 @@
                     height: 96px
                     background-image: url('/img/teresaVoyanceMain/teresaVoyanceMain-card-photoMD.png')
                 @media screen and ( max-width:  700px )
-                    width: 420px
+                    width: 320px
                     height: 96px
                     margin-right: 0
                     display: flex
@@ -241,6 +246,7 @@
             &-text
                 display: flex
                 flex-direction: column
+                margin-right: auto
                 &__name
                     color: #2f3a5b
                     font-family: Aleo
@@ -258,7 +264,7 @@
                         width: 16px
                         height: 16px
                         display: flex
-                        background: url('/img/teresaVoyanceMain/starXS.svg')
+                        background: url('/img/teresaVoyanceMain/Star.svg')
                         @media screen and ( max-width:  700px )
                             width: 12px
                             height: 12px
@@ -327,6 +333,8 @@
                 width: 16px
                 height: 18px
                 background-image: url('/img/main/playerIconPurple.png')
+                &:hover
+                    background-image: url('/img/main/playerIconPurpleActive.png')
                 @media screen and ( max-width:  700px)
                         width: 24px
                         transform: scale(0.9)
@@ -580,10 +588,11 @@
             padding-left: 16px
             @media screen and ( max-width: 1024px)
                 width: 832px
-            @media screen and ( max-width:  1024px)
+            @media screen and ( max-width:  700px)
                 padding: 0
                 position: fixed
                 top: 0px
+                width: 320px
             &__description
                 color: #8c8ea1
                 font-family: Lato
@@ -808,12 +817,25 @@
                 margin-right: 6px
             &-stars
                 display: flex
-                &__star
+                transform: rotate(180deg)
+                &__input
+                    display: none
+                    &:checked
+                        & + label
+                            background: url("/img/teresaVoyanceMain/Star.svg")
+                            height: 16px
+                            width: 16px
+                        & ~ label
+                            background: url("/img/teresaVoyanceMain/Star.svg")
+                            height: 16px
+                            width: 16px
+                &__label
+                    transform: rotate(180deg)
                     margin-left: 0px
                     margin-right: 5.6px
-                    width: 18px
-                    height: 18px
-                    background: url('/img/teresaVoyanceMain/Star18px.png')                  
+                    width: 16px
+                    height: 16px
+                    background: url('/img/teresaVoyanceMain/StarUnActive.png')                  
                     
         &-row
             display: flex
@@ -987,6 +1009,7 @@
                 margin-top: 32px
             &:hover
                 &.teresaVoyanceMain-form-apply
+                    cursor: pointer
                     background-color: #9169db
                     color: #fff
     &-commentCard
@@ -1195,7 +1218,7 @@
         height: 96px
         background-image: url('/img/Voyance/Voyance.png')
     @media screen and ( max-width:  700px )
-        width: 420px
+        width: 320px
         height: 96px
         margin-right: 0
         display: flex

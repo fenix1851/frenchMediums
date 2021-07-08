@@ -1,14 +1,17 @@
 .planningMain
     &-section
         margin-top: 130px
-        @media screen and ( max-width: 320px )
+        margin-bottom: 96px
+        @media screen and ( max-width: 746px )
             margin-top: 54px
+            margin-bottom: 46px
     &-container
         position: relative
     &-text
         margin-right: auto
         margin-bottom: 32px
         &-suptitle
+            text-transform: uppercase
             color: #9169db
             font-family: Lato
             font-size: 10px
@@ -32,20 +35,32 @@
         background-color: #ffffff
         display: flex
         padding: 32px 
-        @media screen and ( max-width: 1024px )
-            width: 832px
-            flex-wrap: wrap
+        @media screen and ( max-width: 1126px )
+            flex-direction: column
+            width: 824px
+            flex-wrap: nowrap
+            justify-content: space-between
             padding: 32px 16px
         @media screen and ( max-width: 768px )
+            flex-direction: row
             width: 736px
             height: 160px
             justify-content: flex-end
-        @media screen and ( max-width: 320px )
-            width: 320px
+        @media screen and ( max-width: 746px )
+            width: 100vw
             height: 280px
             flex-wrap: wrap
             justify-content: center
-            margin-left: -33px
+            margin-left: auto
+            margin-right: auto
+            padding: 32px 15px
+        @media screen and ( max-width: 700px )
+            width: 256px
+            height: 420px
+            flex-wrap: wrap
+            justify-content: center
+            margin-left: auto
+            margin-right: auto
             padding: 32px 15px
             
             
@@ -55,10 +70,13 @@
             align-items: flex-start
             margin-right: 32px
             @media screen and ( max-width: 768px  )
-                margin-right: 90px
-            @media screen and ( max-width: 320px)
+                margin-right: 0px
+            @media screen and ( max-width: 746px)
                 margin: 0
                 flex-wrap: wrap
+            @media screen and ( max-width: 1126px  )
+                margin-right: 12px
+                
                 
             &__weekday
                 text-transform: uppercase
@@ -79,7 +97,7 @@
                 line-height: 19px
             &-buttons
                 display: flex
-                @media screen and ( max-width: 320px )
+                @media screen and ( max-width: 746px )
                     flex-wrap: wrap                    
             &__title
                 color: #2f3a5b
@@ -112,14 +130,15 @@
                     -moz-transition: 0.2s 0.1s ease-in
                     -o-transition: 0.2s 0.1s ease-in
                     -webkit-transition: 0.2s 0.1s ease-in
-                    @media screen and ( max-width: 1024px )
+                    @media screen and ( max-width: 1126px )
                         margin-right: 8px
-                    @media screen and ( max-width:320px )
+                    @media screen and ( max-width: 746px )
                         margin-bottom: 12px
                         margin-right: 12px
-                        
                     &:hover
                         cursor: pointer
+                        border: 1px solid #9169db
+
                 &__button
                     display: none
                     &:checked
@@ -133,21 +152,33 @@
             display: flex
             align-items: center
             margin-top: 24px
-            @media screen and ( max-width: 1024px )
+            @media screen and ( max-width: 1126px )
+                flex-direction: row
                 flex-wrap: wrap
-                width: 127px
-                flex-direction: column
                 justify-content: center
                 align-items: flex-start
-                margin-top: 18px
+                margin-top: 4px
+                margin-left: auto
+            @media screen and ( max-width: 858px  )
+                margin-top: 16px
+                flex-wrap: nowrap
+                flex-direction: column
             @media screen and ( max-width: 768px )
                 flex-wrap: nowrap
-                width: 228px
-                flex-direction: row
-                justify-content: center
+                flex-direction: column
+                justify-content: end
                 align-items: flex-start
                 margin-right: 52px
-            @media screen and ( max-width: 320px )
+                width: 100px
+                margin: 0
+                margin-top: 18px
+            @media screen and ( max-width: 700px )
+                flex-wrap: wrap
+                width: 228px
+                flex-direction: row
+                align-items: flex-start
+                margin-right: 25px
+            @media screen and ( max-width: 746px )
                 margin-right: 10px
                 
                 
@@ -168,24 +199,26 @@
                     border-radius: 1px
                     display: inline-block
                     margin-right: 16px
+                    @media screen and ( max-width: 1126px )
+                        margin-right: 5px
 
             &-flag
                 &__audiotel
                     margin-right: 39px
-                    @media screen and ( max-width: 320px )
+                    @media screen and ( max-width: 746px )
                         margin-right: 26px
                         margin-bottom: 35px
                     &::before
                         background-color: #81e7c2
                 &__CB
                     margin-right: 39px
-                    @media screen and ( max-width: 320px )
+                    @media screen and ( max-width: 746px )
                         margin-right: 26px
                         margin-bottom: 35px
                     &::before
                         background-color: #dadcde
                 &__indisponible
-                    @media screen and ( max-width: 320px )
+                    @media screen and ( max-width: 746px )
                         margin-bottom: 35px
                     &::before
                         background-color: #f57183
@@ -201,7 +234,14 @@
         background: url('/img/hero/searchIcon.svg')
         background-repeat: no-repeat
         background-position: 12px 12px
-        caret-color: black      
+        caret-color: black    
+        @media screen and ( max-width: 1126px )
+            width: 824px
+        @media screen and ( max-width: 802px)
+            width: 100vw
+            margin-left: 8px
+        @media screen and ( max-width: 700px )
+            width: 256px
 
         &::placeholder
             color: #2f3a5b
@@ -226,14 +266,19 @@
         border-radius: 4px
         border: 1px solid #f0f1f3
         background-color: #ffffff
+        margin: 0 auto
         margin-bottom: 16px
         position: sticky
         top: 0
         left: 0
         padding-left: 12px
-        @media screen and ( max-width: 1024px)
-            width: 832px
-        @media screen and ( max-width:  768px)
+        z-index: 9999
+        @media screen and ( max-width: 1126px)
+            width: 802px
+        @media screen and ( max-width: 802px )
+            width: 100vw
+            
+        @media screen and ( max-width:  1024px)
             position: sticky
             top: 0
             left: 0
@@ -248,10 +293,13 @@
             display: flex
             align-items: center
             margin-right: 4px
-            @media screen and ( max-width: 1024px)
+            white-space: pre
+            @media screen and ( max-width: 1126px)
                 font-size: 11px
                 letter-spacing: 0.23px
-            @media screen and ( max-width: 768px  )
+                margin-right: 28px
+                padding-left: 20px
+            @media screen and ( max-width: 1126px  )
                 position: sticky
                 left: 0
                 width: 88px
@@ -265,8 +313,8 @@
                 width: 0
                 height: 32px
                 border: 1px solid #f0f1f3
-                @media screen and ( max-width: 1024px)
-                    margin-left: 24px
+                @media screen and ( max-width: 1126px)
+                    margin-left: 20px
                 @media screen and ( max-width: 768px )
                     margin-left: 12px
                      
@@ -274,8 +322,10 @@
             display: flex
             align-items: center
             justify-content: space-between
+            @media screen and ( max-width: 1024 )
+                margin-left: 10px
             @media screen and ( max-width: 768px )
-                margin-left: 30px
+                margin-left: 0px
                 
             &__item
                 color: #8c8ea1
@@ -287,7 +337,7 @@
                 line-height: normal
                 display: flex
                 align-items: center
-                @media screen and ( max-width: 1024px)
+                @media screen and ( max-width: 1126px)
                     font-size: 11px
                     letter-spacing: 0.26px
 
@@ -298,7 +348,7 @@
                     background: url('/img/planning/Main/arrowRight.png')
                     display: inline-block
                     margin: 0 6.75px
-                    @media screen and ( max-width: 1024px  )
+                    @media screen and ( max-width: 1126px  )
                         margin: 0 3px
                         background: url('/img/planning/Main/arrowRightMD.png')
                 &:last-child
@@ -322,15 +372,18 @@
                 color: #9169db
                 background-color: #FBFBFC
                 box-shadow: none
-        @media screen and ( max-width: 1024px  )
+                cursor: pointer
+        @media screen and ( max-width: 1126px  )
             padding-left: 13px
-            width: 832px
-        @media screen and ( max-width: 768px )
+            width: 802px
+            margin: 16px auto
             &:nth-child(-n+7)
                 display: none  
             position: sticky
             padding: 0
-            left: 0              
+            left: 0       
+        @media screen and ( max-width: 802px )
+            width: 100vw       
             
         &__name
             color: #252729
@@ -342,17 +395,22 @@
             line-height: 19px
             display: flex
             align-items: center
-            @media screen and ( max-width: 1024px  )
+            white-space: pre
+            @media screen and ( max-width: 1126px  )
                 font-size: 13px
-                margin-right: 40px
-            @media screen and ( max-width: 768px  )
+                margin-right: 5px
+                padding-left: 24px
+            @media screen and ( max-width: 1126px  )
                 position: sticky
                 left: 0
                 width: 112px
                 height: 46px
                 background-color: #ffffff
                 z-index: 1000
-                box-shadow: 3px 0px 2px #EEEEEE                    
+                box-shadow: 3px 0px 2px #EEEEEE 
+                padding-right: 24px
+            @media screen and ( max-width: 768px )
+                padding-left: 20px                 
             &:after
                 content: ''
                 margin-left: 85px
@@ -361,7 +419,7 @@
                 width: 1px
                 height: 32px
                 background-color: #f0f1f3
-                @media screen and ( max-width: 1024px  )
+                @media screen and ( max-width: 1126px  )
                     display: none
         &-timeline
             display: flex
@@ -372,7 +430,7 @@
                 &:after
                     content: ''
                     margin: 0 4.8px
-                    @media screen and ( max-width: 1024px  )
+                    @media screen and ( max-width: 1126px  )
                         margin: 0 3.37px
                     display: block
                     width: 1px
@@ -389,23 +447,23 @@
     width: 6px
     height: 16px
     background-image: url(/img/planning/Main/greenLine.png)
-    @media screen and ( max-width: 1024px)
+    @media screen and ( max-width: 1126px)
         width: 4px
 
 .greyLine
     width: 6px
     height: 16px
     background-image: url(/img/planning/Main/greyLine.png)
-    @media screen and ( max-width: 1024px)
+    @media screen and ( max-width: 1126px)
         width: 4px
 
 .redLine
     width: 6px
     height: 16px
     background-image: url(/img/planning/Main/redLine.png)
-    @media screen and ( max-width: 1024px)
+    @media screen and ( max-width: 1126px)
         width: 4px
-@media screen and ( max-width: 768px )
+@media screen and ( max-width: 802px )
     .planning-main-overflowWrapper
         overflow-x: scroll
         margin-bottom: 40px

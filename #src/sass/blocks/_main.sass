@@ -8,7 +8,6 @@
         border-radius: 4px
         display: flex
         flex-direction: column
-        margin-right: 30px
         margin-bottom: 64px
         align-items: center
         position: relative
@@ -20,22 +19,24 @@
         @media screen and ( max-width:  320px)
             width: 256px
             margin-bottom: 32px
+        @media screen and ( max-width: 700px )
+            width: 320px
         @media screen and ( min-width:  1440px)
             &:nth-child(4n)
                 margin-right: 0
         @media screen and ( max-width:  768px)
                 width: 224px
-        @media screen and ( max-width:  1024px)
-                &:nth-child(3n)
-                    margin-right: 0
-                margin-right: 29px
-                &:last-child
-                    display: none
         @media screen and ( max-width:  320px)
             margin-right: 0
         &-wrapper
             display: flex
             flex-wrap: wrap
+            justify-content: space-between
+            @media screen and ( max-width:  1365px )
+                margin: 0 auto
+            @media screen and ( max-width:  700px )
+                justify-content: center
+                
             @media screen and ( max-width:  320px)
                 flex-direction: column
                 align-items: center
@@ -47,6 +48,8 @@
             @media screen and ( max-width:  768px)
                 width: 224px
             @media screen and ( max-width:  320px)
+                width: 256px
+            @media screen and ( max-width: 700px )
                 width: 256px
         &-header
             z-index: 1
@@ -78,6 +81,7 @@
                 background-image: url('/img/main/playerIconPurple.png')
                 position: relative
 
+
         &-teresa
             text-decoration: none
             &-header
@@ -101,6 +105,8 @@
                             height: 4px
                 &-playButton
                     background-image: url('/img/main/playButton.png')
+                    &:hover
+                        background-image: url('/img/main/playButtonActive.png')
                     &_active
                         background-image: url('/img/main/playButtonActive.png')
                 &-title

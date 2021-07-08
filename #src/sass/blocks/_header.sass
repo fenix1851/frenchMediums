@@ -8,39 +8,34 @@
         border-style: none
         background-color: transparent
         padding: 0
-        z-index: 1000000
-        @media screen and ( max-width: 320px )
+        z-index: 10000000000000000
+        @media screen and ( max-width: 700px )
             display: block
             right: 5px
             top: 20px
         &-nonActive
             background-image: url("/img/header/burger-icon.png")
-        &-active
-            width: 14px
-            height: 14px
-            background-image: url("/img/header/burgerX.png")
         &-white
             &-nonActive
                 background-image: url("/img/header/burgerWhite.png")
-            &-active
-                width: 14px
-                height: 14px
-                background-image: url("/img/header/burgerXwhite.png")
+        &-active
+            width: 14px
+            height: 14px
+            background-image: url("/img/header/burgerXwhite.png")
     &-mobile-menu
         &__logo
-            color: #2f3a5b
+            color: #fff
             text-decoration: none
             font-family: Aleo
-            font-size: 27px
+            font-size: 20px
             font-weight: 400
             font-style: normal
             letter-spacing: 0.56px
-            margin-top: -20px
-            &_white
-                color: #fff
+            margin-top: 20px
+            margin-bottom: 160px
+            margin-right: auto
         &__link
             text-decoration: none
-            color: #252729
             font-family: Lato
             font-size: 16px
             font-weight: 600
@@ -48,8 +43,8 @@
             letter-spacing: 0.28px
             line-height: 19px
             position: relative
-            &_white
-                color: #fff
+            color: #fff
+            margin-right: 3.3vw
             &::after
                 position: absolute
                 content: ''
@@ -58,38 +53,37 @@
                 left: 0
                 width: 0
                 height: 2px
-                background-color: #252729
+                background-color: #9169db
                 -moz-transition: 0.2s 0.1s ease-in
                 -o-transition: 0.2s 0.1s ease-in
                 -webkit-transition: 0.2s 0.1s ease-in
 
             &:hover
                 &.header-mobile-menu__link
-                    color: #9169DB
                     &::after
                         opacity: 1
                         width: 100%
-                        background-color: #9169DB
+                        background-color: #fff
 
         &-wrapper
             text-decoration: none
             display: flex
             flex-direction: column
             align-items: center
-            justify-content: space-around
+            justify-content: space-between
             z-index: 999999
             position: absolute
-            height: 400px
-            width: 320px
-            background-color: #fff
+            width: 103.3vw
+            background-color: #9169db
             top: 0px
-            left: -32px  
+            left: -7px  
             opacity: 0 
             height: 0
-            &_purple
-                background-color: #9169db
+            padding-top: 3vw
+            padding-left: 32px
+            padding-bottom: 200px
             &_active
-                height: 400px
+                height: 568px
                 opacity: 1
 
                 
@@ -108,7 +102,7 @@
             left: -348px
             height: 130px
             width: 974px
-    @media screen and ( max-width:  1024px)
+    @media screen and ( max-width:  1365px)
         .header-container
             &::after
                 transform: scaleX(0.71)
@@ -128,7 +122,7 @@
         #dnOnSM
             display: none
         
-    @media screen and ( max-width: 320px)
+    @media screen and ( max-width: 700px)
         .header-container
                 &::after
                     transform: scale(0.5, 0.56)
@@ -145,6 +139,11 @@
         padding-top: 41px
         display: flex
         justify-content: space-between
+        @media screen and ( max-width:  1365px )
+            margin-left: auto
+            margin-right: auto
+        @media screen and ( max-width: 830px )
+            padding: 22px 3vw
     &-logo
         color:#ffffff
         text-decoration: none
