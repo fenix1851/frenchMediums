@@ -1,67 +1,61 @@
 .aboutUs
-    &-container
-        margin-top: 244px
-        margin-bottom: 105px
-        display: flex
-        align-items: flex-start
-        position: relative
-        justify-content: space-around
+    &-body
         &::after
             position: absolute
-            top: -550px
-            left: -360px
+            bottom: 0px
+            right: 0px
             z-index: -99999
             display: block
             content: ''
-            width: 1875px
+            width: 100%
             height: 1300px
+            max-height: 100vh
             background-image: url('/img/aboutUs/aboutUsAfter.svg')
-            transform: rotate(328deg)
         @media screen and ( max-width: 1440px )
             &::after    
                 background-image: url('/img/aboutUs/aboutUsAfter.png')
                 width: 1011px
                 height: 1107px
-                top: -230px
-                left: 264px
+                top: 0px
+                right:0px
                 transform: rotate(0deg)
             &::before
                 top: 742px
                 left: 585px
         @media screen and ( max-width: 1366px )
             &::after
-                left: 0
-                width: 100vw
+                right: 0
+                width: 1011px
         @media screen and ( max-width: 1024px  )
             &::after
-                width: 1011px
+                width: 100vw
                 height: 1107px
-                top: -132px
-                left: -87px
+                top: 0px
+                right: 0px
                 background-image: url('/img/aboutUs/aboutUsAfterMD.png')
             &::before
                 top: 840px
                 left: 585px
         @media screen and ( max-width: 768px  )
             &::after
-                width: 768px
+                width: 100vw
                 height: 1008px
                 top: 0px
-                left: -21px
+                right: 0px
                 background-image: url('/img/aboutUs/aboutUsAfterSM.png')
             &::before
                 top: 791px
                 left: 585px
         @media screen and ( max-width:  700px  )
             &::after
-                width: 320px
-                height: 1290px
-                top: -80px
-                left: -36px
-                background-image: url('/img/aboutUs/aboutUsAfterXS.png')  
+                width: 100vw
+                height: 100vh
+                top: 0px
+                left: 0px
+                background-image: url('/img/aboutUs/aboutUsAfterSM.png')  
             &::before
                 top: 700px
-                left: 0px            
+                left: -100px            
         &::before
             position: absolute
             top: 791px
@@ -72,6 +66,14 @@
             width: 135px
             height: 117px
             background-image: url('/img/aboutUs/aboutUsBefore.png')
+        
+    &-container
+        margin-top: 244px
+        margin-bottom: 105px
+        display: flex
+        align-items: flex-start
+        position: relative
+        justify-content: space-around
         @media screen and ( max-width: 768px )
             margin-bottom: 59px
             margin-top: 184px
@@ -80,6 +82,7 @@
             margin-top: 96px
             display: flex
             flex-direction: column
+        
     &-teresa
         display: flex
         flex-direction: column
@@ -133,12 +136,12 @@
                     left: -16px
                     background-image: url('/img/aboutUs/PBSM.png')
                 @media screen and ( max-width:  700px )
-                    width: 320px
+                    width: 100vw
                     height: 283px
                     top: -7px
                     left: -32px
-                    background-position-x: center
-                    background-image: url('/img/aboutUs/PBXS.png')
+                    background-position: 0 0
+                    background-image: url('/img/aboutUs/PBSM.png')
 
             &::before
                 position: absolute
