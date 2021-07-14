@@ -16,7 +16,7 @@
             display: flex
             flex-direction: column
             align-items: center
-            margin-top: 54px
+            margin-top: 27px
         
 
         &-title
@@ -261,7 +261,7 @@
             @media screen and ( max-width:  768px)
                 width: 600px
         &-container
-            margin-top: 220px
+            margin-top: 157px
             @media screen and ( max-width:  1365px )
                 margin-top: 169px
             @media screen and ( max-width:  700px)
@@ -277,7 +277,12 @@
             margin-bottom: 32px
             position: relative
             list-style: none
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
             &-wrapper
+                position: relative
+            &_wrapper
                 position: relative
             @media screen and ( max-width:  700px )
                 width: 264px
@@ -304,12 +309,20 @@
                 display: flex
                 align-items: center
                 padding-left: 0
+                &-hovered
+                    & > label
+                        &:nth-of-type(1)
+                            background-image: url('/img/hero/iconRadioHover.svg')
                 & > label
                     &:hover
                         cursor: pointer
                 &-skills
                     justify-content: space-between
                     padding-right: 20px
+                    &-hovered
+                        & > label
+                            &:nth-of-type(2)
+                                background-image: url('/img/hero/purpleBoxHover.svg')
                 &:hover
                     background-color: #F9F7FC
                     border-radius: 4px
@@ -330,28 +343,28 @@
                             & + label
                                 color: #9169db
                                 & + label
-                                    background-image: url(/img/hero/purpleBox.png)
+                                    background-image: url(/img/hero/purpleBox.svg)
                     &-inAudiotel
                         display: none
                         position: absolute
                         &:checked
                             & + label
-                                background-image: url(/img/hero/icon-radio-check.png)    
+                                background-image: url(/img/hero/icon-radio-check.svg)    
                                 & + label
                                     color: #9169db
                 &-PurpleRadio
                     width: 20px
                     height: 20px
                     margin-left: 0
-                    background-image: url(/img/hero/icon-radio.png)
+                    background-image: url(/img/hero/icon-radio.svg)
                     background-repeat: no-repeat
                     &:checked
-                        background-image: url(/img/hero/icon-radio-check.png)
+                        background-image: url(/img/hero/icon-radio-check.svg)
                 &-checkbox
                     width: 20px
                     height: 20px
                     margin-left: 0
-                    background-image: url(/img/hero/whiteBox.png)
+                    background-image: url(/img/hero/whiteBox.svg)
                     background-repeat: no-repeat
                     
 
@@ -403,13 +416,13 @@
                     border-color: #9169db
             &::after
                 content: ''
-                background: url(/img/hero/arrowDown.png)
-                width: 16px
-                height: 16px
+                background: url(/img/hero/arrowDown.svg)
+                width: 10px
+                height: 6px
                 display: block
                 position: absolute
-                right: 16px
-                top: 16px
+                right: 20px
+                top: 22px
             &-select
                 color: #8c8ea1
                 font-family: Lato
@@ -556,23 +569,25 @@
         @media screen and ( max-width:  700px)
             display: flex
             align-items: center
-            width: 360px
+            justify-content: space-between
+            width: 320px
             height: 112px
             box-shadow: 0 8px 16px rgba(37, 39, 41, 0.12)
             border-radius: 1px
             background-color: #ffffff
             position: absolute
-            bottom: -58px
-            left: -50px
+            z-index: 9
+            top: 461px
+            left: 50%
+            transform: translateX(-50%)
+            padding: 32px
+            padding-right: 26px
             &-settings
-                width: 192px
+                width: 195px
                 height: 48px
                 border-radius: 1px
                 border: 1px solid #f0f1f3
                 background-color: #ffffff
-                padding-left: 48px
-                display: flex
-                align-items: center
                 color: #2f3a5b
                 font-family: Lato
                 font-size: 15px
@@ -580,39 +595,40 @@
                 font-style: normal
                 letter-spacing: 0.28px
                 line-height: 19px
-                margin-left: 64px
                 position: relative
                 background-repeat: no-repeat
                 &::after
                     content: ''
-                    background: url(/img/hero/arrowDown.png)
-                    width: 16px
-                    height: 16px
+                    background: url(/img/hero/arrowDown.svg)
+                    width: 10px
+                    height: 6px
                     display: block
                     position: absolute
-                    right: 16px
-                    top: 16px
+                    right: 18px
+                    top: 21px
                 &_active
                     border-color: #9169db
                     &::after
                         transform: rotate(180deg)
                 &-label
                     position: absolute
-                    top: 14px
-                    left: 16px
+                    top: 12px
+                    left: 13px
                     display: flex
                     width: 86px
-                    justify-content: space-between
-                    align-items: center
+                    height: 24px
                     &__title
-                        margin-left: 8px
+                        margin-top: 3px
+                        margin-left: 3px
                         display: block
+                    & > picture
+                        margin-right: 8px
                 &-wrapper
                     position: relative
                 &-inner
                     position: absolute
-                    width: 324px
-                    left: 33px
+                    width: 320px
+                    left: -32px
                     height: 0px
                     background-color: #fff
                     z-index: 1000
@@ -634,10 +650,9 @@
                 border-radius: 4px
                 border: 1px solid #f0f1f3
                 background-color: #ffffff
-                margin-left: 16px
                 outline: none
                 padding-left: 48px
-                background-image: url(/img/hero/searchIcon.png)
+                background-image: url(/img/hero/searchIcon.svg)
                 background-repeat: no-repeat
                 background-position: 12px 12px 
                 -moz-transition: 0s 0s ease-in
@@ -647,8 +662,7 @@
                     &.hero-mobile-filter-search 
                         border-color: #9169db
                 &_active                    
-                    width: 83%
-                    margin-left: 48px
+                    width: 100%
   
 
 .webp

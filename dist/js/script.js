@@ -36,21 +36,54 @@ $('.header-burger-white').on('click', function(burgerEvent){
 });
 
 $('.hero-filters-dropdown-option').on('click', function(){
-    console.log(this.getElementsByTagName('input')[0].checked)
-    this.getElementsByTagName('input')[0].checked = true
     let span = this.parentNode.previousElementSibling.childNodes[1]
-    console.log(this)
-    console.log(this.classList.contains('hero-filters-dropdown-skills-li'))
     if(this.classList.contains('hero-filters-dropdown-skills-li')){
-        console.log(this)
-        span.innerHTML = this.childNodes[2].innerHTML
+        if(this.getElementsByTagName('input')[0].checked == true){
+            this.getElementsByTagName('input')[0].checked = false
+            span.innerHTML = span.innerHTML.replace(this.childNodes[2].innerHTML, '')
+        }
+        else{
+            span = this.parentNode.previousElementSibling.childNodes[1]
+            console.log(span.innerHTML)
+
+            this.getElementsByTagName('input')[0].checked = true
+            let spanInnerHTML = span.innerHTML
+            if(spanInnerHTML.includes(this.childNodes[2].innerHTML)){
+                return
+            }
+            else{
+                span.innerHTML +=  ' ' + this.childNodes[2].innerHTML
+                console.log(span.innerHTML)
+            }
+            
+        }
     }
     else
         {
             span.innerHTML = this.lastChild.innerHTML
         }
     }
+    
 )
+
+$('.hero-filters-dropdown-option').mouseenter(function(){
+    if($(this).hasClass('hero-filters-dropdown-inAudiotel-li'))
+        $(this).addClass('hero-filters-dropdown-option-hovered')
+    else if($(this).hasClass('hero-filters-dropdown-option-skills'))
+        $(this).addClass('hero-filters-dropdown-option-skills-hovered')
+    else
+        return
+})
+
+$('.hero-filters-dropdown-option').mouseleave(function(){
+    if($(this).hasClass('hero-filters-dropdown-inAudiotel-li'))
+        $(this).removeClass('hero-filters-dropdown-option-hovered')
+    else if($(this).hasClass('hero-filters-dropdown-option-skills'))
+        $(this).removeClass('hero-filters-dropdown-option-skills-hovered')
+    else
+        return
+})
+
 
 $('.hero-filters-dropdown').on('click', function(){
     if($(this).hasClass('hero-filters-dropdown-InAudiotel'))
@@ -118,7 +151,6 @@ $('.recrument-form-apply').on("click", function(){
 
 $('.teresaVoyanceMain-form-apply').on("click", function(){
     $('.requestSended-inner').removeClass('dn')
-    console.log(window.pageYOffset)
     document.getElementsByClassName('requestSended-inner')[0].style.top = window.pageYOffset  + "px"
     $("body").css("overflowY", "hidden")
 })
